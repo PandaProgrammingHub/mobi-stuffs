@@ -1,0 +1,42 @@
+<div class="modal-header">
+  <button type="button" ng-click="$ctrl.close()" class="close" data-dismiss="modal">×</button>
+</div>
+<div class="modal-body">
+  <div class="pop-input">
+    <form class="form" name="postRfp">
+      <div class="form-group" ng-class="{ 'has-error' : postRfp.rfpTitle.$invalid && !postRfp.rfpTitle.$pristine}">
+        <input type="text" class="block form-control" name="rfpTitle" class="block" ng-model="$ctrl.rfp.rfpTitle" placeholder="RFP Title">
+        <p ng-show="postRfp.rfpTitle.$invalid && !postRfp.rfpTitle.$pristine" class="help-block">Rfp title is required.</p>
+      </div>
+      <select multiple required class="block" ng-model="$ctrl.rfp.productCategories" required>
+        <option value="" label="Products" disabled selected="selected">
+        <option ng-repeat="product in $ctrl.productsList">{{product}}</option>
+        </option>
+      </select>
+      <select multiple required class="block" ng-model="$ctrl.rfp.location" required>
+        <option value="" label="Locations" disabled selected="selected">
+        <option ng-repeat="location in $ctrl.locationsList">{{location}}</option>
+        </option>
+      </select>
+      <div class="form-group" ng-class="{ 'has-error' : postRfp.endDate.$invalid && !postRfp.endDate.$pristine}">
+        <input type="text" name="endDate" class="block form-control" placeholder="End Date" required ng-model="$ctrl.rfp.endDate">
+        <p ng-show="postRfp.endDate.$invalid && !postRfp.endDate.$pristine" class="help-block">End Date is required.</p>
+      </div>
+      <div class="form-group" ng-class="{ 'has-error' : postRfp.budgetStart.$invalid && !postRfp.budgetStart.$pristine}">
+        <input type="text" name="budgetStart" class="block form-control" placeholder="Bugdet Start At" required ng-model="$ctrl.rfp.budgetStart">
+        <p ng-show="postRfp.budgetStart.$invalid && !postRfp.budgetStart.$pristine" class="help-block">Budget Start at is required.</p>
+      </div>
+      <div class="form-group" ng-class="{ 'has-error' : postRfp.budgetEnd.$invalid && !postRfp.budgetEnd.$pristine}">
+        <input type="text" name="budgetEnd" class="block form-control" placeholder="Bugdet End At" required ng-model="$ctrl.rfp.budgetEnd">
+        <p ng-show="postRfp.budgetEnd.$invalid && !postRfp.budgetEnd.$pristine" class="help-block">Budget End at is required.</p>
+      </div>
+      <div class="form-group" ng-class="{ 'has-error' : postRfp.description.$invalid && !postRfp.description.$pristine}">
+        <textarea name="description" class="form-control" placeholder="Description(Maximum 250 character)" maxlength="250" ng-model="$ctrl.rfp.proposalDescription" required></textarea>
+        <p ng-show="postRfp.description.$invalid && !postRfp.description.$pristine" class="help-block">Description is required.</p>
+      </div>
+      <div class="company-name-input text-center">
+        <button type="submit" ng-click="$ctrl.postRfp()" ng-disabled="!$ctrl.isValid(postRfp.$valid)">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[branch "master"]
+[remote "origin"]
+	url = https://github.com/santoshpandamobinext/salesdoor.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[remote "upstream"]
+	url = https://github.com/santoshmobinext/salesdoor.git
+	fetch = +refs/heads/*:refs/remotes/upstream/*
+[branch "dev1"]
+	remote = upstream
+	merge = refs/heads/dev

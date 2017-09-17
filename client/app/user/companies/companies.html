@@ -1,0 +1,86 @@
+<search-bar></search-bar>
+
+<div class="wrapper_1">
+  <div class="container">
+    <div class="row">
+      <left-nav></left-nav>
+      <div class="col-sm-6">
+        <div class="middle_1">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="dis"> <input type="text" placeholder="Discover New" uib-typeahead="company.name for company in $ctrl.allCompanies | filter:$viewValue | limitTo:8" ng-model="searchText"> <a href="#"> <i class="fa fa-search" aria-hidden="true" ng-click="$ctrl.showSearchCompany(searchText)"></i> </a></div>
+            </div>
+            <!--<div class="col-sm-6">-->
+              <!--<div class="dis"> <input type="text" placeholder="Search"> <a href="#"> <i class="fa fa-search" aria-hidden="true"></i> </a></div>-->
+            <!--</div>-->
+          </div><br>
+          <div class="row">
+            <div ng-show="$ctrl.showSearchCompanies">
+              <div ng-repeat="comElem in $ctrl.allCompanies track by $index">
+                <div ng-if="comElem.name === searchText">
+                  <div>
+                  <div class="col-sm-6">
+                    <div class="mzda">
+                      <div class="auc"> <img src="assets/images/mz.jpg" alt="mazda" ng-click="$ctrl.callCompanyProfile(comElem._id)"></div><br>
+                      <div class="auctor">
+                        <h5 ng-click="$ctrl.callCompanyProfile(comElem._id)">{{comElem.name}}</h5><br>
+                        <div> <a href="#">{{comElem.industry}}</a>
+                          <span ng-if="$ctrl.checkObj(comElem)">
+                            <a ng-click="$ctrl.searchCompOpn($index, $ctrl.toggleText)">{{$ctrl.toggleText}} </a>
+                          </span>
+                          <span ng-if="!$ctrl.checkObj(comElem)">
+                            <a ng-click="$ctrl.searchCompOpn($index, $ctrl.toggleText)">{{$ctrl.toggleText}}  </a>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+            <p ng-show="$ctrl.showNoCompanies" style="color: red">No Companies To Show.</p>
+            <div ng-show="$ctrl.showCompanies">
+              <div ng-repeat="comElem in $ctrl.comData | limitTo: 4 track by $index">
+                <div>
+                  <div class="col-sm-6">
+                    <div class="mzda">
+                      <div class="auc"> <img src="assets/images/mz.jpg" alt="mazda" ng-click="$ctrl.callCompanyProfile(comElem._id)"></div><br>
+                      <div class="auctor">
+                        <h5 ng-click="$ctrl.callCompanyProfile(comElem._id)">{{comElem.name}}</h5><br>
+                        <div> <a href="#">{{comElem.industry}}</a>  <a href="#"  ng-click="$ctrl.unfollowCompanies($index, 'unfollowReg')">unfollow </a>  </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div ng-show="$ctrl.showMoreFlag">
+              <div ng-repeat="comElem in $ctrl.comData track by $index" ng-if="$index >= 4">
+                <div>
+                  <div class="col-sm-6">
+                    <div class="mzda">
+                      <div class="auc"> <img src="assets/images/mz.jpg" alt="mazda" ng-click="$ctrl.callCompanyProfile(comElem._id)"></div><br>
+                      <div class="auctor">
+                        <h5 ng-click="$ctrl.callCompanyProfile(comElem._id)">{{comElem.name}}</h5><br>
+                        <div> <a href="#">{{comElem.industry}}</a>  <a href="#" ng-click="$ctrl.unfollowCompanies($index, 'unfollowReg')">unfollow </a>  </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><br>
+          <div class="alert alert-info" ng-show="$ctrl.showAlert">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close" ng-click="$ctrl.closeAlert()">×</a>
+            <strong>Info!</strong> No More Companies Found.
+          </div>
+          <div class="morebtn m2"> <a href="#" ng-show="$ctrl.ShowMoreButton" ng-click="$ctrl.showMore()">View More </a> </div>
+        </div>
+      </div>
+      <notification-panel></notification-panel>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!-- Modal content-->
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" ng-click="editAdminAssignCompany.close()" data-dismiss="modal">&times;</button>
+    <h4 class="modal-title">Update Company Admin</h4>
+  </div>
+  <div class="modal-body">
+    <form id="form-wizard" class="form-horizontal ui-formwizard" name="editForm" method="post" ng-submit="editAdminAssignCompany.updateCompany(editForm)" novalidate="novalidate">
+
+      <div class="control-group ">
+        <label class="control-label">Company</label>
+        <div class="controls">
+          <input id="username" ng-model="company.name"type="text" name="username" value="{{company.name}}"class="ui-wizard-content" >
+        </div>
+      </div>
+      <div class="control-group ">
+        <label class="control-label">Current Admin</label>
+        <div class="controls">
+          <input id="username" type="text" name="username" class="ui-wizard-content" >
+        </div>
+      </div>
+      <div class="control-group ">
+        <label class="control-label">New Admin</label>
+        <div class="controls">
+          <input id="username" type="text" name="username" class="ui-wizard-content" >
+        </div>
+      </div>
+
+      <div class="left0">
+        <input id="next" class="btn btn-primary ui-wizard-content ui-formwizard-button" type="submit" value="Update">
+        <input  class="btn btn-primary ui-wizard-content ui-formwizard-button" type="reset" value="Reset">
+      </div>
+    </form>
+  </div>
+
+</div>

@@ -1,0 +1,415 @@
+<div class="bannerstrip">
+  <div class="container">
+    <div class="col-sm-4">
+      <i class="fa fa-search" aria-hidden="true" ng-click="hireCtrl.searchBy(hireCtrl.searchText,type)"></i>
+      <input class="inpt1" ng-model="hireCtrl.searchText" type="text" ng-change="hireCtrl.onChange(hireCtrl.searchText)" placeholder="Search by Company or Product">
+    </div>
+    <div class="col-sm-4">
+      <i class="fa fa-map-marker" aria-hidden="true"></i>
+      <input class="inpt1" type="text" placeholder="Location">
+    </div>
+    <div class="col-sm-4">
+      <i class="fa fa-building-o" aria-hidden="true"></i>
+      <select  ng-model="type" class="select2" id="sel1" >
+        <option> Company </option>
+        <option ng-selected="true" value="Hired"class="btn btn-primary btnColor"> Hire</option>
+        <option> RFP</option>
+      </select>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <!--<div class="alert alert-danger alert-dismissable text-bold-red" ng-show="hireCtrl.showAlert">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close" ng-click="hireCtrl.closeAlert()">
+        ×</a>Hire Not Found
+    </div>-->
+
+    <div id="no-result" ng-show="hireCtrl.showAlert">
+      <p>
+      </p><h1>SORRY</h1>
+      <h2>No Matching Results</h2>
+      <p></p>
+    </div>
+
+  </div>
+</div>
+  <div class="container margin-bottom" ng-show="hireCtrl.showDiv">
+    <div class="row">
+      <div class="col-sm-9">
+        <div class="middle_1">
+          <div class="row clearfix">
+            <div class="col-sm-8">
+              <span class="bold block font18 bottom15">Search Results </span>
+              <span class="block font16" ng-model="hireCtrl.noOfResult">Showing {{hireCtrl.noOfResult}} Hire Results</span>
+            </div>
+            <div class="col-sm-4">
+              <select class="rvwSelect" name="location" ng-model="hireCtrl.location">
+                <option value="" selected>Choose Locations</option>
+                <option ng-repeat="showSearchResult in hireCtrl.showSearchResults">{{showSearchResult.location[0]}}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="mzda mrv hrPdng" ng-repeat="showSearchResult in hireCtrl.showSearchResults | filter:{location:hireCtrl.location} | limitTo: 2">
+                <div class="hrPnl">
+                  <label>{{showSearchResult.companyName}}</label> </div>
+                <div class="row clearfix pdng8">
+                  <div class="col-sm-3">
+                    <img class="profileImage" src="images/oldman.jpg" alt="profile Image" style="width: 69px;">
+                  </div>
+                  <div class="col-sm-9 addau center">
+                    <div class="row clearfix">
+                      <div class="col-sm-8" style="text-align: left;">
+                        <div class="left20" ng-click="hireCtrl.takeToUser(showSearchResult.postedBy._id)">
+                          <span class="bold block font14">{{showSearchResult.postedBy.name}}</span>
+                          <span class="block font12">{{showSearchResult.postedBy.designation}} @ {{showSearchResult.postedBy.currentcompany}}</span>
+                          <span class="block font10 smallColor">{{hireCtrl.hiredCount[$index]}} Hires, {{hireCtrl.rfpCount[$index]}} RFP</span>
+                        </div>
+                      </div>
+                      <div class="col-sm-4 rvwbtn">
+                        <div class="clearfix" style="float: right;">
+                          <fieldset class="rating rtng" style="">
+                            <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                            <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                            <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                            <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                            <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                            <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                            <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                            <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                            <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                            <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                          </fieldset></div>
+                        <span class="font10 block" style="float: right;">{{hireCtrl.reviewsCount[$index]}} Reviews</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row clearfix">
+                  <!-- <div class="col-sm-3"></div> -->
+                  <div class="col-sm-12 addau center">
+                    <div class="panel-default left font11">
+                      <div class="panel-body" style="padding-bottom: 6px;">
+                        <div ng-show="showSearchResult.priority === 'low'" class="colorLabelLow" style="background-color: #FBC02D;"></div>
+                        <div ng-show="showSearchResult.priority === 'medium'" class="colorLabelMedium" style="background-color: #2cf959;"></div>
+                        <div ng-show="showSearchResult.priority === 'high'" class="colorLabelHigh" style="background-color: #ff0000;"></div>
+
+                        <div class="row clearfix">
+                          <div class="col-sm-6 linkMargin">
+                            <span >{{showSearchResult.productCategory}}</span>
+                          </div>
+                          <div class="col-sm-6 linkMargin">
+                            <div ng-repeat="locElem in showSearchResult.location">
+                              <span> {{locElem}}<span ng-if=$index!==showSearchResult.location.length-1>,<span></span>
+
+                            </div>
+                          </div>
+                          <div class="col-sm-6 linkMargin">
+                            <span class="badge metadata">Sales</span>
+                          </div>
+                          <div class="col-sm-6 linkMargin">
+                            <div class="row clearfix">
+                              <div class="col-sm-12 smallColor" title="No of Responses">
+                                <div class="inlineBlock">
+                                  <i class="fa fa-list" aria-hidden="true" title="No of Responses"></i>
+                                  <span>{{hireCtrl.applyByCount[$index]}}</span>
+                                </div>
+                                <div class="inlineBlock left15 " title="End Date">
+                                  <i class="fa fa-clock-o" aria-hidden="true" title="End Date"></i>
+                                  <span>{{showSearchResult.endDate}}</span>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+                          <div class="col-sm-12 top15">
+                            <p>{{showSearchResult.description}}</p>
+                          </div>
+                          <div class="font14 col-sm-12 top15 rsb text-right" ng-show="hireCtrl.showButtons">
+                            <a ng-show="hireCtrl.alreadyApplied(showSearchResult)">Applied</a>
+                            <a ng-show="!hireCtrl.alreadyApplied(showSearchResult)" ng-click="hireCtrl.applyToHired(showSearchResult, $event)" style="cursor: pointer;">Apply</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mzda mrv hrPdng" ng-repeat="showSearchResult in hireCtrl.showSearchResults | filter:{location:hireCtrl.location}" ng-show="hireCtrl.showMoreFlag" ng-if="$index >= 2">
+                <div class="hrPnl">
+                  <label>{{showSearchResult.companyName}}</label> </div>
+                <div class="row clearfix pdng8">
+                  <div class="col-sm-3">
+                    <img class="profileImage" src="images/oldman.jpg" alt="profile Image" style="width: 69px;">
+                  </div>
+                  <div class="col-sm-9 addau center">
+                    <div class="row clearfix">
+                      <div class="col-sm-8" style="text-align: left;">
+                        <div class="left20" ng-click="hireCtrl.takeToUser(showSearchResult.postedBy._id)">
+                          <span class="bold block font14">{{showSearchResult.postedBy.name}}</span>
+                          <span class="block font12">{{showSearchResult.postedBy.designation}} @ {{showSearchResult.postedBy.currentcompany}}</span>
+                          <span class="block font10 smallColor">{{hireCtrl.hiredCount[$index]}} Hires, {{hireCtrl.rfpCount[$index]}} RFP</span>
+                        </div>
+                      </div>
+                      <div class="col-sm-4 rvwbtn">
+                        <div class="clearfix" style="float: right;">
+                          <fieldset class="rating rtng" style="">
+                            <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                            <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                            <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                            <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                            <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                            <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                            <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                            <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                            <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                            <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                          </fieldset></div>
+                        <span class="font10 block" style="float: right;">{{hireCtrl.reviewsCount[$index]}} Reviews</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row clearfix">
+                  <!-- <div class="col-sm-3"></div> -->
+                  <div class="col-sm-12 addau center">
+                    <div class="panel-default left font11">
+                      <div class="panel-body" style="padding-bottom: 6px;">
+                        <div ng-show="showSearchResult.priority === 'low'" class="colorLabelLow" style="background-color: #FBC02D;"></div>
+                        <div ng-show="showSearchResult.priority === 'medium'" class="colorLabelMedium" style="background-color: #2cf959;"></div>
+                        <div ng-show="showSearchResult.priority === 'high'" class="colorLabelHigh" style="background-color: #ff0000;"></div>
+
+                        <div class="row clearfix">
+                          <div class="col-sm-6 linkMargin">
+                            <span >{{showSearchResult.productCategory}}</span>
+                          </div>
+                          <div class="col-sm-6 linkMargin">
+                            <div ng-repeat="locElem in showSearchResult.location">
+                              <span> {{locElem}}<span ng-if=$index!==showSearchResult.location.length-1>,<span></span>
+
+                            </div>
+                          </div>
+                          <div class="col-sm-6 linkMargin">
+                            <span class="badge metadata">Sales</span>
+                          </div>
+                          <div class="col-sm-6 linkMargin">
+                            <div class="row clearfix">
+                              <div class="col-sm-12 smallColor" title="No of Responses">
+                                <div class="inlineBlock">
+                                  <i class="fa fa-list" aria-hidden="true" title="No of Responses"></i>
+                                  <span>{{hireCtrl.applyByCount[$index]}}</span>
+                                </div>
+                                <div class="inlineBlock left15 " title="End Date">
+                                  <i class="fa fa-clock-o" aria-hidden="true" title="End Date"></i>
+                                  <span>{{showSearchResult.endDate}}</span>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+                          <div class="col-sm-12 top15">
+                            <p>{{showSearchResult.description}}</p>
+                          </div>
+                          <div class="font14 col-sm-12 top15 rsb text-right" ng-show="hireCtrl.showButtons">
+                            <a ng-show="hireCtrl.alreadyApplied(showSearchResult)">Applied</a>
+                            <a ng-show="!hireCtrl.alreadyApplied(showSearchResult)" ng-click="hireCtrl.applyToHired(showSearchResult, $event)" style="cursor: pointer;">Apply</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div type="button" class="morebtn m2"  class="btn btn-primary btnColor"ng-click="hireCtrl.showMore()" ng-show="!hireCtrl.showMoreFlag"> <a href="#">View More </a> </div>
+            </div>
+          </div>
+          <!-- <div class="col-sm-3">
+                <div class="rightside_1">
+                </div>
+            </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="searchapp" ng-show="hireCtrl.showPage">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-5">  </div>
+      <div class="col-sm-7">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+
+            <div class="item active">
+              <div class="appright">
+                <img src="assets/images/ui.jpg" alt="ui">
+                <span>  <b> ut in </b> nisl cursus, <br> volutpat turpis <b> id, sollicitu </b> </span>
+                <p> <b>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </b> </p>
+                <p> Ius laudem vidisse quaerendum at, ad case utroque officiis pro. Id vix populo gubergren. Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea</p>
+                <div class="fstars">
+                  <div> </div>
+                  <div class="pull-right"> <span> Follow </span>
+                    <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-link" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="appright">
+                <img src="assets/images/ui.jpg" alt="ui">
+                <span>  <b> ut in </b> nisl cursus, <br> volutpat turpis <b> id, sollicitu </b> </span>
+                <p> <b>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </b> </p>
+                <p> Ius laudem vidisse quaerendum at, ad case utroque officiis pro. Id vix populo gubergren. Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea</p>
+                <div class="fstars">
+                  <div> </div>
+                  <div class="pull-right"> <span> Follow </span>
+                    <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-link" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="appright">
+                <img src="assets/images/ui.jpg" alt="ui">
+                <span>  <b> ut in </b> nisl cursus, <br> volutpat turpis <b> id, sollicitu </b> </span>
+                <p> <b>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </b> </p>
+                <p> Ius laudem vidisse quaerendum at, ad case utroque officiis pro. Id vix populo gubergren. Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea</p>
+                <div class="fstars">
+                  <div> </div>
+                  <div class="pull-right"> <span> Follow </span>
+                    <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-link" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+            <span class="sr-only"></span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            <span class="sr-only"></span>
+          </a>
+        </div>
+
+        <div class="appbtn pull-right"> <a href="#">search app </a> </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="salesdoor" ng-show="hireCtrl.showPage">
+  <div class="container">
+    <div id="myCarousel2" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel2" data-slide-to="1"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+
+        <div class="item active">
+          <div class="row">
+            <div class="col-sm-6"> <h4> benefit of</h4>
+              <h1> salesdoor</h1>
+              <p> <b>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </b> </p>
+              <p> Ius laudem vidisse quaerendum at, ad case utroque officiis pro. Id vix populo gubergren. Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea Ius laudem vidisse quaerendum at, ad case utroque officiis pro. Id vix populo gubergren. Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea.</p>
+              <div class="profitbtn"> <a href="#"> read all our benefit story</a> </div>
+            </div>
+            <div class="col-sm-6"> <img src="assets/images/tab1.jpg" alt="Los Angeles" style="width:100%;"> </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="row">
+            <div class="col-sm-6"> <h4> benefit of</h4>
+              <h1> salesdoor</h1>
+              <p> <b>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </b> </p>
+              <p> Ius laudem vidisse quaerendum at, ad case utroque officiis pro. Id vix populo gubergren. Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea Ius laudem vidisse quaerendum at, ad case utroque officiis pro. Id vix populo gubergren. Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea.</p>
+              <div class="profitbtn"> <a href="#"> read all our benefit story</a> </div>
+            </div>
+            <div class="col-sm-6"> <img src="assets/images/tab1.jpg" alt="Los Angeles" style="width:100%;"> </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel2" data-slide="prev">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel2" data-slide="next">
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="getrating" ng-show="hireCtrl.showPage">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6"> <img src="assets/images/tab2.jpg" alt="Los Angeles" style="width:100%;"> </div>
+      <div class="col-sm-6"> <h4> get rating</h4>
+        <h1> for campany</h1>
+        <p> <b>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </b> </p>
+        <p> Ius laudem vidisse quaerendum at, ad case utroque officiis pro. Id vix populo gubergren. Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea Ius laudem vidisse quaerendum at, ad case utroque officiis pro. Id vix populo gubergren. Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea.</p>
+        <div class="profitbtn"> <a href="#"> read more</a> </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="latest_news" ng-show="hireCtrl.showPage">
+  <div class="container">
+    <h1> latest news</h1>
+    <p> Ius laudem vidisse quaerendum at, ad case utroque officiis pro. Id vix populo gubergren. </p>
+    <div class="row">
+      <div class="col-sm-4">
+        <img src="assets/images/p1.jpg" alt="images">
+        <span class="cal"><i class="fa fa-calendar" aria-hidden="true"></i>  </span> <span> July 25, 2017</span>
+        <span class="cal1"><i class="fa fa-male" aria-hidden="true"></i> </span> <span> By Admin </span>
+        <h4> Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  </h4>
+        <p>  Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea Ius laudem vidisse quaerendum at, ad case utroque officiis pro. Id vix populo gubergren. Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea.</p>
+        <div class="profitbtn"> <a href="#"> read the blog</a> </div>
+      </div>
+      <div class="col-sm-4">
+        <img src="assets/images/p1.jpg" alt="images">
+        <span class="cal"><i class="fa fa-calendar" aria-hidden="true"></i>  </span> <span> July 25, 2017</span>
+        <span class="cal1"><i class="fa fa-male" aria-hidden="true"></i> </span> <span> By Admin </span>
+        <h4> Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  </h4>
+        <p>  Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea Ius laudem vidisse quaerendum at, ad case utroque officiis pro. Id vix populo gubergren. Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea.</p>
+        <div class="profitbtn"> <a href="#"> read the blog</a> </div>
+      </div>
+      <div class="col-sm-4">
+        <img src="assets/images/p1.jpg" alt="images">
+        <span class="cal"><i class="fa fa-calendar" aria-hidden="true"></i>  </span> <span> July 25, 2017</span>
+        <span class="cal1"><i class="fa fa-male" aria-hidden="true"></i> </span> <span> By Admin </span>
+        <h4> Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  </h4>
+        <p>  Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea Ius laudem vidisse quaerendum at, ad case utroque officiis pro. Id vix populo gubergren. Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea.</p>
+        <div class="profitbtn"> <a href="#"> read the blog</a> </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

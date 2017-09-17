@@ -1,0 +1,40 @@
+<search-bar></search-bar>
+
+<div class="wrapper_1">
+  <div class="container">
+    <div class="row">
+      <left-nav></left-nav>
+      <div class="col-sm-6">
+        <div class="middle_1">
+          <ul class="nav nav-tabs ntab1">
+            <li ng-class="{'active':flag=='send'}"><a ui-sref="hired.sendHired" ng-init = "flag='send'" ng-click = "flag='send'">I want to hire</a></li>
+            <li ng-class="{'active':flag=='apply'}"><a ui-sref="hired.applyHired" ng-click="flag='apply'"> I want to get hired </a></li>
+          </ul>
+          <div class="tab-content active">
+            <div ui-view><send-hired></send-hired></div>
+          </div>
+        </div>
+      </div>
+      <notification-panel></notification-panel>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $("#high").click(function(e){
+    $(this).css({"background-color":"#b71c1c","color":"white"});
+    $("#med").css({"background-color":"white","color":"black"});
+    $("#low").css({"background-color":"white","color":"black"});
+  });
+  $("#med").click(function(e){
+    $(this).css({"background-color":"#ff6d00","color":"white"});
+    $("#high").css({"background-color":"white","color":"black"});
+    $("#low").css({"background-color":"white","color":"black"});
+  });
+  $("#low").click(function(e){
+    $(this).css({"background-color":"#1b5e20","color":"white"});
+    $("#high").css({"background-color":"white","color":"black"});
+    $("#med").css({"background-color":"white","color":"black"});
+  });
+</script>
+</body></html>

@@ -1,0 +1,65 @@
+
+<nav class="navbar" ng-hide="$ctrl.stateName()">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" aria-expanded="true">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" ui-sref="main"><img src="../../assets/images/logo.png" style="width: 80%; padding-top: 3%;"></a>
+    </div>
+    <div class="navbar-collapse collapse in" id="myNavbar" aria-expanded="true">
+      <ul class="nav navbar-nav">
+        <li class="active"><a ui-sref="reviews">Company Reviews</a></li>
+        <li><a ui-sref="hireMe">Hire</a></li>
+        <li><a ui-sref="searchRfp">RFP</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" ng-click="$ctrl.doLogin()" ng-show="!$ctrl.isLoggedIn()"> Sign In</a></li>
+        <li><a ng-click="$ctrl.checkSession()"> Write Review</a></li>
+        <li><div class="dropdown"><a href="#" class="dropbtn"> For Companies </a>
+          <div class="dropdown-content">
+            <a ui-sref="rfp">Post RFP</a>
+            <a ui-sref="companyLogin">Sign In</a>
+          </div></div>
+        </li>
+        <li ng-show="$ctrl.isLoggedIn()"><a href="#"> <i class="fa fa-bell-o" aria-hidden="true"></i> </a></li>
+        <li ng-show="$ctrl.isLoggedIn()"><div class="dropdown"><a href="#" class="dropbtn"><i class="fa fa-user-circle" aria-hidden="true"></i></a>
+          <div class="dropdown-content">
+            <a ui-sref="profile">My Profile</a>
+            <a href="#" ng-click="$ctrl.logout()" ng-show="$ctrl.isLoggedIn()"> Sign Out</a>
+          </div></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- admin panle navbar goes here -->
+<nav class="navbar" ng-if="$ctrl.stateName() == true">
+  <!--Header-part-->
+<div id="header">
+  <h1><a href="#">SaleDoor Admin</a></h1>
+</div>
+<!--close-Header-part-->
+
+<!--top-Header-menu-->
+<div id="user-nav" class="navbar navbar-inverse">
+  <ul class="nav ">
+    <li class="lg1"><a title="" ng-click="$ctrl.adminLogout()" href="#"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
+  </ul>
+</div>
+
+<div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Menu</a>
+  <ul>
+    <li ><a ui-sref="adminDashboard"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
+    <li> <a ui-sref="adminUsers"><i class="icon icon-user"></i> <span>Users</span></a> </li>
+    <li> <a ui-sref="adminCompany"><i class="icon icon-tint"></i> <span>Companies</span></a> </li>
+    <li><a ui-sref="adminReview"><i class="icon icon-th"></i> <span>Review</span></a></li>
+    <li><a ui-sref="adminHire"><i class="icon icon-fullscreen"></i> <span>Hire</span></a></li>
+    <li> <a ui-sref="rfpAdmin"><i class="icon icon-th-list"></i> <span>RPF</span></a> </li>
+    <!-- <li> <a ui-sref="uploadMasterAdmin"><i class="icon icon-legal"></i> <span>Upload Master</span></a> </li>
+    <li> <a ui-sref="adminResetpassword"><i class="icon icon-external-link"></i> <span>Reset Password</span></a> </li>
+  </ul> -->
+</div>
+</nav>

@@ -1,0 +1,631 @@
+<div class="bannerstrip">
+  <div class="container">
+    <div class="col-sm-4">
+      <i class="fa fa-search" aria-hidden="true"></i>
+      <input type="text" class="select1" id="sel1" placeholder="Search by">
+    </div>
+    <div class="col-sm-4">
+      <i class="fa fa-map-marker" aria-hidden="true"></i>
+      <input class="inpt1" type="text" placeholder="Location">
+    </div>
+    <div class="col-sm-4">
+      <i class="fa fa-building-o" aria-hidden="true"></i>
+      <select class="select2" id="sel1" >
+        <option> Company </option>
+        <option> Company</option>
+        <option> Company</option>
+        <option> Company </option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper_1">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="middle_1 profilePadding">
+              <div class="col-md-4 none">
+                <img src="../../assets/images/circle.png" class="img-circle" style="width: 29%;" />
+              </div>
+              <div class="col-md-8 none bottom10">
+                <div class="top-st text-right">
+                  <ul>
+                    <!-- <li class="top-st pull-right" style="    margin-top: 5px;"><i class="fa fa-pencil" aria-hidden="true"></i></li> -->
+                    <li><fieldset class="rating" style="float:right;margin-right: 10px;font-size: 9px;">
+                      <input type="radio" id="star5" name="rating" value="5"><label class="full" for="star5" title="Awesome - 5 stars"></label>
+                      <input type="radio" id="star4half" name="rating" value="4 and a half"><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                      <input type="radio" id="star4" name="rating" value="4"><label class="full" for="star4" title="Pretty good - 4 stars"></label>
+                      <input type="radio" id="star3half" name="rating" value="3 and a half"><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                      <input type="radio" id="star3" name="rating" value="3"><label class="full" for="star3" title="Meh - 3 stars"></label>
+                      <input type="radio" id="star2half" name="rating" value="2 and a half"><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                      <input type="radio" id="star2" name="rating" value="2"><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+                      <input type="radio" id="star1half" name="rating" value="1 and a half"><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                      <input type="radio" id="star1" name="rating" value="1"><label class="full" for="star1" title="Sucks big time - 1 star"></label>
+                      <input type="radio" id="starhalf" name="rating" value="half"><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                    </fieldset></li>
+                  </ul>
+                </div>
+
+                <div class="garete">
+                  <div class="col-sm-8">
+                    <label class="pfName profileHdr" style="margin-left: 13%;"> {{userpublicCtrl.userName}}</label>
+                    <span class="font12">{{userpublicCtrl.userDesignation}} @ {{userpublicCtrl.userCompany}}</span>
+                    <p style="margin-left: 13%;">34 Hires, 15 RFP</p>
+                  </div>
+                  <div class="col-sm-4 right">
+                    <span class="block rvwcss">{{userpublicCtrl.recommendResult.length}} Recommendations</span>
+                    <div class="rrvw pull-right">
+                      <a href="" class="font11">Follow (56) </a>  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="middle_1" style="background-color: #F5F5F5;">
+              <div class="row clearfix">
+                <div class="col-md-6">
+                  <div><label class="block">Key Expertise</label>
+                    <span class="badge metadata">{{userpublicCtrl.typeOfSales}}</span>
+                  </div>
+                </div>
+                <div class="col-md-6 center">
+                  <div><label class="block">Sales experiences in</label>
+                    <span class="sei">{{userpublicCtrl.companies}} </span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div><!-- end profile header -->
+          <!--
+           // TODO
+           -->
+          <div class="container col-sm-12"></div>
+          <div class="tab-content">
+            <uib-tabset type="pills">
+              <uib-tab heading="Review">
+                <p ng-show="userpublicCtrl.showNoReview" style="color: red">No Reviews Available.</p>
+                <div ng-show="userpublicCtrl.showReview">
+                  <span class="block font14 bold top10">{{userpublicCtrl.reviewResult.length}} Reviews</span>
+                  <div class="pfcntnr mrv profileData">
+                    <div class="row clearfix lineSpac">
+                      <div class="col-sm-12">
+                        <span class="badge metadata fRight"> Sales</span>
+                        <h5 class="block fnt26" style="display: block;">{{userpublicCtrl.reviewResult[0].companyName}}</h5>
+                        <fieldset class="rating">
+                          <input type="radio" id="star5" name="rating" value="5">
+                          <label class="full" for="star5" title="Awesome - 5 stars"></label>
+                          <input type="radio" id="star4half" name="rating" value="4 and a half">
+                          <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                          <input type="radio" id="star4" name="rating" value="4">
+                          <label class="full" for="star4" title="Pretty good - 4 stars"></label>
+                          <input type="radio" id="star3half" name="rating" value="3 and a half">
+                          <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                          <input type="radio" id="star3" name="rating" value="3">
+                          <label class="full" for="star3" title="Meh - 3 stars"></label>
+                          <input type="radio" id="star2half" name="rating" value="2 and a half">
+                          <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                          <input type="radio" id="star2" name="rating" value="2">
+                          <label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+                          <input type="radio" id="star1half" name="rating" value="1 and a half">
+                          <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                          <input type="radio" id="star1" name="rating" value="1">
+                          <label class="full" for="star1" title="Sucks big time - 1 star"></label>
+                          <input type="radio" id="starhalf" name="rating" value="half">
+                          <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                        </fieldset>
+                        <span class="ratingDscrpn font11">Product - {{userpublicCtrl.reviewResult[0].product.toString()}}, IT-solutions in {{userpublicCtrl.reviewResult[0].location[0]}}</span>
+                      </div>
+                    </div>
+                    <div class="row clearfix lineSpac">
+                      <div class="col-sm-6">
+                        <label class="block">Time</label>
+                        <span class="badge metadata"> {{userpublicCtrl.reviewResult[0].decisionTime}}</span>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="block">Departments</label>
+                        <span class="badge metadata" ng-repeat="deps in userpublicCtrl.reviewResult[0].departmentsInvolved"> {{deps}}</span>
+                      </div>
+                    </div>
+                    <div class="row clearfix lineSpac">
+                      <div class="col-sm-6">
+                        <label class="block">Key People</label>
+                        <span class="badge metadata" ng-repeat="person in userpublicCtrl.reviewResult[0].keyDecisionMakers"> {{person}}</span>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="block">Success Factor</label>
+                        <span class="badge metadata" ng-repeat="factor in userpublicCtrl.reviewResult[0].sucessFactors"> {{factor}}</span>
+                      </div>
+                    </div>
+                    <div class="row clearfix lineSpac">
+                      <div class="col-sm-12">
+                        <label class="block">Overall Difficulty</label>
+                        <fieldset disabled="disabled" class="rating rtng" style="">
+                          <input type="radio" id="over{{$index}}" ng-checked="userpublicCtrl.reviewResult[0].rateDifficulty == 5" name="over{{$index}}"  value="5">
+                          <label class="full" for="over{{$index}}" title="Awesome - 5 stars"></label>
+                          <input type="radio" id="over{{$index}}" ng-checked="userpublicCtrl.reviewResult[0].rateDifficulty == 4" name="over{{$index}}" value="4"/>
+                          <label class="full" for="over{{$index}}"  title="Pretty good - 4 stars"></label>
+                          <input type="radio" id="over{{$index}}" ng-checked="userpublicCtrl.reviewResult[0].rateDifficulty == 3" name="over{{$index}}" value="3"/>
+                          <label class="full" for="over{{$index}}" title="Meh - 3 stars"></label>
+                          <input type="radio" id="over{{$index}}" ng-checked="userpublicCtrl.reviewResult[0].rateDifficulty == 2" name="over{{$index}}"  value="2"/>
+                          <label class="full" for="over{{$index}}" title="Kinda bad - 2 stars"></label>
+                          <input type="radio" id="over{{$index}}" ng-checked="userpublicCtrl.reviewResult[0].rateDifficulty == 1" name="over{{$index}}" value="1"/>
+                          <label class="full" for="over{{$index}}" title="Sucks big time - 1 star"></label>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <div class="row clearfix lineSpac">
+                      <div class="col-sm-12">
+                        <label class="block">Overall Experience</label>
+                        <!-- <input type="textarea" name="Advice" /> -->
+                        <p>{{userpublicCtrl.reviewResult[0].describe}}</p>
+                      </div>
+                    </div>
+                    <div class="row clearfix lineSpac">
+                      <div class="col-sm-12">
+                        <label class="block">What was Good</label>
+                        <!-- <input type="textarea" name="Advice" /> -->
+                        <p>{{userpublicCtrl.reviewResult[0].whatWasGood}}</p>
+                      </div>
+                    </div>
+                    <div class="row clearfix lineSpac">
+                      <div class="col-sm-12">
+                        <label class="block">What Could be Better</label>
+                        <!-- <input type="textarea" name="Advice" /> -->
+                        <p>{{userpublicCtrl.reviewResult[0].whatCouldBeBetter}}</p>
+                      </div>
+                    </div>
+                    <div class="row clearfix" style="margin-top: 20px;">
+                      <div class="col-sm-5">
+                        <img alt="Facebook" ng-src="../../assets/images/facebook.png" class="sclImg">
+                        <img alt="Facebook" ng-src="../../assets/images/twitter.png" class="sclImg">
+                        <img alt="Facebook" ng-src="../../assets/images/gmail.png" class="sclImg">
+                        <img alt="Facebook" ng-src="../../assets/images/facebook.png" class="sclImg">
+                      </div>
+                      <div class="col-sm-7 right">
+                        <button type="button" class="btn btn-primary btnColor wdth80">Helpful</button>
+                        <i class="fa fa-flag flag" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div ng-show="userpublicCtrl.showMoreFlag">
+                <span class="block font14 bold top10">{{userpublicCtrl.reviewResult.length}} Reviews</span>
+                <div class="pfcntnr mrv profileData" ng-repeat="review in userpublicCtrl.reviewResult" ng-if="$index > 0">
+                  <div class="row clearfix lineSpac">
+                    <div class="col-sm-12">
+                      <span class="badge metadata fRight"> Sales</span>
+                      <h5 class="block fnt26" style="display: block;">{{review.companyName}}</h5>
+                      <fieldset class="rating">
+                        <input type="radio" id="star5" name="rating" value="5">
+                        <label class="full" for="star5" title="Awesome - 5 stars"></label>
+                        <input type="radio" id="star4half" name="rating" value="4 and a half">
+                        <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label class="full" for="star4" title="Pretty good - 4 stars"></label>
+                        <input type="radio" id="star3half" name="rating" value="3 and a half">
+                        <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                        <input type="radio" id="star3" name="rating" value="3">
+                        <label class="full" for="star3" title="Meh - 3 stars"></label>
+                        <input type="radio" id="star2half" name="rating" value="2 and a half">
+                        <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+                        <input type="radio" id="star1half" name="rating" value="1 and a half">
+                        <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label class="full" for="star1" title="Sucks big time - 1 star"></label>
+                        <input type="radio" id="starhalf" name="rating" value="half">
+                        <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                      </fieldset>
+                      <span class="ratingDscrpn font11">Product - {{review.product.toString()}}, IT-solutions in {{review.location[0]}}</span>
+                    </div>
+                  </div>
+                  <div class="row clearfix lineSpac">
+                    <div class="col-sm-6">
+                      <label class="block">Time</label>
+                      <span class="badge metadata"> {{review.decisionTime}}</span>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="block">Departments</label>
+                      <span class="badge metadata" ng-repeat="deps in review.departmentsInvolved"> {{deps}}</span>
+                    </div>
+                  </div>
+                  <div class="row clearfix lineSpac">
+                    <div class="col-sm-6">
+                      <label class="block">Key People</label>
+                      <span class="badge metadata" ng-repeat="person in review.keyDecisionMakers"> {{person}}</span>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="block">Success Factor</label>
+                      <span class="badge metadata" ng-repeat="factor in review.sucessFactors"> {{factor}}</span>
+                    </div>
+                  </div>
+                  <div class="row clearfix lineSpac">
+                    <div class="col-sm-12">
+                      <label class="block">Overall Difficulty</label>
+                      <fieldset disabled="disabled" class="rating rtng" style="">
+                        <input type="radio" id="over{{$index}}" ng-checked="review.rateDifficulty == 5" name="over{{$index}}"  value="5">
+                        <label class="full" for="over{{$index}}" title="Awesome - 5 stars"></label>
+                        <input type="radio" id="over{{$index}}" ng-checked="review.rateDifficulty == 4" name="over{{$index}}" value="4"/>
+                        <label class="full" for="over{{$index}}"  title="Pretty good - 4 stars"></label>
+                        <input type="radio" id="over{{$index}}" ng-checked="review.rateDifficulty == 3" name="over{{$index}}" value="3"/>
+                        <label class="full" for="over{{$index}}" title="Meh - 3 stars"></label>
+                        <input type="radio" id="over{{$index}}" ng-checked="review.rateDifficulty == 2" name="over{{$index}}"  value="2"/>
+                        <label class="full" for="over{{$index}}" title="Kinda bad - 2 stars"></label>
+                        <input type="radio" id="over{{$index}}" ng-checked="review.rateDifficulty == 1" name="over{{$index}}" value="1"/>
+                        <label class="full" for="over{{$index}}" title="Sucks big time - 1 star"></label>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <div class="row clearfix lineSpac">
+                    <div class="col-sm-12">
+                      <label class="block">Overall Experience</label>
+                      <!-- <input type="textarea" name="Advice" /> -->
+                      <p>{{review.describe}}</p>
+                    </div>
+                  </div>
+                  <div class="row clearfix lineSpac">
+                    <div class="col-sm-12">
+                      <label class="block">What was Good</label>
+                      <!-- <input type="textarea" name="Advice" /> -->
+                      <p>{{review.whatWasGood}}</p>
+                    </div>
+                  </div>
+                  <div class="row clearfix lineSpac">
+                    <div class="col-sm-12">
+                      <label class="block">What Could be Better</label>
+                      <!-- <input type="textarea" name="Advice" /> -->
+                      <p>{{review.whatCouldBeBetter}}</p>
+                    </div>
+                  </div>
+                  <div class="row clearfix" style="margin-top: 20px;">
+                    <div class="col-sm-5">
+                      <img alt="Facebook" ng-src="../../assets/images/facebook.png" class="sclImg">
+                      <img alt="Facebook" ng-src="../../assets/images/twitter.png" class="sclImg">
+                      <img alt="Facebook" ng-src="../../assets/images/gmail.png" class="sclImg">
+                      <img alt="Facebook" ng-src="../../assets/images/facebook.png" class="sclImg">
+                    </div>
+                    <div class="col-sm-7 right">
+                      <button type="button" class="btn btn-primary btnColor wdth80">Helpful</button>
+                      <i class="fa fa-flag flag" aria-hidden="true"></i>
+                    </div>
+                  </div>
+
+
+                </div>
+                </div>
+                <div class="morebtn"> <a href="#" ng-click="userpublicCtrl.showMore()" ng-show="userpublicCtrl.removeShowMoreButton">View More </a> </div>
+              </uib-tab>
+              <uib-tab heading="Recommendation">
+                <p ng-show="!userpublicCtrl.showRecom" style="color: red">No Recommendations Available.</p>
+                <div class="tab-pane" ng-show="userpublicCtrl.showRecom">
+                  <div style="width: 98%;margin-left: 1%">
+                    <span class="block font14 bold top10">{{userpublicCtrl.recommendResult.length}} Recommendation</span>
+                    <div class="pfcntnr mrv" ng-repeat="recom in userpublicCtrl.recommendResult">
+                      <div class="col-sm-2">
+                        <img ng-src="../../assets/images/circle.png" class="img-circle revwImg">
+                      </div>
+                      <div class="col-sm-10">
+                        <div class="st">
+                          <span class="font12 bold">{{recom.projectTitle}}</span>
+                          <div><fieldset disabled="disabled" class="rating rtng" style="">
+                            <input type="radio" id="overall{{$index}}" ng-checked="recom.recommendedRtaings == 5" name="overall{{$index}}"  value="5">
+                            <label class="full" for="overall{{$index}}" title="Awesome - 5 stars"></label>
+
+                            <input type="radio" id="overall{{$index}}" ng-checked="recom.recommendedRtaings == 4" name="overall{{$index}}" value="4"/>
+                            <label class="full" for="overall{{$index}}"  title="Pretty good - 4 stars"></label>
+
+                            <input type="radio" id="overall{{$index}}" ng-checked="recom.recommendedRtaings == 3" name="overall{{$index}}" value="3"/>
+                            <label class="full" for="overall{{$index}}" title="Meh - 3 stars"></label>
+
+                            <input type="radio" id="overall{{$index}}" ng-checked="recom.recommendedRtaings == 2" name="overall{{$index}}"  value="2"/>
+                            <label class="full" for="overall{{$index}}" title="Kinda bad - 2 stars"></label>
+
+                            <input type="radio" id="overall{{$index}}" ng-checked="recom.recommendedRtaings == 1" name="overall{{$index}}" value="1"/>
+                            <label class="full" for="overall{{$index}}" title="Sucks big time - 1 star"></label>
+
+                          </fieldset></div>
+                          <p class="font11">York. united kingdom</p>
+                        </div>
+                        <p class="font11">{{recom.recommendDescription}}</p>
+
+                        <ul class="date-time-post">
+                          <li>{{recom.recommendedDate | date}}</li>
+                          <li>-</li>
+                          <li>3 ppeople likes this recommendation</li>
+                          <!-- <li class="pull-right see-m"><a href="">See More</a></li> -->
+                        </ul>
+                      </div>
+
+                    </div>
+                  </div>
+                  <!-- End -->
+                </div>
+
+              </uib-tab>
+              <uib-tab heading="Hires">
+                <div class="tab-pane active in">
+                  <div style="width: 98%;margin-left: 1%">
+                    <span class="block bold font14">{{userpublicCtrl.hireds.length}} Hires</span>
+                    <div class="mzda mrv rfpCntr" ng-repeat="hire in userpublicCtrl.hireds | limitTo: 3">
+                      <div class="row clearfix">
+                        <div class="col-sm-12">
+                          <div class="panel panel-default hrHeight">
+                            <div class="panel-heading" style="padding: 1px 15px;">
+                              <label>{{hire.projectTitle}}</label> </div>
+                            <div class="panel-body" style="padding-bottom: 6px;">
+                              <div ng-show="hire.priority === 'low'" class="colorLabelLow" style="background-color: #FBC02D;"></div>
+                              <div ng-show="hire.priority === 'medium'" class="colorLabelMedium" style="background-color: #2cf959;"></div>
+                              <div ng-show="hire.priority === 'high'" class="colorLabelHigh" style="background-color: #ff0000;"></div>
+
+                              <div class="row clearfix">
+                                <div class="row clearfix">
+                                  <div class="col-sm-6 linkMargin" ng-repeat="productCategory in hire.productCategories ">
+                                    <span class="badge metadata">{{ productCategory }}</span>
+                                  </div>
+                                  <div class="col-sm-6 linkMargin"  >
+                                    <span ng-repeat="location in hire.location">{{location}}<span ng-if="$index!==hire.location.length-1">,</span></span>
+                                  </div>
+                                </div>
+                                <div class="col-sm-6 linkMargin" >
+                                  <div ng-repeat="salesStage in hire.salesStage ">
+                                    <span class="badge metadata">{{salesStage}}</span>
+                                  </div>
+                                </div>
+                                <div class="col-sm-6 linkMargin">
+                                  <!-- <span class="badge metadata">Sales</span>	 -->
+                                  <div class="row clearfix">
+                                    <div class="col-sm-12 smallColor" title="No of Responses">
+                                      <div class="inlineBlock left15 " title="End Date">
+                                        <i class="fa fa-clock-o" aria-hidden="true" title="End Date"></i>
+                                        <span>{{hire.endDate  | date}}</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-12" style="font-size: 12px;margin-top: 12px; ">
+                                  <p> {{hire.description}}
+                                  </p>
+                                </div>
+                                <div class="col-md-12 right">
+                                  <button class="pointer applied" ng-show="userpublicCtrl.alreadyApplied(hire)">Applied</button>
+                                  <button ng-show="!userpublicCtrl.alreadyApplied(hire)" ng-click="userpublicCtrl.applyToHired(hire, $event)" style="cursor: pointer;">Apply</button>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div ng-show="userpublicCtrl.showMoreFlag">
+                      <div class="mzda mrv rfpCntr" ng-repeat="hire in userpublicCtrl.hireds"  ng-if="$index >= 6" >
+                        <div class="row clearfix">
+                          <div class="col-sm-12">
+                            <div class="panel panel-default hrHeight">
+                              <div class="panel-heading" style="padding: 1px 15px;">
+                                <label>{{hire.projectTitle}}</label> </div>
+                              <div class="panel-body" style="padding-bottom: 6px;">
+                                <div ng-show="hire.priority === 'low'" class="colorLabelLow" style="background-color: #FBC02D;"></div>
+                                <div ng-show="hire.priority === 'medium'" class="colorLabelMedium" style="background-color: #2cf959;"></div>
+                                <div ng-show="hire.priority === 'high'" class="colorLabelHigh" style="background-color: #ff0000;"></div>
+
+                                <div class="row clearfix">
+                                  <div class="row clearfix">
+                                    <div class="col-sm-6 linkMargin" ng-repeat="productCategory in hire.productCategories ">
+                                      <span class="badge metadata">{{ productCategory }}</span>
+                                    </div>
+                                    <div class="col-sm-6 linkMargin"  >
+                                      <span ng-repeat="location in hire.location">{{location}}<span ng-if="$index!==hire.location.length-1">,</span></span>
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-6 linkMargin" >
+                                    <div ng-repeat="salesStage in hire.salesStage ">
+                                      <span class="badge metadata">{{salesStage}}</span>
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-6 linkMargin">
+                                    <!-- <span class="badge metadata">Sales</span>	 -->
+                                    <div class="row clearfix">
+                                      <div class="col-sm-12 smallColor" title="No of Responses">
+                                        <div class="inlineBlock left15 " title="End Date">
+                                          <i class="fa fa-clock-o" aria-hidden="true" title="End Date"></i>
+                                          <span>{{hire.endDate  | date}}</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-12" style="font-size: 12px;margin-top: 12px; ">
+                                    <p> {{hire.description}}
+                                    </p>
+                                  </div>
+                                  <div class="col-md-12 right">
+                                    <button class="pointer applied" ng-show="userpublicCtrl.alreadyApplied(hire)">Applied</button>
+                                    <button ng-show="!userpublicCtrl.alreadyApplied(hire)" ng-click="userpublicCtrl.applyToHired(hire, $event)" style="cursor: pointer;">Apply</button>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End -->
+                  <!--<div class="row clearfix mzda mrv">-->
+                    <!--<div class="col-sm-12">-->
+                      <!--<span># The page shows three 3-4 reviews</span>-->
+                    <!--</div>-->
+                  <!--</div>-->
+                  <div class="morebtn smbtn" ng-click="userpublicCtrl.showMore()" ng-show="!userpublicCtrl.showMoreFlag"> <a href="#">See More </a> </div>
+                </div>
+
+              </uib-tab>
+              <uib-tab heading="Companies">
+                <p ng-show="userpublicCtrl.showNoCompany" style="color: red">No Companies followed yet.</p>
+                <div class="tab-pane">
+                  <div class=" mzda mrv">
+                    <div class="row" style="background-color: white;">
+                      <div ng-repeat="comp in userpublicCtrl.resultFollowedCompanies">
+                        <div class="col-sm-4">
+                          <div class="mzda croxxbtn">
+
+                            <div class="auc"> <img ng-src="../../assets/images/mz.jpg" alt="mazda"></div>
+                            <div class="auctor nwstars">
+                              <span class="font14  block bottom7">{{comp.name}}</span>
+                              <span class="font14  block bottom7">Auctor Pellentesque</span>
+                              <div>
+                                <fieldset class="rating">
+                                  <input type="radio" id="star5" name="rating" value="5">
+                                  <label class="full" for="star5" title="Awesome - 5 stars"></label>
+                                  <input type="radio" id="star4half" name="rating" value="4 and a half">
+                                  <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                                  <input type="radio" id="star4" name="rating" value="4">
+                                  <label class="full" for="star4" title="Pretty good - 4 stars"></label>
+                                  <input type="radio" id="star3half" name="rating" value="3 and a half">
+                                  <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                                  <input type="radio" id="star3" name="rating" value="3">
+                                  <label class="full" for="star3" title="Meh - 3 stars"></label>
+                                  <input type="radio" id="star2half" name="rating" value="2 and a half">
+                                  <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                                  <input type="radio" id="star2" name="rating" value="2">
+                                  <label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+                                  <input type="radio" id="star1half" name="rating" value="1 and a half">
+                                  <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                                  <input type="radio" id="star1" name="rating" value="1">
+                                  <label class="full" for="star1" title="Sucks big time - 1 star"></label>
+                                  <input type="radio" id="starhalf" name="rating" value="half">
+                                  <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                </fieldset>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </uib-tab>
+              <uib-tab heading="RFP">
+                <p ng-show="userpublicCtrl.showNoRfp" style="color: red">No Rfp Available.</p>
+                <div ng-show="userpublicCtrl.showRfp">
+                  <span class="block bold font14 top10">{{userpublicCtrl.resultRfpById.length}} RFPs</span>
+                  <div class="mzda mrv rfpCntr">
+                    <div class="panel panel-default rmvMrgn">
+                      <div class="panel-heading">
+                        <h4 class="block" style="margin-bottom: 1px;font-size:15px;font-weight: bold;display: inline;">{{userpublicCtrl.resultRfpById[0].rfpTitle}}</h4>
+                        <i class="fa fa-download download pull-right" title="Download Document" aria-hidden="true"></i>
+                      </div>
+                      <div class="panel-body">
+                        <div class="row clearfix">
+                          <div class="col-sm-6 linkMargin">
+
+                            <span>{{userpublicCtrl.resultRfpById[0].productCategory.toString()}}</span>
+                          </div>
+                          <div class="col-sm-6 linkMargin">
+
+                            <span>{{userpublicCtrl.resultRfpById[0].budgetStart}} - {{userpublicCtrl.resultRfpById[0].budgetEnd}}</span>
+                          </div>
+                          <div class="col-sm-6 linkMargin">
+                            <span class="badge metadata" ng-repeat="location in userpublicCtrl.resultRfpById[0].location">{{location}}</span>
+                          </div>
+                          <div class="col-sm-6 linkMargin" style="padding-bottom: 1px;padding-top: 3px;">
+                            <div class="col-sm-6 none hrDt"><i class="fa fa-clock-o hrDt mrgnleft4" aria-hidden="true" title="End Date"></i>
+                              <span>{{userpublicCtrl.resultRfpById[0].endDate | date}}</span>
+                            </div>
+                            <div class="col-sm-6 none rsb text-right">
+
+                            </div>
+                          </div>
+                          <div class="col-sm-12 bottomSpace linkMargin" style="margin-bottom: 0px;">
+                            <p>{{userpublicCtrl.resultRfpById[0].proposalDescription}}</p>
+                          </div>
+
+                        </div>
+                        <div class="col-sm-12 none rsb text-right">
+                          <a class="right10 pointer interested" data-toggle="modal" data-target="#expressInterest">Interested
+                          </a>
+                          <a class="pointer right10" style="font-weight: bold;" data-toggle="modal" data-target="#applyRFP">Apply
+                          </a>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div ng-show="userpublicCtrl.showMoreFlag">
+                  <span class="block bold font14 top10">{{userpublicCtrl.resultRfpById.length}} RFPs</span>
+                  <div class="mzda mrv rfpCntr" ng-repeat="rfp in userpublicCtrl.resultRfpById" ng-if="$index > 0">
+                    <div class="panel panel-default rmvMrgn">
+                      <div class="panel-heading">
+                        <h4 class="block" style="margin-bottom: 1px;font-size:15px;font-weight: bold;display: inline;">{{rfp.rfpTitle}}</h4>
+                        <i class="fa fa-download download pull-right" title="Download Document" aria-hidden="true"></i>
+                      </div>
+                      <div class="panel-body">
+                        <div class="row clearfix">
+                          <div class="col-sm-6 linkMargin">
+
+                            <span>{{rfp.productCategory.toString()}}</span>
+                          </div>
+                          <div class="col-sm-6 linkMargin">
+
+                            <span>{{rfp.budgetStart}} - {{rfp.budgetEnd}}</span>
+                          </div>
+                          <div class="col-sm-6 linkMargin">
+                            <span class="badge metadata" ng-repeat="location in rfp.location">{{location}}</span>
+                          </div>
+                          <div class="col-sm-6 linkMargin" style="padding-bottom: 1px;padding-top: 3px;">
+                            <div class="col-sm-6 none hrDt"><i class="fa fa-clock-o hrDt mrgnleft4" aria-hidden="true" title="End Date"></i>
+                              <span>{{rfp.endDate | date}}</span>
+                            </div>
+                            <div class="col-sm-6 none rsb text-right">
+
+                            </div>
+                          </div>
+                          <div class="col-sm-12 bottomSpace linkMargin" style="margin-bottom: 0px;">
+                            <p>{{rfp.proposalDescription}}</p>
+                          </div>
+
+                        </div>
+                        <div class="col-sm-12 none rsb text-right">
+                          <a class="right10 pointer interested" data-toggle="modal" data-target="#expressInterest">Interested
+                          </a>
+                          <a class="pointer right10" style="font-weight: bold;" data-toggle="modal" data-target="#applyRFP">Apply
+                          </a>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="morebtn smbtn"> <a href="#" ng-click="userpublicCtrl.showMore()" ng-show="userpublicCtrl.removeViewMoreButton">View More </a></div>
+              </uib-tab>
+
+          </uib-tabset>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="rightside_1" style="padding:10px;">
+          <ul class="post-rpf">
+            <li>Add 1</li>
+            <li>Add 2</li>
+            <li>Add 3</li>
+            <li>Add 4</li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

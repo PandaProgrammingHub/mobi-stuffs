@@ -1,0 +1,132 @@
+<search-bar></search-bar>
+
+<div class="wrapper_1">
+  <div class="container">
+    <div class="row">
+      <left-nav></left-nav>
+      <div class="col-sm-6">
+        <div class="middle_1">
+          <div class="col-md-12">
+            <label class="pull-left rate-lab" style="position: relative;
+    top: -10px;">Overall Rating</label>
+            <fieldset disabled="disabled" class="rating">
+              <input type="radio" id="avgRating" ng-checked="$ctrl.avgRecomRating == 5" name="avgRating"  value="5">
+              <label class="full" for="avgRating"  title="Awesome - 5 stars"></label>
+
+              <input type="radio" id="avgRating" ng-checked="$ctrl.avgRecomRating == 4" name="avgRating" value="4">
+              <label class="full" for="avgRating" title="Pretty good - 4 stars"></label>
+
+              <input type="radio" id="avgRating" ng-checked="$ctrl.avgRecomRating == 3" name="avgRating" value="3">
+              <label class="full" for="avgRating" title="Meh - 3 stars"></label>
+
+              <input type="radio" id="avgRating" ng-checked="$ctrl.avgRecomRating == 2" name="avgRating" value="2">
+              <label class="full" for="avgRating" title="Kinda bad - 2 stars"></label>
+
+              <input type="radio" id="avgRating" ng-checked="$ctrl.avgRecomRating == 1" name="avgRating" value="1">
+              <label class="full" for="avgRating" title="Sucks big time - 1 star"></label>
+
+            </fieldset>
+            <span class="font11" style="float: right;">{{$ctrl.recLength}} Ratings</span>
+          </div>
+          <div class="tab-content">
+            <div id="menu1" class="tab-pane fade in active">
+              <p ng-show="$ctrl.showNoRecommendation" style="color: red">No Recommendation Available.</p>
+              <div ng-repeat="initialElems in $ctrl.recData | limitTo: 3">
+                <div class="srchtxt">
+                <div class="mrv ovrFlw">
+                  <div class="col-sm-2">
+                    <img src={{initialElems.recByUserDetails.profileImage}} class="img-circle revwImg" />
+                  </div>
+                  <div class="col-sm-10">
+                    <div class="st">
+                      <span class="font12 bold">{{initialElems.projectTitle}}</span>
+                      <fieldset disabled="disabled" class="rating pfRating">
+                        <input type="radio" id="recRating{{$index}}" ng-checked="initialElems.recommendedRtaings == 5" name="recRating{{$index}}"  value="5">
+                        <label class="full" for="recRating{{$index}}"  title="Awesome - 5 stars"></label>
+
+                        <input type="radio" id="recRating{{$index}}" ng-checked="initialElems.recommendedRtaings == 4" name="recRating{{$index}}" value="4">
+                        <label class="full" for="recRating{{$index}}" title="Pretty good - 4 stars"></label>
+
+                        <input type="radio" id="recRating{{$index}}" ng-checked="initialElems.recommendedRtaings == 3" name="recRating{{$index}}" value="3">
+                        <label class="full" for="recRating{{$index}}" title="Meh - 3 stars"></label>
+
+                        <input type="radio" id="recRating{{$index}}" ng-checked="initialElems.recommendedRtaings == 2" name="recRating{{$index}}" value="2">
+                        <label class="full" for="recRating{{$index}}" title="Kinda bad - 2 stars"></label>
+
+                        <input type="radio" id="recRating{{$index}}" ng-checked="initialElems.recommendedRtaings == 1" name="recRating{{$index}}" value="1">
+                        <label class="full" for="recRating{{$index}}" title="Sucks big time - 1 star"></label>
+
+                      </fieldset>
+                        <p class="font11">{{initialElems.recByUserDetails.name}},{{initialElems.recByUserDetails.designation}}@ {{initialElems.recByUserDetails.currentcompany}}</p>
+                    </div>
+                    <p class="font11">{{initialElems.recommendDescription}}</p>
+
+                    <div class="row clearfix font11">
+                      <div class="col-sm-6">{{initialElems.recommendedDate}}</div>
+                      <div class="col-sm-6 right">
+                        <i class="fa fa-thumbs-o-up" aria-hidden="true"><span> (23)</span></i></div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              </div>
+              <div ng-show="$ctrl.showMoreFlag">
+                <div ng-repeat="recElem in $ctrl.recData" ng-if="$index > 2">
+                  <div class="srchtxt">
+
+                <div class="mrv ovrFlw">
+                  <div class="col-sm-2">
+                    <img src={{recElem.recByUserDetails.profileImage}} class="img-circle revwImg" />
+                  </div>
+                  <div class="col-sm-10">
+                    <div class="st">
+                      <span class="font12 bold">{{recElem.projectTitle}}</span>
+                      <div><fieldset disabled="disabled" class="rating pfRating">
+                        <input type="radio" id="recMoreRating{{$index}}" ng-checked="recElem.recommendedRtaings == 5" name="recMoreRating{{$index}}"  value="5">
+                        <label class="full" for="recMoreRating{{$index}}"  title="Awesome - 5 stars"></label>
+
+                        <input type="radio" id="recMoreRating{{$index}}" ng-checked="recElem.recommendedRtaings == 4" name="recMoreRating{{$index}}" value="4">
+                        <label class="full" for="recMoreRating{{$index}}" title="Pretty good - 4 stars"></label>
+
+                        <input type="radio" id="recMoreRating{{$index}}" ng-checked="recElem.recommendedRtaings == 3" name="recMoreRating{{$index}}" value="3">
+                        <label class="full" for="recMoreRating{{$index}}" title="Meh - 3 stars"></label>
+
+                        <input type="radio" id="recMoreRating{{$index}}" ng-checked="recElem.recommendedRtaings == 2" name="recMoreRating{{$index}}" value="2">
+                        <label class="full" for="recMoreRating{{$index}}" title="Kinda bad - 2 stars"></label>
+
+                        <input type="radio" id="recMoreRating{{$index}}" ng-checked="recElem.recommendedRtaings == 1" name="recMoreRating{{$index}}" value="1">
+                        <label class="full" for="recMoreRating{{$index}}" title="Sucks big time - 1 star"></label>
+
+                      </fieldset></div>
+                      <p class="font11">{{recElem.recByUserDetails.name}}, {{recElem.recByUserDetails.designation}}@ {{recElem.recByUserDetails.currentcompany}}</p>
+                    </div>
+                    <p class="font11">{{recElem.recommendDescription}}</p>
+
+                    <div class="row clearfix font11">
+                      <div class="col-sm-6">{{recElem.recommendedDate}}</div>
+                      <div class="col-sm-6 right">
+                        <i class="fa fa-thumbs-o-up" aria-hidden="true"><span> (23)</span></i></div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+                </div>
+              </div>
+              <div class="alert alert-info" ng-show="$ctrl.showAlert">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close" ng-click="$ctrl.closeAlert()">×</a>
+                <strong>Info!</strong> No More Recommendations Found.
+              </div>
+              <div class="morebtn"> <a href="#" ng-click="$ctrl.showMore()" ng-show="$ctrl.showMoreButton">View More </a> </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <notification-panel></notification-panel>
+    </div>
+  </div>
+</div>
+</body>
+</html>

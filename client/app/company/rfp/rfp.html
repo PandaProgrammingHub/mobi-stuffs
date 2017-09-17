@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-offset-3 col-sm-offset-3 col-sm-6 col-md-6" style="margin-bottom:100px;">
+      <div class="pg-4-sec">
+        <h4>Post a RFP</h4>
+
+        <div class="pg-4-input">
+          <input type="text" placeholder="RFP Title:">
+          <input type="text" placeholder="Product">
+          <input type="text" placeholder="Location">
+          <input type="text" placeholder="RFP End Date">
+          <input type="text" placeholder="Budget Range">
+          <textarea placeholder="Description(Maximum 250 Character)"></textarea>
+          <!--<h4>Upload your RFP documents</h4>-->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="input-group">
+            <input type="file" name="img[]" class="file">
+            <span class="input-group-addon">
+				         			 	<i class="fa fa-chain-broken" aria-hidden="true"></i>
+				         			 </span>
+            <input type="text" class="form-control bottom0" ng-model="fileData.name" disabled
+                   placeholder="Upload your RFP documents"
+                   style="max-width: 100%">
+            <span class="input-group-btn ">
+								         <span class="btn btn-default btn-file brs" style=" width: 120px;">
+						    				Browse <input type="file" ng-model="fileData"
+                                      ngf-select="onselectFile($files)">
+								 		</span>
+							 		 </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="company-name-input text-center">
+        <button type="submit">SUBMIT</button>
+      </div>
+    </div>
+  </div>
+</div>

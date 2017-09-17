@@ -1,0 +1,55 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-offset-3 col-sm-offset-3 col-sm-6 col-md-6">
+      <div class="pg-5-sec">
+        <div class="alert alert-danger alert-dismissable" ng-show="writeReviewCtrl.showAlertForCompany">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close" ng-click="writeReviewCtrl.closeAlertCompany()">×</a>
+          Please enter company name.
+        </div>
+        <div class="alert alert-danger alert-dismissable" ng-show="writeReviewCtrl.showAlertForType">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close" ng-click="writeReviewCtrl.closeAlertType()">×</a>
+          Please select any one review type.
+        </div>
+        <div class="heading">
+          <span class="font14 bold">Suspendisse Convallis Quis Lobortis</span>
+        </div>
+        <div class="content">
+          <p class="font12">Nullam nulla tortor, dignissim sed megna at, vestibullam tincidunt lectus Praesent maximus mi vulputate nec. Fusce tempor sem pelentique</p>
+        </div>
+
+        <div class="heading head-sec-2">
+          <span class="font14 bold">Add your reviews in one of these categories</span>
+        </div>
+        <div class="content font12">
+          <label class="radio-inline">
+            <input ng-model="result" value="/review/overall" type="radio" name="optradio">Overall</label>
+          <label class="radio-inline">
+            <input ng-model="result" value="/review/presales" type="radio" name="optradio">Pre-Sales</label>
+          <label class="radio-inline">
+            <input ng-model="result" value="/review/sales" type="radio" name="optradio">Sales</label>
+          <label class="radio-inline">
+            <input ng-model="result" value="/review/postsales" type="radio" name="optradio">Post-Sales</label>
+        </div>
+
+        <div class="heading head-sec-2">
+          <span class="font13">Do you wish your review to be anonymous</span>
+          <input type="checkbox" ng-model="writeReviewCtrl.reviewType.isAnonymous" value="">
+          <div class="company-name-input text-center top10" >
+            <input type="text"
+                   uib-typeahead="company.name  for company in writeReviewCtrl.companies | filter:$viewValue | limitTo:8"
+                   ng-model="writeReviewCtrl.company"
+                   typeahead-on-select="writeReviewCtrl.onSelect($item)"
+                   placeholder="Enter Company you wish to review"
+                   class="form-control"/>
+            <div class="right">
+              <button ng-click="writeReviewCtrl.submitResult(result)" class="" style="background: #1e80a5;
+    				color: white;text-align: center;border: 1px solid #1e80a5; margin-top: 26px;
+    					border-radius: 5px;" type="submit">Continue</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

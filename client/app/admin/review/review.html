@@ -1,0 +1,138 @@
+<div ng-show="reviewCtrl.stateName()">
+  <!-- admin panle assets links goes here -->
+  <link rel="stylesheet" href="../../../assets/admin_assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../../../assets/admin_assets/css/bootstrap-responsive.min.css" />
+  <link rel="stylesheet" href="../../../assets/admin_assets/css/style.css" />
+  <link rel="stylesheet" href="../../../assets/admin_assets/css/media.css" />
+  <link href="../../../assets/admin_assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+</div>
+<div id="content">
+  <div id="content-header">
+    <div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="current"></a> </div>
+  </div>
+  <div class="container-fluid">
+    <hr>
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"> <i class="icon-pencil"></i> </span>
+            <h5>Review Search</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <form id="form-wizard" name="SearchReview" ng-submit="reviewCtrl.searchReview(SearchReview)" class="form-horizontal ui-formwizard" method="post" novalidate="novalidate">
+              <div id="form-wizard-1" class="step ui-formwizard-content" style="display: block;">
+                <!-- <div class="admin-panel-search-message" ng-show="noSearchResult == true"> Review with search criteria not found </div> -->
+
+			   <div class="controls-row">
+                <div class="control-group span6">
+                  <label class="control-label">Review title</label>
+                  <div class="controls">
+                    <input id="username" type="text" name="title" ng-model="reviewCtrl.searchReviewList.name" class="ui-wizard-content">
+                  </div>
+                </div>
+
+				<div class="control-group span6">
+                  <label class="control-label">Product</label>
+                  <div class="controls">
+                    <input id="username" type="text" name="product" uib-typeahead="product.name  for product in reviewCtrl.products | filter:$viewValue | limitTo:8" ng-model="reviewCtrl.searchReviewList.product" class="ui-wizard-content">
+                  </div>
+                </div>
+				</div>
+
+				 <div class="controls-row">
+				<div class="control-group span6">
+                  <label class="control-label">Companies</label>
+                  <div class="controls">
+                    <input id="username" type="text" name="company" uib-typeahead="company.name  for company in reviewCtrl.companies | filter:$viewValue | limitTo:8" ng-model="reviewCtrl.searchReviewList.company" class="ui-wizard-content">
+                  </div>
+                </div>
+
+                <div class="control-group span6">
+              <label class="control-label">Review Type</label>
+              <div class="controls">
+                <input id="username" type="text" name="reviewType" ng-model="reviewCtrl.searchReviewList.reviewType" class="ui-wizard-content">
+              </div>
+            </div>
+              </div>
+             </div>
+              <div class="form-actions">
+			   <input id="next" class="btn btn-primary ui-wizard-content ui-formwizard-button" type="reset" value="Reset">
+                <input id="next" class="btn btn-primary ui-wizard-content ui-formwizard-button" type="submit" value="Search">
+
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"> <i class="icon-pencil"></i> </span>
+            <h5>Create Review</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <form id="form-wizard" class="form-horizontal ui-formwizard" method="post" novalidate="novalidate">
+              <div class="form-actions">
+                <button  class="btn btn-primary" ng-click="reviewCtrl.createReview()">Create Review</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="widget-box">
+
+          <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
+            <h5> Review List</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <table class="table table-bordered data-table">
+              <thead>
+                <tr>
+                  <th style="text-align:left!important;"><input type="checkbox"></th>
+                  <th>Review Title</th>
+                    <th>Product</th>
+                    <th>Location</th>
+                    <th>Company</th>
+  				          <th>Review type</th>
+                    <th>Posted by</th>
+                    <th>Date</th>
+  				          <th>Flag</th>
+                    <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="gradeA" ng-repeat="revw in review | limitTo:itemsPerPage" >
+                  <td><input type="checkbox" name="radios"></td>
+                  <td>{{revw.name}}</td>
+                  <td>{{revw.product[0]}}</td>
+                  <td>{{revw.location[0]}}</td>
+                  <td>{{revw.company}}</td>
+                  <td>{{revw.reviewType}}</td>
+                  <td>{{revw.postedBy}}</td>
+                  <td>{{revw.date | date}}</td>
+                  <td>
+                    <button ng-click="reviewCtrl.onReviewFlag(revw._id,revw.name,$index)" title="on the flag" ng-show="!revw.flag" class="btn btn-success btn-mini">ON</button>
+                    <button ng-click="reviewCtrl.offReviewFlag(revw._id,revw.name,$index)" title="off the flag" ng-show="revw.flag" class="btn btn-danger  btn-mini">OFF</button>
+                  </td>
+                  <td class="center">
+                  <button ng-click="reviewCtrl.deleteReview(revw._id,revw.name,$index)" class="btn btn-warning btn-mini">Delete</button>
+                  </td>
+                </tr>
+                <tr ng-if="review.length < 1 || review === 'undefined' ">
+                  <td colspan="9" style="text-align: center;font-size: 15px;">No Review Avliable</td>
+                </tr>
+              </tbody>
+            </table>
+            <ul style="float: right;" ng-hide="noSearchResult" uib-pagination total-items="totalItems" ng-model="currentPage"  max-size="maxSize" ng-change="pageChanged()" boundary-links="true" class="pagination-sm" items-per-page="itemsPerPage" num-pages="numPages" ></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>

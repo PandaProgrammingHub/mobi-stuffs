@@ -1,0 +1,174 @@
+0000000000000000000000000000000000000000 822b1399dc9fb87eaeaeb8abae315fad9d294a13 santosh-pc <mobinext@mobinext-Lenovo-V110-15ISK.(none)> 1503493743 +0530	clone: from https://github.com/santoshpandamobinext/salesdoor.git
+822b1399dc9fb87eaeaeb8abae315fad9d294a13 5d3c17aa200abfebef7fbb1f97dcf4b7c93f388b santosh-pc <mobinext@mobinext-Lenovo-V110-15ISK.(none)> 1503493780 +0530	checkout: moving from master to dev
+5d3c17aa200abfebef7fbb1f97dcf4b7c93f388b d6a1493ce0c9a95e61dc2186950a788eb73707e5 santosh-pc <santosh.p@mobinexttech.com> 1503549571 +0530	commit: development.js url modified and .env file created
+d6a1493ce0c9a95e61dc2186950a788eb73707e5 340c3a884274a4345d5c7eac7c5912e163a2e973 santosh-pc <santosh.p@mobinexttech.com> 1503568395 +0530	checkout: moving from dev to upstream/dev
+340c3a884274a4345d5c7eac7c5912e163a2e973 340c3a884274a4345d5c7eac7c5912e163a2e973 santosh-pc <santosh.p@mobinexttech.com> 1503568418 +0530	checkout: moving from 340c3a884274a4345d5c7eac7c5912e163a2e973 to dev
+340c3a884274a4345d5c7eac7c5912e163a2e973 407826393fe6ec171dab23c3d9744a2e524c9dcb santosh-pc <santosh.p@mobinexttech.com> 1503643978 +0530	commit: create search hired frontend module
+407826393fe6ec171dab23c3d9744a2e524c9dcb 33f26c0c088efd8bb42e8b1e9bcb94b290b36dac santosh-pc <santosh.p@mobinexttech.com> 1503911095 +0530	rebase: checkout upstream/dev
+33f26c0c088efd8bb42e8b1e9bcb94b290b36dac 05d5e6975c97dfebf8160973cde7c77068434fa4 santosh-pc <santosh.p@mobinexttech.com> 1503911259 +0530	rebase: create search hired frontend module
+05d5e6975c97dfebf8160973cde7c77068434fa4 05d5e6975c97dfebf8160973cde7c77068434fa4 santosh-pc <santosh.p@mobinexttech.com> 1503911259 +0530	rebase finished: returning to refs/heads/dev
+05d5e6975c97dfebf8160973cde7c77068434fa4 6478d5bf708a4d115af542a6b8c097751ba0815e santosh panda <santosh.p@mobinexttech.com> 1503911724 +0530	commit: deleting unused files
+6478d5bf708a4d115af542a6b8c097751ba0815e e38bc75ce2e150a2a6df8a12cd3c95279a171cbe santosh panda <santosh.p@mobinexttech.com> 1503911921 +0530	commit (merge): Merge remote-tracking branch 'origin/dev' into dev
+e38bc75ce2e150a2a6df8a12cd3c95279a171cbe 33f26c0c088efd8bb42e8b1e9bcb94b290b36dac santosh panda <santosh.p@mobinexttech.com> 1503912054 +0530	rebase: checkout upstream/dev
+33f26c0c088efd8bb42e8b1e9bcb94b290b36dac 06416c0a29c2ee291e703d2a20748b4147ae6f70 santosh panda <santosh.p@mobinexttech.com> 1503915675 +0530	commit: create search hired frontend module
+06416c0a29c2ee291e703d2a20748b4147ae6f70 e38bc75ce2e150a2a6df8a12cd3c95279a171cbe santosh panda <santosh.p@mobinexttech.com> 1503919739 +0530	checkout: moving from 06416c0a29c2ee291e703d2a20748b4147ae6f70 to dev
+e38bc75ce2e150a2a6df8a12cd3c95279a171cbe dac063c4c7b306a3e8f5ecb996b2826d3be0dad3 santosh panda <santosh.p@mobinexttech.com> 1503921125 +0530	commit: Search Hired Intial Empty result
+dac063c4c7b306a3e8f5ecb996b2826d3be0dad3 2e3384905b1fa74816a1d48428560b5945257326 santosh panda <santosh.p@mobinexttech.com> 1503922201 +0530	pull: Merge made by the 'recursive' strategy.
+2e3384905b1fa74816a1d48428560b5945257326 d2e11f98a4f5fe22beac57ca293b26489d16960d santosh panda <santosh.p@mobinexttech.com> 1504188792 +0530	commit: admin panel users,hire,review frontend module created
+d2e11f98a4f5fe22beac57ca293b26489d16960d ebcc79cb09a9a346b7fc4b00f35ea28efebe0236 santosh panda <santosh.p@mobinexttech.com> 1504240264 +0530	commit: admin panel dashboard frontend module created
+ebcc79cb09a9a346b7fc4b00f35ea28efebe0236 ebcc79cb09a9a346b7fc4b00f35ea28efebe0236 santosh panda <santosh.p@mobinexttech.com> 1504243959 +0530	rebase: aborting
+ebcc79cb09a9a346b7fc4b00f35ea28efebe0236 e38bc75ce2e150a2a6df8a12cd3c95279a171cbe santosh panda <santosh.p@mobinexttech.com> 1504243959 +0530	rebase: updating HEAD
+e38bc75ce2e150a2a6df8a12cd3c95279a171cbe 04596a6a68d844bff428e05c1a600620f0672007 santosh panda <santosh.p@mobinexttech.com> 1504243975 +0530	rebase: checkout upstream/dev
+04596a6a68d844bff428e05c1a600620f0672007 e5482c9596aeff239dbb26c91690347bd8b44daf santosh panda <santosh.p@mobinexttech.com> 1504244172 +0530	rebase: create search hired frontend module
+e5482c9596aeff239dbb26c91690347bd8b44daf f9ddb98d94e5e805a10a94783a3ae87962cb8510 santosh panda <santosh.p@mobinexttech.com> 1504244260 +0530	rebase: create search hired frontend module
+f9ddb98d94e5e805a10a94783a3ae87962cb8510 ec06b709fa3b21f5039ec54256b2065ead7ec659 santosh panda <santosh.p@mobinexttech.com> 1504244260 +0530	rebase: deleting unused files
+ec06b709fa3b21f5039ec54256b2065ead7ec659 ec06b709fa3b21f5039ec54256b2065ead7ec659 santosh panda <santosh.p@mobinexttech.com> 1504244260 +0530	rebase finished: returning to refs/heads/dev
+ec06b709fa3b21f5039ec54256b2065ead7ec659 ebcc79cb09a9a346b7fc4b00f35ea28efebe0236 santosh panda <santosh.p@mobinexttech.com> 1504244350 +0530	rebase: checkout origin/dev
+ebcc79cb09a9a346b7fc4b00f35ea28efebe0236 4c63647f42aceea025dace5cf07af1d90f9d3ae4 santosh panda <santosh.p@mobinexttech.com> 1504244352 +0530	rebase: 1.In User RFP Show interest, Apply for Invitation completed (#69)
+4c63647f42aceea025dace5cf07af1d90f9d3ae4 f415902ada9a665b3f9e0dcf8c15a5aba087c00f santosh panda <santosh.p@mobinexttech.com> 1504244352 +0530	rebase: Company Login (#70)
+f415902ada9a665b3f9e0dcf8c15a5aba087c00f eaf0f9ce68c5f03888e6692f9f9f47f4b9f89c8c santosh panda <santosh.p@mobinexttech.com> 1504244352 +0530	rebase: Fixed Syntax Error (#73)
+eaf0f9ce68c5f03888e6692f9f9f47f4b9f89c8c ec06b709fa3b21f5039ec54256b2065ead7ec659 santosh panda <santosh.p@mobinexttech.com> 1504244392 +0530	rebase: aborting
+ec06b709fa3b21f5039ec54256b2065ead7ec659 f44c4032986b533b491b8b5a356a5234376fe0f5 santosh panda <santosh.p@mobinexttech.com> 1504244920 +0530	commit (merge): Merge remote-tracking branch 'origin/dev' into dev
+f44c4032986b533b491b8b5a356a5234376fe0f5 eff7c3516d290d4d68d2814a0a886ed3cd52cf89 santosh panda <santosh.p@mobinexttech.com> 1504246768 +0530	commit: development domain changes
+eff7c3516d290d4d68d2814a0a886ed3cd52cf89 1f130321e0b7d674f602ea89730c3aec4cc0118b santosh panda <santosh.p@mobinexttech.com> 1504262358 +0530	rebase: checkout upstream/dev
+1f130321e0b7d674f602ea89730c3aec4cc0118b eff7c3516d290d4d68d2814a0a886ed3cd52cf89 santosh panda <santosh.p@mobinexttech.com> 1504287665 +0530	checkout: moving from 1f130321e0b7d674f602ea89730c3aec4cc0118b to dev
+eff7c3516d290d4d68d2814a0a886ed3cd52cf89 eff7c3516d290d4d68d2814a0a886ed3cd52cf89 santosh panda <santosh.p@mobinexttech.com> 1504338126 +0530	rebase: aborting
+eff7c3516d290d4d68d2814a0a886ed3cd52cf89 4c4b9539bd5f065e3d64d2003cf960cccd3f13e5 santosh panda <santosh.p@mobinexttech.com> 1504338165 +0530	rebase: checkout upstream/dev
+4c4b9539bd5f065e3d64d2003cf960cccd3f13e5 eff7c3516d290d4d68d2814a0a886ed3cd52cf89 santosh panda <santosh.p@mobinexttech.com> 1504338377 +0530	checkout: moving from 4c4b9539bd5f065e3d64d2003cf960cccd3f13e5 to dev
+eff7c3516d290d4d68d2814a0a886ed3cd52cf89 eff7c3516d290d4d68d2814a0a886ed3cd52cf89 santosh panda <santosh.p@mobinexttech.com> 1504338774 +0530	rebase: aborting
+eff7c3516d290d4d68d2814a0a886ed3cd52cf89 4c4b9539bd5f065e3d64d2003cf960cccd3f13e5 santosh panda <santosh.p@mobinexttech.com> 1504338782 +0530	rebase: checkout upstream/dev
+4c4b9539bd5f065e3d64d2003cf960cccd3f13e5 eff7c3516d290d4d68d2814a0a886ed3cd52cf89 santosh panda <santosh.p@mobinexttech.com> 1504339118 +0530	rebase: aborting
+eff7c3516d290d4d68d2814a0a886ed3cd52cf89 081e3622d35a97b82c1649fc6801732fe9dfe639 santosh panda <santosh.p@mobinexttech.com> 1504339407 +0530	rebase: checkout upstream/dev
+081e3622d35a97b82c1649fc6801732fe9dfe639 54d7574b7ee80a30bee83a3a9629a5c21a981e82 santosh panda <santosh.p@mobinexttech.com> 1504339422 +0530	rebase: create search hired frontend module
+54d7574b7ee80a30bee83a3a9629a5c21a981e82 3e5783d3d3d72ae29cfcaceba953a318e6df7280 santosh panda <santosh.p@mobinexttech.com> 1504339442 +0530	rebase: deleting unused files
+3e5783d3d3d72ae29cfcaceba953a318e6df7280 0627616d95026e64f3f4fa88c628a4d2fdf91b13 santosh panda <santosh.p@mobinexttech.com> 1504339472 +0530	rebase: create search hired frontend module
+0627616d95026e64f3f4fa88c628a4d2fdf91b13 3f3b9999384163e2a9e2be9769f09afb7c2c5240 santosh panda <santosh.p@mobinexttech.com> 1504339472 +0530	rebase: create search hired frontend module
+3f3b9999384163e2a9e2be9769f09afb7c2c5240 2f915f915f5d5991b9a7ce05c7b95f1fc7bddc6f santosh panda <santosh.p@mobinexttech.com> 1504339472 +0530	rebase: deleting unused files
+2f915f915f5d5991b9a7ce05c7b95f1fc7bddc6f 237a7badcde5e0c222a787b3a7bb9e26c0b48ee0 santosh panda <santosh.p@mobinexttech.com> 1504339472 +0530	rebase: development domain changes
+237a7badcde5e0c222a787b3a7bb9e26c0b48ee0 237a7badcde5e0c222a787b3a7bb9e26c0b48ee0 santosh panda <santosh.p@mobinexttech.com> 1504339472 +0530	rebase finished: returning to refs/heads/dev
+237a7badcde5e0c222a787b3a7bb9e26c0b48ee0 081e3622d35a97b82c1649fc6801732fe9dfe639 santosh panda <santosh.p@mobinexttech.com> 1504339510 +0530	checkout: moving from dev to dev1
+081e3622d35a97b82c1649fc6801732fe9dfe639 c55e3ae07d3bd07aed368fdb35cff72dd07edaf4 santosh panda <santosh.p@mobinexttech.com> 1504353119 +0530	rebase: checkout upstream/dev
+c55e3ae07d3bd07aed368fdb35cff72dd07edaf4 c55e3ae07d3bd07aed368fdb35cff72dd07edaf4 santosh panda <santosh.p@mobinexttech.com> 1504353119 +0530	rebase finished: returning to refs/heads/dev1
+c55e3ae07d3bd07aed368fdb35cff72dd07edaf4 4dfc9589c94736fa96c913899b68bbc3590ee66c santosh panda <santosh.p@mobinexttech.com> 1504353351 +0530	commit: Create admin panel login and reset password as well ass Api integrations
+4dfc9589c94736fa96c913899b68bbc3590ee66c 229d4270750c30ca56599ceb9dc5bda951ead703 santosh panda <santosh.p@mobinexttech.com> 1504354054 +0530	commit: Create admin panel login and reset password as well ass Api integrations
+229d4270750c30ca56599ceb9dc5bda951ead703 710152384a02188f19de0f8976d3bf201c81dcc3 santosh panda <santosh.p@mobinexttech.com> 1504411273 +0530	rebase: checkout upstream/dev
+710152384a02188f19de0f8976d3bf201c81dcc3 a46856d5a56e6811ded53983479b09d6a95b7683 santosh panda <santosh.p@mobinexttech.com> 1504411274 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+a46856d5a56e6811ded53983479b09d6a95b7683 fba1fde5452bb09363efe2049f9a5cca5013266e santosh panda <santosh.p@mobinexttech.com> 1504411274 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+fba1fde5452bb09363efe2049f9a5cca5013266e fba1fde5452bb09363efe2049f9a5cca5013266e santosh panda <santosh.p@mobinexttech.com> 1504411274 +0530	rebase finished: returning to refs/heads/dev1
+fba1fde5452bb09363efe2049f9a5cca5013266e 9b89c64609232c9ec840aad791fd3cad9a61c41d santosh panda <santosh.p@mobinexttech.com> 1504414681 +0530	commit: Admin Panel-create hire and review issues solved as well as api integrations
+9b89c64609232c9ec840aad791fd3cad9a61c41d 101ac82e7cafe138bf73dd593c57aa0c91eb5e5c santosh panda <santosh.p@mobinexttech.com> 1504430441 +0530	rebase: checkout upstream/dev
+101ac82e7cafe138bf73dd593c57aa0c91eb5e5c 320eef675ff8844562b5f2a6c83d6b51519a887b santosh panda <santosh.p@mobinexttech.com> 1504430441 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+320eef675ff8844562b5f2a6c83d6b51519a887b 5bb7581ae3fb5297a4afe0465c55f06fba25e516 santosh panda <santosh.p@mobinexttech.com> 1504430441 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+5bb7581ae3fb5297a4afe0465c55f06fba25e516 5bb7581ae3fb5297a4afe0465c55f06fba25e516 santosh panda <santosh.p@mobinexttech.com> 1504430441 +0530	rebase finished: returning to refs/heads/dev1
+5bb7581ae3fb5297a4afe0465c55f06fba25e516 6afa5274310af0dd999267caab627ba080ade023 santosh panda <santosh.p@mobinexttech.com> 1504444384 +0530	rebase: checkout upstream/dev
+6afa5274310af0dd999267caab627ba080ade023 7b2fa97d1a6dd07d1cea90437f06deca8e5b100c santosh panda <santosh.p@mobinexttech.com> 1504444384 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+7b2fa97d1a6dd07d1cea90437f06deca8e5b100c 876130229bb19b8db962c20dfbf666d4025062ba santosh panda <santosh.p@mobinexttech.com> 1504444384 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+876130229bb19b8db962c20dfbf666d4025062ba 876130229bb19b8db962c20dfbf666d4025062ba santosh panda <santosh.p@mobinexttech.com> 1504444384 +0530	rebase finished: returning to refs/heads/dev1
+876130229bb19b8db962c20dfbf666d4025062ba 1d5db949cf5803caf8fe097e4427ed47b28e3210 santosh panda <santosh.p@mobinexttech.com> 1504446845 +0530	commit: Admin Panel-Login and Authentication Check as well as search API Integration
+1d5db949cf5803caf8fe097e4427ed47b28e3210 e6d6ca7878eb604e191451b806744dd9d9c14250 santosh panda <santosh.p@mobinexttech.com> 1504506357 +0530	rebase: checkout upstream/dev
+e6d6ca7878eb604e191451b806744dd9d9c14250 6df8d0ebd551c7f948da63cfccd3d43d23070cdc santosh panda <santosh.p@mobinexttech.com> 1504506357 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+6df8d0ebd551c7f948da63cfccd3d43d23070cdc f00e9337ced314f9d3cf0b98c4dc9cc8581cdcbc santosh panda <santosh.p@mobinexttech.com> 1504506357 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+f00e9337ced314f9d3cf0b98c4dc9cc8581cdcbc f00e9337ced314f9d3cf0b98c4dc9cc8581cdcbc santosh panda <santosh.p@mobinexttech.com> 1504506357 +0530	rebase finished: returning to refs/heads/dev1
+f00e9337ced314f9d3cf0b98c4dc9cc8581cdcbc c0dd7e0d8dc4d8da43f180d66bc9bbadf677032a santosh panda <santosh.p@mobinexttech.com> 1504521949 +0530	rebase: checkout upstream/dev
+c0dd7e0d8dc4d8da43f180d66bc9bbadf677032a 73dc97017fcab81c994844ab39f3c41155eba91e santosh panda <santosh.p@mobinexttech.com> 1504521949 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+73dc97017fcab81c994844ab39f3c41155eba91e 47f43ea6473cc7651bfad9aa3ebd7df79af9a691 santosh panda <santosh.p@mobinexttech.com> 1504521949 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+47f43ea6473cc7651bfad9aa3ebd7df79af9a691 47f43ea6473cc7651bfad9aa3ebd7df79af9a691 santosh panda <santosh.p@mobinexttech.com> 1504521949 +0530	rebase finished: returning to refs/heads/dev1
+47f43ea6473cc7651bfad9aa3ebd7df79af9a691 b6a000403601030728ea4df70998c9fb8164d15b santosh panda <santosh.p@mobinexttech.com> 1504525145 +0530	rebase: checkout upstream/dev
+b6a000403601030728ea4df70998c9fb8164d15b 703f5bbd049421cd98b705c1900428e3be454e61 santosh panda <santosh.p@mobinexttech.com> 1504525145 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+703f5bbd049421cd98b705c1900428e3be454e61 f6e293234ff98b0808341c8eb0c1909e268031e4 santosh panda <santosh.p@mobinexttech.com> 1504525145 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+f6e293234ff98b0808341c8eb0c1909e268031e4 f6e293234ff98b0808341c8eb0c1909e268031e4 santosh panda <santosh.p@mobinexttech.com> 1504525145 +0530	rebase finished: returning to refs/heads/dev1
+f6e293234ff98b0808341c8eb0c1909e268031e4 55f56f23726fa3943cbb199b66d8d5eafeaf63ce santosh panda <santosh.p@mobinexttech.com> 1504525429 +0530	commit: Admin Panel- create user empty record inserted issues solve as well as password field added in create user popup
+55f56f23726fa3943cbb199b66d8d5eafeaf63ce 19cc4cd32147025396a653a1ecf78aff4b61f9e4 santosh panda <santosh.p@mobinexttech.com> 1504526969 +0530	rebase: checkout upstream/dev
+19cc4cd32147025396a653a1ecf78aff4b61f9e4 f79bb18dd8f46c9b45248310f3ac191b0d5e1c52 santosh panda <santosh.p@mobinexttech.com> 1504526969 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+f79bb18dd8f46c9b45248310f3ac191b0d5e1c52 270ed7d61826a6f270ead4ee1ba088a162b198f1 santosh panda <santosh.p@mobinexttech.com> 1504526969 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+270ed7d61826a6f270ead4ee1ba088a162b198f1 270ed7d61826a6f270ead4ee1ba088a162b198f1 santosh panda <santosh.p@mobinexttech.com> 1504526969 +0530	rebase finished: returning to refs/heads/dev1
+270ed7d61826a6f270ead4ee1ba088a162b198f1 cc7f75b9e2e7bc88792902471b718400935b1886 santosh panda <santosh.p@mobinexttech.com> 1504527075 +0530	commit: Admin Panel-after admin logout it will redirect to admin loging page
+cc7f75b9e2e7bc88792902471b718400935b1886 b4fb83c8888d76482cbb98d8222fe46380f291c1 santosh panda <santosh.p@mobinexttech.com> 1504532441 +0530	rebase: checkout upstream/dev
+b4fb83c8888d76482cbb98d8222fe46380f291c1 0dc58d47cab09a74fb942a50325ce5f5dc3302f9 santosh panda <santosh.p@mobinexttech.com> 1504532441 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+0dc58d47cab09a74fb942a50325ce5f5dc3302f9 e74f6952a2da85f2e3501c0b7fd3851dca0620b6 santosh panda <santosh.p@mobinexttech.com> 1504532441 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+e74f6952a2da85f2e3501c0b7fd3851dca0620b6 e74f6952a2da85f2e3501c0b7fd3851dca0620b6 santosh panda <santosh.p@mobinexttech.com> 1504532441 +0530	rebase finished: returning to refs/heads/dev1
+e74f6952a2da85f2e3501c0b7fd3851dca0620b6 564be5d1c880a51314bc47b3ddeb2eb67bd644f4 santosh panda <santosh.p@mobinexttech.com> 1504532630 +0530	commit: Admin Panel-user search,hire search, review search re-api integration
+564be5d1c880a51314bc47b3ddeb2eb67bd644f4 3586f286ae102fd1833d7b411b6f19333df35e4b santosh panda <santosh.p@mobinexttech.com> 1504591379 +0530	rebase: checkout upstream/dev
+3586f286ae102fd1833d7b411b6f19333df35e4b 9cd4172f023d172e00ddfcd12983cfcfe4334abf santosh panda <santosh.p@mobinexttech.com> 1504591379 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+9cd4172f023d172e00ddfcd12983cfcfe4334abf 936a36393d6921d9d43ed1f1219bdf8d6fad801f santosh panda <santosh.p@mobinexttech.com> 1504591379 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+936a36393d6921d9d43ed1f1219bdf8d6fad801f 936a36393d6921d9d43ed1f1219bdf8d6fad801f santosh panda <santosh.p@mobinexttech.com> 1504591379 +0530	rebase finished: returning to refs/heads/dev1
+936a36393d6921d9d43ed1f1219bdf8d6fad801f 0fb62a711daf7eacefa0e7e1becd8560b30ef897 santosh panda <santosh.p@mobinexttech.com> 1504609726 +0530	rebase: checkout upstream/dev
+0fb62a711daf7eacefa0e7e1becd8560b30ef897 ca2d11573784045946c2cfc4a7dca8a60acf4e48 santosh panda <santosh.p@mobinexttech.com> 1504609726 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+ca2d11573784045946c2cfc4a7dca8a60acf4e48 4fbfd138c6c1892dc1f5ff88493e1b34477b256d santosh panda <santosh.p@mobinexttech.com> 1504609726 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+4fbfd138c6c1892dc1f5ff88493e1b34477b256d 4fbfd138c6c1892dc1f5ff88493e1b34477b256d santosh panda <santosh.p@mobinexttech.com> 1504609726 +0530	rebase finished: returning to refs/heads/dev1
+4fbfd138c6c1892dc1f5ff88493e1b34477b256d ec7c11915aaf482daba47b29789ca6187ff752b5 santosh panda <santosh.p@mobinexttech.com> 1504671221 +0530	rebase: checkout upstream/dev
+ec7c11915aaf482daba47b29789ca6187ff752b5 be9519d009b35b985a759d880c8349e38a0fb4a2 santosh panda <santosh.p@mobinexttech.com> 1504671221 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+be9519d009b35b985a759d880c8349e38a0fb4a2 fb048c85e75b482bd74b48d36e6b2ee2629d4330 santosh panda <santosh.p@mobinexttech.com> 1504671221 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+fb048c85e75b482bd74b48d36e6b2ee2629d4330 fb048c85e75b482bd74b48d36e6b2ee2629d4330 santosh panda <santosh.p@mobinexttech.com> 1504671221 +0530	rebase finished: returning to refs/heads/dev1
+fb048c85e75b482bd74b48d36e6b2ee2629d4330 25459407780dfccab4407001a8cf84e164672a4b santosh panda <santosh.p@mobinexttech.com> 1504691278 +0530	rebase: checkout upstream/dev
+25459407780dfccab4407001a8cf84e164672a4b 77d0a166977b43d312e49712faa5f2d929a4b069 santosh panda <santosh.p@mobinexttech.com> 1504691278 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+77d0a166977b43d312e49712faa5f2d929a4b069 a5a022742fa972a0f6327edf7231b1e4622d2990 santosh panda <santosh.p@mobinexttech.com> 1504691278 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+a5a022742fa972a0f6327edf7231b1e4622d2990 a5a022742fa972a0f6327edf7231b1e4622d2990 santosh panda <santosh.p@mobinexttech.com> 1504691278 +0530	rebase finished: returning to refs/heads/dev1
+a5a022742fa972a0f6327edf7231b1e4622d2990 3d6153bcb677ba54295c9ed8bcf3c2ba7884a477 santosh panda <santosh.p@mobinexttech.com> 1504764170 +0530	rebase: checkout upstream/dev
+3d6153bcb677ba54295c9ed8bcf3c2ba7884a477 a174ab361b00ff20396c883262695266c3c64908 santosh panda <santosh.p@mobinexttech.com> 1504764170 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+a174ab361b00ff20396c883262695266c3c64908 8b8e278979c620a3d82915dd69d0bfa071a4fd2b santosh panda <santosh.p@mobinexttech.com> 1504764170 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+8b8e278979c620a3d82915dd69d0bfa071a4fd2b 8b8e278979c620a3d82915dd69d0bfa071a4fd2b santosh panda <santosh.p@mobinexttech.com> 1504764170 +0530	rebase finished: returning to refs/heads/dev1
+8b8e278979c620a3d82915dd69d0bfa071a4fd2b 944c82215b5c6bc55d9deed18a127af538896aa6 santosh panda <santosh.p@mobinexttech.com> 1504765860 +0530	rebase: checkout upstream/dev
+944c82215b5c6bc55d9deed18a127af538896aa6 84402e278885fac86a1e847f6b9d08e405705492 santosh panda <santosh.p@mobinexttech.com> 1504765860 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+84402e278885fac86a1e847f6b9d08e405705492 708f5c6effdca2e57c5574a98a6b55d7fed60434 santosh panda <santosh.p@mobinexttech.com> 1504765860 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+708f5c6effdca2e57c5574a98a6b55d7fed60434 708f5c6effdca2e57c5574a98a6b55d7fed60434 santosh panda <santosh.p@mobinexttech.com> 1504765860 +0530	rebase finished: returning to refs/heads/dev1
+708f5c6effdca2e57c5574a98a6b55d7fed60434 9fa7bf4d9ada397adb567f604ac77e3f3a331a95 santosh panda <santosh.p@mobinexttech.com> 1504774658 +0530	rebase: checkout upstream/dev
+9fa7bf4d9ada397adb567f604ac77e3f3a331a95 238e5117991fbebc066db619b585c9c0f1d9f02e santosh panda <santosh.p@mobinexttech.com> 1504774658 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+238e5117991fbebc066db619b585c9c0f1d9f02e 34eb3b0a90c5957fc6a1b9c113ed72a4616e6a40 santosh panda <santosh.p@mobinexttech.com> 1504774658 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+34eb3b0a90c5957fc6a1b9c113ed72a4616e6a40 34eb3b0a90c5957fc6a1b9c113ed72a4616e6a40 santosh panda <santosh.p@mobinexttech.com> 1504774658 +0530	rebase finished: returning to refs/heads/dev1
+34eb3b0a90c5957fc6a1b9c113ed72a4616e6a40 ba9ae1b17d6396ed60fcd6e22acfc0371166b137 santosh panda <santosh.p@mobinexttech.com> 1504774933 +0530	commit: Admin Panel-user,review,hire some change
+ba9ae1b17d6396ed60fcd6e22acfc0371166b137 1d9a895283100a2e0a355364ede59df7f64a7af0 santosh panda <santosh.p@mobinexttech.com> 1504775992 +0530	commit: Admin Panel-user,review,hire some change
+1d9a895283100a2e0a355364ede59df7f64a7af0 f45a71af11d6f3f74a5019ce62551b293d4eb1c9 santosh panda <santosh.p@mobinexttech.com> 1504795720 +0530	rebase: checkout upstream/dev
+f45a71af11d6f3f74a5019ce62551b293d4eb1c9 3bd1638df276e56fd5fafa28ec0c4db448f603ab santosh panda <santosh.p@mobinexttech.com> 1504795720 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+3bd1638df276e56fd5fafa28ec0c4db448f603ab ab6f40156f7632a7009bbc69f0e287c6efb595c6 santosh panda <santosh.p@mobinexttech.com> 1504795720 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+ab6f40156f7632a7009bbc69f0e287c6efb595c6 1d9a895283100a2e0a355364ede59df7f64a7af0 santosh panda <santosh.p@mobinexttech.com> 1504796016 +0530	rebase: aborting
+1d9a895283100a2e0a355364ede59df7f64a7af0 bfa1fb89441ee5de662b6d03596bb65e5e0b6983 santosh panda <santosh.p@mobinexttech.com> 1504796030 +0530	rebase: checkout upstream/dev
+bfa1fb89441ee5de662b6d03596bb65e5e0b6983 6999ab8ac625be232995e17fc605ca5180c73c4e santosh panda <santosh.p@mobinexttech.com> 1504796030 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+6999ab8ac625be232995e17fc605ca5180c73c4e b199a2b957c07c2f8753562e9ffcea2eb358048f santosh panda <santosh.p@mobinexttech.com> 1504796030 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+b199a2b957c07c2f8753562e9ffcea2eb358048f 09a1690cf93d521ebedc073a40a569e99961223f santosh panda <santosh.p@mobinexttech.com> 1504796202 +0530	rebase: Admin Panel-user,review,hire some change
+09a1690cf93d521ebedc073a40a569e99961223f 1d9a895283100a2e0a355364ede59df7f64a7af0 santosh panda <santosh.p@mobinexttech.com> 1504796255 +0530	rebase: aborting
+1d9a895283100a2e0a355364ede59df7f64a7af0 bfa1fb89441ee5de662b6d03596bb65e5e0b6983 santosh panda <santosh.p@mobinexttech.com> 1504796321 +0530	rebase: checkout upstream/dev
+bfa1fb89441ee5de662b6d03596bb65e5e0b6983 036394d52b3123eb57d9dc6682483589ac7ea604 santosh panda <santosh.p@mobinexttech.com> 1504796321 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+036394d52b3123eb57d9dc6682483589ac7ea604 3c28eaea9b4bd0736171dfa75d4f758dbc138e6e santosh panda <santosh.p@mobinexttech.com> 1504796321 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+3c28eaea9b4bd0736171dfa75d4f758dbc138e6e 796e8e0ebf6c76959400451b37254fbb23e3d7ab santosh panda <santosh.p@mobinexttech.com> 1504796393 +0530	rebase: Admin Panel-user,review,hire some change
+796e8e0ebf6c76959400451b37254fbb23e3d7ab 4926456f93b19657e0534e5595160a0aa69707b8 santosh panda <santosh.p@mobinexttech.com> 1504796426 +0530	rebase: Admin Panel-user,review,hire some change
+4926456f93b19657e0534e5595160a0aa69707b8 4926456f93b19657e0534e5595160a0aa69707b8 santosh panda <santosh.p@mobinexttech.com> 1504796426 +0530	rebase finished: returning to refs/heads/dev1
+4926456f93b19657e0534e5595160a0aa69707b8 c1d1a74955dde1b5863956b5efffb0b16b671f31 santosh panda <santosh.p@mobinexttech.com> 1504797680 +0530	commit: Admin Panel-user,review,hire pagination API integration as we all API Create
+c1d1a74955dde1b5863956b5efffb0b16b671f31 e810433a5e67e817a192c6cce94b7de9749074ab santosh panda <santosh.p@mobinexttech.com> 1504850434 +0530	rebase: checkout upstream/dev
+e810433a5e67e817a192c6cce94b7de9749074ab aa52e4678bc883f580248cee7d382eb02e0be4e1 santosh panda <santosh.p@mobinexttech.com> 1504850434 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+aa52e4678bc883f580248cee7d382eb02e0be4e1 83b2d156e249b9720ad6c7f7892054be6bf7b717 santosh panda <santosh.p@mobinexttech.com> 1504850434 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+83b2d156e249b9720ad6c7f7892054be6bf7b717 eb30f4451f7e8a45180a8f0df64b72f745bbf60f santosh panda <santosh.p@mobinexttech.com> 1504850434 +0530	rebase: Admin Panel-user,review,hire some change
+eb30f4451f7e8a45180a8f0df64b72f745bbf60f 6b4fa5a2c445a1b4df3a87b04e9b07fbd1908ab5 santosh panda <santosh.p@mobinexttech.com> 1504850434 +0530	rebase: Admin Panel-user,review,hire some change
+6b4fa5a2c445a1b4df3a87b04e9b07fbd1908ab5 6b4fa5a2c445a1b4df3a87b04e9b07fbd1908ab5 santosh panda <santosh.p@mobinexttech.com> 1504850435 +0530	rebase finished: returning to refs/heads/dev1
+6b4fa5a2c445a1b4df3a87b04e9b07fbd1908ab5 19c1ec05baf12a0088b30bae3f38e6b755b322a6 santosh panda <santosh.p@mobinexttech.com> 1504865954 +0530	rebase: checkout upstream/dev
+19c1ec05baf12a0088b30bae3f38e6b755b322a6 428908a0cd8b3449ee719a36f86d8cdc1ec17840 santosh panda <santosh.p@mobinexttech.com> 1504865954 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+428908a0cd8b3449ee719a36f86d8cdc1ec17840 12958e5a1bdc5b8ef6b5565b0a24b64e3a1cd8b9 santosh panda <santosh.p@mobinexttech.com> 1504865954 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+12958e5a1bdc5b8ef6b5565b0a24b64e3a1cd8b9 c297ff6f099f6a369f9d1ab62e617451d947776a santosh panda <santosh.p@mobinexttech.com> 1504865954 +0530	rebase: Admin Panel-user,review,hire some change
+c297ff6f099f6a369f9d1ab62e617451d947776a 0f89a43ee82f24573648af7d0249d2f54cc42898 santosh panda <santosh.p@mobinexttech.com> 1504865954 +0530	rebase: Admin Panel-user,review,hire some change
+0f89a43ee82f24573648af7d0249d2f54cc42898 0f89a43ee82f24573648af7d0249d2f54cc42898 santosh panda <santosh.p@mobinexttech.com> 1504865954 +0530	rebase finished: returning to refs/heads/dev1
+0f89a43ee82f24573648af7d0249d2f54cc42898 4d5112e7fe326fcd7423cf1d481d6b38275076ce santosh panda <santosh.p@mobinexttech.com> 1504875385 +0530	rebase: checkout upstream/dev
+4d5112e7fe326fcd7423cf1d481d6b38275076ce 54fd9cc6c0bc606be197cf026efb0cb8985b18b8 santosh panda <santosh.p@mobinexttech.com> 1504875385 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+54fd9cc6c0bc606be197cf026efb0cb8985b18b8 635f5a8ee756e34ec62470c82442df322d0979fd santosh panda <santosh.p@mobinexttech.com> 1504875385 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+635f5a8ee756e34ec62470c82442df322d0979fd 1fc59215fa6bf9c5bca9b8be2c329976d234858f santosh panda <santosh.p@mobinexttech.com> 1504875385 +0530	rebase: Admin Panel-user,review,hire some change
+1fc59215fa6bf9c5bca9b8be2c329976d234858f c4b725fa8425c96996a0990e7f247e9583562d89 santosh panda <santosh.p@mobinexttech.com> 1504875385 +0530	rebase: Admin Panel-user,review,hire some change
+c4b725fa8425c96996a0990e7f247e9583562d89 c4b725fa8425c96996a0990e7f247e9583562d89 santosh panda <santosh.p@mobinexttech.com> 1504875385 +0530	rebase finished: returning to refs/heads/dev1
+c4b725fa8425c96996a0990e7f247e9583562d89 bb16edb19dc0343c4b508f5b2fdd252794bfca76 santosh panda <santosh.p@mobinexttech.com> 1504875477 +0530	commit: Admin Panel-user,review,hire pagination and search issues solve
+bb16edb19dc0343c4b508f5b2fdd252794bfca76 0765d042959a48c7ec60ec0771f972d8ecf46066 santosh panda <santosh.p@mobinexttech.com> 1504878379 +0530	rebase: checkout upstream/dev
+0765d042959a48c7ec60ec0771f972d8ecf46066 af525b35c3e05434663fab1b09894d4669bec57a santosh panda <santosh.p@mobinexttech.com> 1504878379 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+af525b35c3e05434663fab1b09894d4669bec57a 08879b02f2bca48158525c15b3525a6dc61d9c16 santosh panda <santosh.p@mobinexttech.com> 1504878379 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+08879b02f2bca48158525c15b3525a6dc61d9c16 6427f89a90644f5d2fb59e58d0c8df2af4004e88 santosh panda <santosh.p@mobinexttech.com> 1504878379 +0530	rebase: Admin Panel-user,review,hire some change
+6427f89a90644f5d2fb59e58d0c8df2af4004e88 56aa66f39efbc400f21904840f4a9b0dcd4524b8 santosh panda <santosh.p@mobinexttech.com> 1504878379 +0530	rebase: Admin Panel-user,review,hire some change
+56aa66f39efbc400f21904840f4a9b0dcd4524b8 56aa66f39efbc400f21904840f4a9b0dcd4524b8 santosh panda <santosh.p@mobinexttech.com> 1504878379 +0530	rebase finished: returning to refs/heads/dev1
+56aa66f39efbc400f21904840f4a9b0dcd4524b8 7c0eaa9dc66d9bd0a37040ef34ae8979b953be2d santosh panda <santosh.p@mobinexttech.com> 1504931918 +0530	rebase: checkout upstream/dev
+7c0eaa9dc66d9bd0a37040ef34ae8979b953be2d 8eff872fdadb256eb392b0743058d3ac8690204b santosh panda <santosh.p@mobinexttech.com> 1504931918 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+8eff872fdadb256eb392b0743058d3ac8690204b ed3c783ea55512550e878ac244b9b4d354d5d0f6 santosh panda <santosh.p@mobinexttech.com> 1504931918 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+ed3c783ea55512550e878ac244b9b4d354d5d0f6 8f591172cde4d8257109fa85d7c0ea80c78f6dfa santosh panda <santosh.p@mobinexttech.com> 1504931918 +0530	rebase: Admin Panel-user,review,hire some change
+8f591172cde4d8257109fa85d7c0ea80c78f6dfa 9117cd9391a0ab0c13f88851d3a9a82790f3e47e santosh panda <santosh.p@mobinexttech.com> 1504931918 +0530	rebase: Admin Panel-user,review,hire some change
+9117cd9391a0ab0c13f88851d3a9a82790f3e47e 9117cd9391a0ab0c13f88851d3a9a82790f3e47e santosh panda <santosh.p@mobinexttech.com> 1504931918 +0530	rebase finished: returning to refs/heads/dev1
+9117cd9391a0ab0c13f88851d3a9a82790f3e47e ce62ddb34c846f07ba0c53bc435c1d39604ba5c0 santosh panda <santosh.p@mobinexttech.com> 1504938248 +0530	rebase: checkout upstream/dev
+ce62ddb34c846f07ba0c53bc435c1d39604ba5c0 a2047a1754badb0a693e787ae9f5ccfec9ea4fa0 santosh panda <santosh.p@mobinexttech.com> 1504938248 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+a2047a1754badb0a693e787ae9f5ccfec9ea4fa0 1538da587ece35cc10cd444956cbae317abc5ba9 santosh panda <santosh.p@mobinexttech.com> 1504938248 +0530	rebase: Create admin panel login and reset password as well ass Api integrations
+1538da587ece35cc10cd444956cbae317abc5ba9 1d6d4ba00e9d82376d11f021a06b0eb7ba63c717 santosh panda <santosh.p@mobinexttech.com> 1504938248 +0530	rebase: Admin Panel-user,review,hire some change
+1d6d4ba00e9d82376d11f021a06b0eb7ba63c717 6a1abb86c6f9aec6846fca603cd0f323d05ad511 santosh panda <santosh.p@mobinexttech.com> 1504938248 +0530	rebase: Admin Panel-user,review,hire some change
+6a1abb86c6f9aec6846fca603cd0f323d05ad511 6a1abb86c6f9aec6846fca603cd0f323d05ad511 santosh panda <santosh.p@mobinexttech.com> 1504938249 +0530	rebase finished: returning to refs/heads/dev1
+6a1abb86c6f9aec6846fca603cd0f323d05ad511 4c3fb21e48d9a870368e9aeaef4d6376349be991 santosh panda <santosh.p@mobinexttech.com> 1505616558 +0530	commit: Push to my repo

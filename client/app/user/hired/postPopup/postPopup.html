@@ -1,0 +1,46 @@
+<div class="modal-header">
+  <button type="button" ng-click="$ctrl.close()" class="close" data-dismiss="modal">×</button>
+</div>
+<div class="modal-body">
+  <div class="pop-input">
+    <form class="form" name="postHired">
+    <div class="form-group" ng-class="{ 'has-error' : postHired.projectTitle.$invalid && !postHired.projectTitle.$pristine}">
+    <input type="text" class="block form-control" name="projectTitle" placeholder="Enter Project Title" ng-model="$ctrl.hired.projectTitle" required>
+      <p ng-show="postHired.projectTitle.$invalid && !postHired.projectTitle.$pristine" class="help-block">Project title is required.</p>
+    </div>
+    <select multiple required class="block" ng-model="$ctrl.hired.productCategories" required>
+      <option value="" label="Products" disabled selected="selected">
+      <option ng-repeat="product in $ctrl.productsList">{{product}}</option>
+      </option>
+    </select>
+    <select multiple required class="block" ng-model="$ctrl.hired.location" required>
+      <option value="" label="Locations" disabled selected="selected">
+      <option ng-repeat="location in $ctrl.locationsList">{{location}}</option>
+      </option>
+    </select>
+    <select classs="block" ng-model="$ctrl.hired.salesStage">
+      <option value="" label="Sales Stage" disabled selected="selected" required>
+      <option>Pre-Sales</option>
+      <option>Sales</option>
+      <option>Post-Sales</option>
+    </select>
+    <div class="form-group" ng-class="{ 'has-error' : postHired.endDate.$invalid && !postHired.endDate.$pristine}">
+      <input type="text" name="endDate" class="block form-control" placeholder="End Date" required ng-model="$ctrl.hired.endDate">
+      <p ng-show="postHired.endDate.$invalid && !postHired.endDate.$pristine" class="help-block">End Date is required.</p>
+    </div>
+    <div class="marginBottom">
+      <span class="muru">Priority :</span>
+      <button class="btn btn-default" ng-click="$ctrl.setPriority('high')" id="high">High</button>
+      <button class="btn btn-default" ng-click="$ctrl.setPriority('medium')" id="med">Medium</button>
+      <button class="btn btn-default" ng-click="$ctrl.setPriority('low')" id="low">Low</button>
+    </div>
+    <div class="form-group" ng-class="{ 'has-error' : postHired.description.$invalid && !postHired.description.$pristine}">
+    <textarea name="description" class="form-control" placeholder="Description(Maximum 250 character)" maxlength="250" ng-model="$ctrl.hired.description" required></textarea>
+    <p ng-show="postHired.description.$invalid && !postHired.description.$pristine" class="help-block">Description is required.</p>
+    </div>
+    <div class="company-name-input text-center">
+      <button type="submit" ng-click="$ctrl.postHired()" ng-disabled="!$ctrl.isValid(postHired.$valid)">Submit</button>
+    </div>
+    </form>
+  </div>
+</div>

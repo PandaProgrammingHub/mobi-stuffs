@@ -1,0 +1,169 @@
+<div class="body1">
+  <form class="form" name="companySignup" ng-submit="companySignupCtrl.register(companySignup)" >
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-offset-3 col-sm-offset-3 col-md-6 col-sm-6 side-kam1">
+          <div class="welcome-page1">
+            <div class="head-wel text-center">
+              <span class="block bold" style="font-size: 18px;">Create Your Account</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-offset-3 col-sm-offset-3 col-md-6 col-sm-6 side-kam1">
+          <div class="welcome-page2">
+            <div class="row">
+              <div class="col-md-4">
+                <ul class="text-left com-pg-ul">
+                  <li>Manage Your Company Page</li>
+                  <li>Keep track Of All RFP</li>
+                  <li>Know Where Your Organization Stands</li>
+                  <li class="text-danger">{{companySignupCtrl.errorMessage}}</li>
+                </ul>
+              </div>
+
+              <div class="col-md-8 tex-center">
+                <div class="welcome-input" style="width:100%;">
+                  <div class="form-group" ng-class="{ 'has-error' : companySignup.name.$invalid && companySignup.name.$touched}">
+                    <input type="text" placeholder="Name"  name="name" class="form-control" ng-model="companySignupCtrl.user.name"required>
+                    <p ng-show="companySignup.name.$invalid && companySignup.name.$touched" class="help-block">Name is required.</p>
+                  </div>
+                  <div class="form-group" ng-class="{ 'has-error' : companySignup.email.$invalid && companySignup.email.$touched}">
+                    <input type="email" placeholder="Work Email"  name="email" class="form-control" ng-model="companySignupCtrl.user.email"required>
+                    <p ng-show="companySignup.email.$invalid && companySignup.email.$touched" class="help-block">Email is required.</p>
+                  </div>
+                  <div class="form-group" ng-class="{ 'has-error' : companySignup.password.$invalid && companySignup.password.$touched}">
+                    <input type="password" placeholder="Password"  name="password" class="form-control" ng-model="companySignupCtrl.user.password"required>
+                    <p ng-show="companySignup.password.$invalid && companySignup.password.$touched" class="help-block">Password is required.</p>
+                  </div>
+                  <div class="form-group" ng-class="{ 'has-error' : companySignup.company.$invalid && companySignup.company.$touched}">
+                    <input type="text" placeholder="Company"  name="company" class="form-control" ng-model="companySignupCtrl.user.company"required>
+                    <p ng-show="companySignup.company.$invalid && companySignup.company.$touched" class="help-block">Company is required.</p>
+                  </div>
+                  <div class="form-group" ng-class="{ 'has-error' : companySignup.designation.$invalid && companySignup.designation.$touched}">
+                    <input type="text" placeholder="Designation"  name="designation" class="form-control" ng-model="companySignupCtrl.user.designation"required>
+                    <p ng-show="companySignup.designation.$invalid && companySignup.designation.$touched" class="help-block">Designation is required.</p>
+                  </div>
+                  <div class="company-name-input text-center sub-btn subb">
+                    <button type="submit">Submit</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-offset-3 col-sm-offset-3 col-md-6 col-sm-6 side-kam1">
+          <div class="welcome-page1" style="padding:2px;">
+            <div class="head-wel text-center">
+              <h5>Already have an account <a  ui-sref="companyLogin">Sign In</a></h5>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </form>
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content sign-up-pop">
+
+          <div class="modal-body">
+            <div class="social-button">
+              <button type="button"><span class="pop-sign"><i class="fa fa-google-plus" aria-hidden="true"></i></span>Sign in with Google</button>
+              <button type="button"><span class="pop-sign"><i class="fa fa-facebook-square" aria-hidden="true"></i></span>Sign in with Facebook</button>
+              <button type="button"><span class="pop-sign"><i class="fa fa-linkedin" aria-hidden="true"></i></span>Sign in with LinkedIn</button>
+            </div>
+
+            <div class="or text-center">
+              <p>OR</p>
+            </div>
+
+            <div class="row pop-input">
+              <div class="col-md-12">
+                <input type="text" placeholder="Name">
+                <input type="text" placeholder="Email">
+                <input type="password" placeholder="Password">
+              </div>
+
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <label class="checkbox-inline"><input type="checkbox" value="">I accept the <a href="">Terms And Conditions</a></label>
+                <div class="company-name-input text-center">
+                  <button type="submit" style="width:100%">Register</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="text-center">
+              <p>Already have an account <a href="" data-toggle="modal" data-target="#Login">Sign In</a></p>
+            </div>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="Login" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content sign-up-pop">
+
+          <div class="modal-body">
+            <div class="text-center comp-page">
+              <p>Sign in to Profile</p>
+            </div>
+
+            <div class="row pop-input">
+              <div class="col-md-12">
+                <input type="text" placeholder="Email">
+                <input type="password" placeholder="Password">
+              </div>
+
+            </div>
+            <div class="or text-center">
+              <p><u>Forgot password</u></p>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="company-name-input text-center">
+                  <button type="submit" style="width:100%">Sign In</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="text-center">
+              <p>Don't Have an Account <a href="">Sign up</a></p>
+            </div>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="exit-db" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+
+          <div class="modal-body">
+            <div class="text-center comp-page">
+              <h3>Company Exist in Database</h3>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+</div>

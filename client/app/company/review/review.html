@@ -1,0 +1,248 @@
+<div class="bannerstrip">
+  <div class="container">
+    <div class="col-sm-4">
+      <i class="fa fa-search" aria-hidden="true" ng-click="reviewCtrl.getResultedData(searchText, type)"></i>
+      <input class="inpt1"  type="text"
+             uib-typeahead="company.name for company in reviewCtrl.companies | filter:$viewValue | limitTo:8"
+             ng-model="searchText"
+             typeahead-on-select="reviewCtrl.onSelect( $item )"
+             ng-change="reviewCtrl.getPageChanges(searchText, type)"
+             placeholder="Company Name"/>
+    </div>
+    <div class="col-sm-4">
+      <i class="fa fa-map-marker" aria-hidden="true"></i>
+      <input class="inpt1" type="text" placeholder="Location">
+    </div>
+    <div class="col-sm-4">
+      <i class="fa fa-building-o" aria-hidden="true"></i>
+      <select ng-model="type" class="select2" id="sel1" ng-change="reviewCtrl.getResultedData(searchText, type)">
+        <option ng-selected="true">Company</option>
+        <option> Hire</option>
+        <option> RFP</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+
+<div class="container margin-bottom"  ng-repeat="company in reviewCtrl.searchData" >
+  <div class="row">
+    <div class="mzda mrv">
+      <div class="row clearfix">
+        <div class="col-sm-3">
+          <img class="bottom15"
+               style=" width:37%;height: 90px;"
+               src="../../../assets/images/mz.jpg" ng-src="{{company.logo}}"alt="mazda">
+        </div>
+        <div class="col-sm-5 addau">
+          <span class="bold block font16" ng-click="reviewCtrl.callCompanyProfile(company._id)">{{company.name}}</span>
+          <span class="block font14"><a href="{{company.website}}" target="_blank">{{company.website}}</a> <span ng-if="company.website !== undefined && company.website !== ''">/</span> {{company.headquarters}} </span>
+        </div>
+        <div class="col-sm-4 rvwbtn">
+          <div class="pull-right" >
+            <!--ng-show="reviewCtrl.showButtons"-->
+              <span ng-if="reviewCtrl.checkObj(company)">
+                            <a ng-if="reviewCtrl.follow == true" ng-click="reviewCtrl.unfollowCompanies($index)">unfollow </a>
+                          </span>
+            <span ng-if="!reviewCtrl.checkObj(company)">
+                            <a ng-if="reviewCtrl.follow == false" ng-click="reviewCtrl.followCompany($index)">follow </a>
+                          </span>
+            <span  ng-click="reviewCtrl.openWriteReview()"><a> <i class="fa fa-plus" aria-hidden="true"></i> Review </a></span>
+          </div>
+        </div>
+      </div>
+      <div class="row clearfix">
+        <div class="col-sm-6">
+          <div><span class="font10 block">{{reviewCtrl.reviewCount[$index]}} Reviews</span></div>
+        </div>
+        <div class="col-sm-6 right">
+          <div class="inlineBlock rvwFormat">
+            <span class="bold block">{{company.followersCount }}</span>
+            <span class="block" >Followers</span>
+          </div>
+          <div class="inlineBlock rvwFormat">
+            <span class="bold block">{{company.rfpsCount  }}</span>
+            <span class="block" >RFPs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="searchapp" ng-show="reviewCtrl.showPage">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-5">  </div>
+      <div class="col-sm-7">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+
+            <div class="item active">
+              <div class="appright">
+                <img src="assets/images/ui.jpg" alt="ui">
+                <span>  <b> ut in </b> nisl cursus, <br> volutpat turpis <b> id, sollicitu </b> </span>
+                <p> <b>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </b> </p>
+                <p> Ius laudem vidisse quaerendum at, ad case utroque officiis pro. Id vix populo gubergren. Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea</p>
+                <div class="fstars">
+                  <div> </div>
+                  <div class="pull-right"> <span> Follow </span>
+                    <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-link" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="appright">
+                <img src="assets/images/ui.jpg" alt="ui">
+                <span>  <b> ut in </b> nisl cursus, <br> volutpat turpis <b> id, sollicitu </b> </span>
+                <p> <b>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </b> </p>
+                <p> Ius laudem vidisse quaerendum at, ad case utroque officiis pro. Id vix populo gubergren. Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea</p>
+                <div class="fstars">
+                  <div> </div>
+                  <div class="pull-right"> <span> Follow </span>
+                    <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-link" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="appright">
+                <img src="assets/images/ui.jpg" alt="ui">
+                <span>  <b> ut in </b> nisl cursus, <br> volutpat turpis <b> id, sollicitu </b> </span>
+                <p> <b>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </b> </p>
+                <p> Ius laudem vidisse quaerendum at, ad case utroque officiis pro. Id vix populo gubergren. Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea</p>
+                <div class="fstars">
+                  <div> </div>
+                  <div class="pull-right"> <span> Follow </span>
+                    <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-link" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+            <span class="sr-only"></span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            <span class="sr-only"></span>
+          </a>
+        </div>
+
+        <div class="appbtn pull-right"> <a href="#">search app </a> </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="salesdoor" ng-show="reviewCtrl.showPage">
+  <div class="container">
+    <div id="myCarousel2" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel2" data-slide-to="1"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+
+        <div class="item active">
+          <div class="row">
+            <div class="col-sm-6"> <h4> benefit of</h4>
+              <h1> salesdoor</h1>
+              <p> <b>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </b> </p>
+              <p> Ius laudem vidisse quaerendum at, ad case utroque officiis pro. Id vix populo gubergren. Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea Ius laudem vidisse quaerendum at, ad case utroque officiis pro. Id vix populo gubergren. Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea.</p>
+              <div class="profitbtn"> <a href="#"> read all our benefit story</a> </div>
+            </div>
+            <div class="col-sm-6"> <img src="assets/images/tab1.jpg" alt="Los Angeles" style="width:100%;"> </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="row">
+            <div class="col-sm-6"> <h4> benefit of</h4>
+              <h1> salesdoor</h1>
+              <p> <b>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </b> </p>
+              <p> Ius laudem vidisse quaerendum at, ad case utroque officiis pro. Id vix populo gubergren. Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea Ius laudem vidisse quaerendum at, ad case utroque officiis pro. Id vix populo gubergren. Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea.</p>
+              <div class="profitbtn"> <a href="#"> read all our benefit story</a> </div>
+            </div>
+            <div class="col-sm-6"> <img src="assets/images/tab1.jpg" alt="Los Angeles" style="width:100%;"> </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel2" data-slide="prev">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel2" data-slide="next">
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="getrating" ng-show="reviewCtrl.showPage">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6"> <img src="assets/images/tab2.jpg" alt="Los Angeles" style="width:100%;"> </div>
+      <div class="col-sm-6"> <h4> get rating</h4>
+        <h1> for campany</h1>
+        <p> <b>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </b> </p>
+        <p> Ius laudem vidisse quaerendum at, ad case utroque officiis pro. Id vix populo gubergren. Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea Ius laudem vidisse quaerendum at, ad case utroque officiis pro. Id vix populo gubergren. Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea.</p>
+        <div class="profitbtn"> <a href="#"> read more</a> </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="latest_news" ng-show="reviewCtrl.showPage">
+  <div class="container">
+    <h1> latest news</h1>
+    <p> Ius laudem vidisse quaerendum at, ad case utroque officiis pro. Id vix populo gubergren. </p>
+    <div class="row">
+      <div class="col-sm-4">
+        <img src="assets/images/p1.jpg" alt="images">
+        <span class="cal"><i class="fa fa-calendar" aria-hidden="true"></i>  </span> <span> July 25, 2017</span>
+        <span class="cal1"><i class="fa fa-male" aria-hidden="true"></i> </span> <span> By Admin </span>
+        <h4> Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  </h4>
+        <p>  Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea Ius laudem vidisse quaerendum at, ad case utroque officiis pro. Id vix populo gubergren. Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea.</p>
+        <div class="profitbtn"> <a href="#"> read the blog</a> </div>
+      </div>
+      <div class="col-sm-4">
+        <img src="assets/images/p1.jpg" alt="images">
+        <span class="cal"><i class="fa fa-calendar" aria-hidden="true"></i>  </span> <span> July 25, 2017</span>
+        <span class="cal1"><i class="fa fa-male" aria-hidden="true"></i> </span> <span> By Admin </span>
+        <h4> Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  </h4>
+        <p>  Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea Ius laudem vidisse quaerendum at, ad case utroque officiis pro. Id vix populo gubergren. Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea.</p>
+        <div class="profitbtn"> <a href="#"> read the blog</a> </div>
+      </div>
+      <div class="col-sm-4">
+        <img src="assets/images/p1.jpg" alt="images">
+        <span class="cal"><i class="fa fa-calendar" aria-hidden="true"></i>  </span> <span> July 25, 2017</span>
+        <span class="cal1"><i class="fa fa-male" aria-hidden="true"></i> </span> <span> By Admin </span>
+        <h4> Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  </h4>
+        <p>  Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea Ius laudem vidisse quaerendum at, ad case utroque officiis pro. Id vix populo gubergren. Eirmod accusata iracundia et vim, munere persius adipisci ius ex. Te sit vocent audiam suscipit, sint explicari ex mea.</p>
+        <div class="profitbtn"> <a href="#"> read the blog</a> </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!-- <div class="bannerstrip">
+    <div class="container">
+         <div class="col-sm-4">
+		  <div class="bbtm">
+		    <i class="fa fa-search" aria-hidden="true"></i>
+		     <input type="text" class="select1" id="sel1" placeholder="Search by">
+		 </div>
+		 </div>
+		  <div class="col-sm-4">
+		    <div class="bbtm">
+		    <i class="fa fa-map-marker" aria-hidden="true"></i>
+			 <input class="inpt1" type="text" placeholder="Location">
+		  </div>
+		  </div>
+		   <div class="col-sm-4">
+		      <div class="bbtm">
+		       <i class="fa fa-building-o" aria-hidden="true"></i>
+			  <select class="select2" id="sel1" >
+				<option> Company </option>
+				<option> Company</option>
+				<option> Company</option>
+				<option>Company </option>
+			  </select>
+		   </div>
+		   </div>
+   </div>
+</div> -->
+
+
+<div class="wrapper_1 padding22">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="middle_1">
+          <h4 class="cnrw11">Join few groups to get started</h4>
+            <div class="row">
+              <div class="col-sm-4" ng-repeat="group in joinGroupsCtrl.groups" >
+                <div class="mzda croxxbtn">
+                  <span class="xbtn"><i ng-click="joinGroupsCtrl.onGroupSelected($index)" class="fa fa-check" ng-Class="{'my-class': joinGroupsCtrl.checkFlags[$index] === true}" aria-hidden="true"></i> </span>
+                  <div class="auc"> <img src="assets/images/grpname.jpg" alt="mazda"></div>
+                  <div class="auctor">
+                    <span class="font14 bold block bottom7">{{group.name}}</span>
+                    <!-- <span class="font14 bold block bottom7">Group Name</span>   -->
+                    <p> No. of members ({{group.members_count}})</p>
+                  </div>
+                </div>
+                <!--<div class="mzda croxxbtn">-->
+                  <!--<span class="xbtn"> <i class="fa fa-check" aria-hidden="true"></i> </span>-->
+                  <!--<div class="auc"> <img src="assets/images/grpname.jpg" alt="mazda"></div>-->
+                  <!--<div class="auctor">-->
+                    <!--<span class="font14 bold block bottom7">Group Name</span>-->
+                    <!--<p> No. of members (x)</p>-->
+                  <!--</div>-->
+                <!--</div>-->
+                <!--<div class="mzda croxxbtn">-->
+                  <!--<span class="xbtn"> <i class="fa fa-check" aria-hidden="true"></i> </span>-->
+                  <!--<div class="auc"> <img src="assets/images/grpname.jpg" alt="mazda"></div>-->
+                  <!--<div class="auctor">-->
+                    <!--<span class="font14 bold block bottom7">Group Name</span>-->
+                    <!--<p> No. of members (x)</p>-->
+                  <!--</div>-->
+                <!--</div>-->
+                <!--<div class="mzda croxxbtn">-->
+                  <!--<span class="xbtn"> <i class="fa fa-check" aria-hidden="true"></i> </span>-->
+                  <!--<div class="auc"> <img src="assets/images/grpname.jpg" alt="mazda"></div>-->
+                  <!--<div class="auctor">-->
+                    <!--<span class="font14 bold block bottom7">Group Name</span>-->
+                    <!--<p> No. of members (x)</p>-->
+                  <!--</div>-->
+                <!--</div>-->
+                <!--<div class="mzda croxxbtn">-->
+                  <!--<span class="xbtn"> <i class="fa fa-check" aria-hidden="true"></i> </span>-->
+                  <!--<div class="auc"> <img src="assets/images/grpname.jpg" alt="mazda"></div>-->
+                  <!--<div class="auctor">-->
+                    <!--<span class="font14 bold block bottom7">Group Name</span>-->
+                    <!--<p> No. of members (x)</p>-->
+                  <!--</div>-->
+                <!--</div>-->
+              </div>
+              <!--<div class="col-sm-4">-->
+                <!--<div class="mzda croxxbtn">-->
+                  <!--<span class="xbtn"> <i class="fa fa-check" aria-hidden="true"></i> </span>-->
+                  <!--<div class="auc"> <img src="assets/images/grpname.jpg" alt="mazda"></div>-->
+                  <!--<div class="auctor">-->
+                    <!--<span class="font14 bold block bottom7">Group Name</span>-->
+                    <!--<p> No. of members (x)</p>-->
+                  <!--</div>-->
+                <!--</div>-->
+                <!--<div class="mzda croxxbtn">-->
+                  <!--<span class="xbtn"> <i class="fa fa-check" aria-hidden="true"></i> </span>-->
+                  <!--<div class="auc"> <img src="assets/images/grpname.jpg" alt="mazda"></div>-->
+                  <!--<div class="auctor">-->
+                    <!--<span class="font14 bold block bottom7">Group Name</span>-->
+                    <!--<p> No. of members (x)</p>-->
+                  <!--</div>-->
+                <!--</div>-->
+                <!--<div class="mzda croxxbtn">-->
+                  <!--<span class="xbtn"> <i class="fa fa-check" aria-hidden="true"></i> </span>-->
+                  <!--<div class="auc"> <img src="assets/images/grpname.jpg" alt="mazda"></div>-->
+                  <!--<div class="auctor">-->
+                    <!--<span class="font14 bold block bottom7">Group Name</span>-->
+                    <!--<p> No. of members (x)</p>-->
+                  <!--</div>-->
+                <!--</div>-->
+                <!--<div class="mzda croxxbtn">-->
+                  <!--<span class="xbtn"> <i class="fa fa-check" aria-hidden="true"></i> </span>-->
+                  <!--<div class="auc"> <img src="assets/images/grpname.jpg" alt="mazda"></div>-->
+                  <!--<div class="auctor">-->
+                    <!--<span class="font14 bold block bottom7">Group Name</span>-->
+                    <!--<p> No. of members (x)</p>-->
+                  <!--</div>-->
+                <!--</div>-->
+                <!--<div class="mzda croxxbtn">-->
+                  <!--<span class="xbtn"> <i class="fa fa-check" aria-hidden="true"></i> </span>-->
+                  <!--<div class="auc"> <img src="assets/images/grpname.jpg" alt="mazda"></div>-->
+                  <!--<div class="auctor">-->
+                    <!--<span class="font14 bold block bottom7">Group Name</span>-->
+                    <!--<p> No. of members (x)</p>-->
+                  <!--</div>-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<div class="col-sm-4">-->
+                <!--<div class="mzda croxxbtn">-->
+                  <!--<span class="xbtn"> <i class="fa fa-check" aria-hidden="true"></i> </span>-->
+                  <!--<div class="auc"> <img src="assets/images/grpname.jpg" alt="mazda"></div>-->
+                  <!--<div class="auctor">-->
+                    <!--<span class="font14 bold block bottom7">Group Name</span>-->
+                    <!--<p> No. of members (x)</p>-->
+                  <!--</div>-->
+                <!--</div>-->
+                <!--<div class="mzda croxxbtn">-->
+                  <!--<span class="xbtn"> <i class="fa fa-check" aria-hidden="true"></i> </span>-->
+                  <!--<div class="auc"> <img src="assets/images/grpname.jpg" alt="mazda"></div>-->
+                  <!--<div class="auctor">-->
+                    <!--<span class="font14 bold block bottom7">Group Name</span>-->
+                    <!--<p> No. of members (x)</p>-->
+                  <!--</div>-->
+                <!--</div>-->
+                <!--<div class="mzda croxxbtn">-->
+                  <!--<span class="xbtn"> <i class="fa fa-check" aria-hidden="true"></i> </span>-->
+                  <!--<div class="auc"> <img src="assets/images/grpname.jpg" alt="mazda"></div>-->
+                  <!--<div class="auctor">-->
+                    <!--<span class="font14 bold block bottom7">Group Name</span>-->
+                    <!--<p> No. of members (x)</p>-->
+                  <!--</div>-->
+                <!--</div>-->
+                <!--<div class="mzda croxxbtn">-->
+                  <!--<span class="xbtn"> <i class="fa fa-check" aria-hidden="true"></i> </span>-->
+                  <!--<div class="auc"> <img src="assets/images/grpname.jpg" alt="mazda"></div>-->
+                  <!--<div class="auctor">-->
+                    <!--<span class="font14 bold block bottom7">Group Name</span>-->
+                    <!--<p> No. of members (x)</p>-->
+                  <!--</div>-->
+                <!--</div>-->
+                <!--<div class="mzda croxxbtn">-->
+                  <!--<span class="xbtn"> <i class="fa fa-check" aria-hidden="true"></i> </span>-->
+                  <!--<div class="auc"> <img src="assets/images/grpname.jpg" alt="mazda"></div>-->
+                  <!--<div class="auctor">-->
+                    <!--<span class="font14 bold block bottom7">Group Name</span>-->
+                    <!--<p> No. of members (x)</p>-->
+                  <!--</div>-->
+                <!--</div>-->
+              <!--</div>-->
+            </div>
+            <button type="button" class="submit" ng-click="joinGroupsCtrl.goToProfile()">Skip</button>
+          <button type="button" class="submit fRight" ng-click="joinGroupsCtrl.joinGroup()">Next</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>

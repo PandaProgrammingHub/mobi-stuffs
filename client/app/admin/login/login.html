@@ -1,0 +1,39 @@
+<div ng-show="logindCtrl.stateName()">
+  <!-- admin panle assets links goes here -->
+  <link rel="stylesheet" href="../../../assets/admin_assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../../../assets/admin_assets/css/bootstrap-responsive.min.css" />
+  <link rel="stylesheet" href="../../../assets/admin_assets/css/login.css" />
+  <link rel="stylesheet" href="../../../assets/admin_assets/css/style.css" />
+  <link rel="stylesheet" href="../../../assets/admin_assets/css/media.css" />
+  <link href="../../../assets/admin_assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+</div>
+<div id="loginbox">
+         <form id="loginform" name="Adminlogin" ng-submit="logindCtrl.login(Adminlogin)"  class="form-vertical">
+      <div class="control-group normal_text"> <h3><img src="img/logo.png" alt="Logo" /></h3></div>
+             <div class="control-group">
+                 <div class="controls">
+                     <div class="main_input_box">
+                         <span class="add-on bg_lg"><i class="icon-user"> </i></span><input type="text" name="email" ng-model="logindCtrl.adminuser.email" placeholder="Email" ng-pattern="/^[a-zA-Z0-9._]+[a-zA-Z0-9._]+@.*\.[a-zA-Z]{1,50}/" maxlength="100" required
+                         autocomplete="off" />
+                     </div>
+                 </div>
+             </div>
+             <div class="control-group">
+                 <div class="controls">
+                     <div class="main_input_box">
+                         <span class="add-on bg_ly"><i class="icon-lock"></i></span><input type="password" name="password" ng-model="logindCtrl.adminuser.password" placeholder="Password" required />
+                     </div>
+                 </div>
+             </div>
+             <div class="form-actions">
+              <span class="pull-left"> <p class="text-center text-danger">{{logindCtrl.errorMessage}}</p></span>
+
+                 <!-- <span class="pull-left"><a href="#" class="flip-link btn btn-info" id="to-recover">Lost password?</a></span> -->
+                 <span class="pull-right"><button type="submit" class="btn btn-success"> Login</button></span>
+             </div>
+         </form>
+
+     </div>
+</body>
+
+</html>

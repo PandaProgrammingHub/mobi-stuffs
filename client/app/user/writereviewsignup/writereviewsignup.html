@@ -1,0 +1,59 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-offset-3 col-sm-offset-3 col-sm-6 col-md-6">
+      <div class="pg-5-sec">
+        <div class="alert alert-danger alert-dismissable" ng-show="writereviewsignupCtrl.showAlertForCompany">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close" ng-click="writereviewsignupCtrl.closeAlertCompany()">×</a>
+          Please enter company name.
+        </div>
+        <div class="alert alert-danger alert-dismissable" ng-show="writereviewsignupCtrl.showAlertForType">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close" ng-click="writereviewsignupCtrl.closeAlertType()">×</a>
+          Please select any one review type.
+        </div>
+        <div class="heading">
+          <span class="font14 bold">Thanks you for Sign Up</span>
+        </div>
+        <div class="content">
+          <p class="font12">Please let your profile stand out by telling about your sales experiences</p>
+        </div>
+
+        <div class="heading head-sec-2">
+          <span class="font14 bold">Add your reviews in one of these categories</span>
+        </div>
+        <div class="content font12">
+          <label class="radio-inline">
+            <input ng-model="result" type="radio" name="optradio" value="/overallReviewSignup">Overall</label>
+          <label class="radio-inline">
+            <input ng-model="result" type="radio" name="optradio" value="/preSalesReviewSignup">Pre-Sales</label>
+          <label class="radio-inline">
+            <input ng-model="result" type="radio" name="optradio" value="/salesReviewSignup">Sales</label>
+          <label class="radio-inline">
+            <input ng-model="result" type="radio" name="optradio" value="/postSalesReviewSignup">Post-Sales</label>
+        </div>
+
+        <div class="clearfix heading head-sec-2">
+          <span class="font13">Do you wish your review to be anonymous</span>
+          <input type="checkbox" ng-model="writereviewsignupCtrl.reviewType.isAnonymous" value="">
+          <div class="company-name-input text-center top10">
+            <input type="text"
+                   uib-typeahead="company.name  for company in writereviewsignupCtrl.companies | filter:$viewValue | limitTo:8"
+                   ng-model="writereviewsignupCtrl.company"
+                   typeahead-on-select="writereviewsignupCtrl.onSelect( $item )"
+                   placeholder="Enter Company you wish to review"
+                   class="form-control"/>
+          </div>
+        </div>
+        <div class="right">
+          <button class="" style="background: #1e80a5;
+    				color: white;text-align: center;border: 1px solid #1e80a5; margin-top: 26px;padding: 10px 35px;
+    					border-radius: 5px;" type="submit" ng-click="writereviewsignupCtrl.skipToCompanies()">Skip</button>
+        </div>
+        <div class="right">
+          <button class="" style="background: #1e80a5;margin-right: 10px;
+    				color: white;text-align: center;border: 1px solid #1e80a5; margin-top: 26px;padding: 10px 35px;
+    					border-radius: 5px;" type="submit" ng-click="writereviewsignupCtrl.submitResult(result)">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,107 @@
+<div class="bannerstrip">
+  <div class="container">
+    <div class="col-sm-4">
+      <i class="fa fa-search" aria-hidden="true"></i>
+      <input class="inpt1" type="text" placeholder="Search by">
+    </div>
+    <div class="col-sm-4">
+      <i class="fa fa-map-marker" aria-hidden="true"></i>
+      <input class="inpt1" type="text" placeholder="Location">
+    </div>
+    <div class="col-sm-4">
+      <i class="fa fa-building-o" aria-hidden="true"></i>
+      <select class="select2" id="sel1">
+        <option> Company</option>
+        <option> Company</option>
+        <option> Company</option>
+        <option>Company</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper_1" >
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9">
+        <div class="middle_1">
+          <div class="row">
+            <div class="col-sm-2 oldman">
+              <span>
+              <label>
+                <i class="fa fa-pencil editInfo" aria-hidden="true" style="right: 0px;cursor:pointer"></i>
+                <input type="file" style="visibility: hidden;" name="filename" accept="image/*"
+                       onchange="angular.element(this).scope().profileCtrl.fileChangeEvent(this.files[0]); angular.element(this).scope().$digest();">
+              </label>
+              </span>
+              <span>
+              <img src="assets/images/tcs.png" id="blah" ng-src="{{profileCtrl.profileImage}}" alt="your image"
+                   style=" width:90%;margin-top:-24px ; height: 120px;" class="img-rounded width90">
+  </span>
+            </div>
+            <div class="col-sm-6">
+              <span class="font14 bold block bottom7">{{profileCtrl.companyInfo.name}}</span>
+              <div class="clearfix">
+                <fieldset disabled="disabled" class="rating rtng" style="">
+                  <input type="radio" id="star5" ng-checked="profileCtrl.avgReviewRating == 5" name="rating"  value="5">
+                   <label class="full" for="star5" title="Awesome - 5 stars"></label>
+
+                   <input type="radio" id="star4" ng-checked="profileCtrl.avgReviewRating == 4" name="rating" value="4"/>
+                   <label class="full" for="star4"  title="Pretty good - 4 stars"></label>
+
+                  <input type="radio" id="star3" name="rating" ng-checked="profileCtrl.avgReviewRating == 3" value="3"/>
+                  <label class="full" for="star3" title="Meh - 3 stars"></label>
+
+                  <input type="radio" id="star2" name="rating" ng-checked="profileCtrl.avgReviewRating == 2" value="2"/>
+                  <label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+
+                  <input type="radio" id="star1" name="rating" ng-checked="profileCtrl.avgReviewRating == 1" value="1"/>
+                  <label class="full" for="star1" title="Sucks big time - 1 star"></label>
+
+                </fieldset>
+              </div>
+              <span class="font11 bottom7" style="display: inline-block;">{{profileCtrl.companyReview.length}} Review</span>
+
+            </div>
+            <div class="col-sm-4">
+              <div class="rrvw pull-right">
+                <!-- <a href="http://www.interactiveitsolutions.com/clients/salesdoor/pg37.html#">  Write Review </a>   -->
+                <a class="font14" href="http://www.interactiveitsolutions.com/clients/salesdoor/pg37.html#"> Followers
+                  (13) </a>
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <ul class="nav nav-tabs ntab1 ntabs22">
+                <li class="" ng-init="profileCtrl.tabFlag = 'about'" ui-sref="companyProfile.about" ng-class="{'active':profileCtrl.tabFlag == 'about'}">
+                  <a data-toggle="tab" href="" aria-expanded="true">About</a></li>
+                <li class="" ui-sref="companyProfile.overall" ng-class="{'active':profileCtrl.tabFlag == 'overall'}">
+                  <a data-toggle="tab" href="" aria-expanded="true"> Overall Review </a></li>
+                <li class="" ui-sref="companyProfile.preSales" ng-class="{'active':profileCtrl.tabFlag == 'pre'}">
+                  <a data-toggle="tab" href="" aria-expanded="true"> Pre-Sales </a></li>
+                <li class="" ui-sref="companyProfile.sales" ng-class="{'active':profileCtrl.tabFlag == 'sales'}">
+                  <a data-toggle="tab" href="" aria-expanded="false"> Sales </a></li>
+                <li class="" ui-sref="companyProfile.postSales" ng-class="{'active':profileCtrl.tabFlag == 'post'}">
+                  <a data-toggle="tab" href="" aria-expanded="false"> Post Sales </a></li>
+                <li class="" ui-sref="companyProfile.rfps" ng-class="{'active':profileCtrl.tabFlag == 'rfps'}">
+                  <a data-toggle="tab" href="" aria-expanded="false"> RFPS </a></li>
+              </ul>
+              <div class="tab-content">
+                <div ui-view><company-about></company-about></div>
+              </div>
+            </div>
+          </div>
+          <div class="morebtn smbtn"><a href="">SEE
+            MORE </a></div>
+
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="rightside_1">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

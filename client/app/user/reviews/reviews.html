@@ -1,0 +1,304 @@
+<div class="bannerstrip">
+  <div class="container">
+    <div class="col-sm-4">
+      <i class="fa fa-search" aria-hidden="true"></i>
+      <input type="text" class="select1" id="sel1" placeholder="Search by">
+    </div>
+    <div class="col-sm-4">
+      <i class="fa fa-map-marker" aria-hidden="true"></i>
+      <input class="inpt1" type="text" placeholder="Location">
+    </div>
+    <div class="col-sm-4">
+      <i class="fa fa-building-o" aria-hidden="true"></i>
+      <select class="select2" id="sel1" >
+        <option> Company </option>
+        <option> Company</option>
+        <option> Company</option>
+        <option>Company </option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper_1">
+  <div class="container">
+    <div class="row">
+      <!--<div class="col-sm-3">-->
+      <!--<div class="leftside_1">-->
+      <!--<ul>-->
+      <!--<li> <a ui-sref="profile"> User Profile</a> </li>-->
+      <!--<li> <a ui-sref="userreviews" class="active"> Reviews</a> </li>-->
+      <!--<li> <a ui-sref="recommendation"> Recommendation</a> </li>-->
+      <!--<li> <a ui-sref="hired"> Hired </a> </li>-->
+      <!--<li> <a ui-sref="group"> Group</a> </li>-->
+      <!--<li> <a ui-sref="companies"> Companies</a> </li>-->
+      <!--<li> <a ui-sref="userRfp" class="last"> RFP</a> </li>-->
+      <!--</ul>-->
+      <!--</div>-->
+      <!--</div>-->
+      <left-nav></left-nav>
+      <div class="col-sm-6">
+        <div class="middle_1">
+          <div class="col-md-12 none text-right">
+            <!-- <div>
+                          <button type="button" class="rev-btn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Write a Review</button>
+                </div> -->
+            <div class="morebtn right" style="margin-bottom: 13px;
+    		position: relative;bottom: 10px;"> <a href="" ng-click="$ctrl.writeReview()">Write a Review </a> </div>
+          </div>
+          <div class="tab-content">
+            <div id="menu1" class="tab-pane fade in active">
+              <p ng-show="$ctrl.showNoReview" style="color: red">No Reviews Available.</p>
+              <div ng-show="$ctrl.showReview">
+                <div class="srchtxt">
+                <div class="row clearfix ">
+                  <div class="col-sm-8 cTitle">
+                    <span class="font18 bold block">{{$ctrl.revData[0].name}}</span>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="top-st text-right">
+                      <a href=""><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                      <a href="" ng-click="$ctrl.deleteReview($ctrl.revData[0])"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div >
+                  <div class="row clearfix lineSpac">
+                    <div class="col-sm-12">
+                      <span class="badge metadata fRight" class="inherit">{{$ctrl.revData[0].reviewType}}</span>
+                      <span class="font16 bold block bottom8">{{$ctrl.revData[0].review}}</span>
+                      <!-- <h5 class="block fnt26" style="display: block;">"Employee's paradise"</h5> -->
+                      <fieldset disabled="disabled" class="rating">
+                        <input type="radio" id="overall{{0}}" ng-checked="$ctrl.revData[0].experience == 5" name="overall{{0}}"  value="5">
+                        <label class="full" for="overall{{0}}"  title="Awesome - 5 stars"></label>
+
+                        <input type="radio" id="overall{{0}}" ng-checked="$ctrl.revData[0].experience == 4" name="overall{{0}}" value="4">
+                        <label class="full" for="overall{{0}}" title="Pretty good - 4 stars"></label>
+
+                        <input type="radio" id="overall{{0}}" ng-checked="$ctrl.revData[0].experience == 3" name="overall{{0}}" value="3">
+                        <label class="full" for="overall{{0}}" title="Meh - 3 stars"></label>
+
+                        <input type="radio" id="overall{{0}}" ng-checked="$ctrl.revData[0].experience == 2" name="overall{{0}}" value="2">
+                        <label class="full" for="overall{{0}}" title="Kinda bad - 2 stars"></label>
+
+                        <input type="radio" id="overall{{0}}" ng-checked="$ctrl.revData[0].experience == 1" name="overall{{0}}" value="1">
+                        <label class="full" for="overall{{0}}" title="Sucks big time - 1 star"></label>
+
+                      </fieldset>
+                      <span class="ratingDscrpn font11">Product-
+                        <span ng-repeat="prod in $ctrl.revData[0].product"> {{prod}}<span ng-if="$index !== $ctrl.revData[0].product.length-1">,</span></span>
+                        in
+                        <span ng-repeat="loc in $ctrl.revData[0].location"> {{loc}}<span ng-if="$index !== $ctrl.revData[0].location.length-1">,</span></span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="row clearfix lineSpac">
+                    <div class="col-sm-6">
+                      <label class="block">Time (weeks)</label>
+                      <span class="badge metadata" class="inherit">{{$ctrl.revData[0].decisionTime}}</span>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="block">Departments</label>
+                      <span class="badge metadata" class="inherit" ng-repeat="depElem in $ctrl.revData[0].departmentsInvolved" ng>{{depElem}}</span>
+                    </div>
+                  </div>
+                  <div class="row clearfix lineSpac">
+                    <div class="col-sm-6">
+                      <label class="block">Key People</label>
+                      <span class="badge metadata" class="inherit" ng-repeat="kpiElem in $ctrl.revData[0].keyDecisionMakers">{{kpiElem}}</span>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="block">Success Factor</label>
+                      <span class="badge metadata" class="inherit" ng-repeat="sfElem in $ctrl.revData[0].sucessFactors">{{sfElem}}</span>
+                    </div>
+                  </div>
+                  <div class="row clearfix lineSpac">
+                    <div class="col-sm-12">
+                      <label class="block">Overall Difficulty</label>
+                      <fieldset disabled="disabled" class="rating">
+                        <input type="radio" id="difficulty{{0}}" ng-checked="$ctrl.revData[0].rateDifficulty == 5" name="difficulty{{0}}"  value="5">
+                        <label class="full" for="difficulty{{0}}"  title="Awesome - 5 stars"></label>
+
+                        <input type="radio" id="difficulty{{0}}" ng-checked="$ctrl.revData[0].rateDifficulty == 4" name="difficulty{{0}}" value="4">
+                        <label class="full" for="difficulty{{0}}" title="Pretty good - 4 stars"></label>
+
+                        <input type="radio" id="difficulty{{0}}" ng-checked="$ctrl.revData[0].rateDifficulty == 3" name="difficulty{{0}}" value="3">
+                        <label class="full" for="difficulty{{0}}" title="Meh - 3 stars"></label>
+
+                        <input type="radio" id="difficulty{{0}}" ng-checked="$ctrl.revData[0].rateDifficulty == 2" name="difficulty{{0}}" value="2">
+                        <label class="full" for="difficulty{{0}}" title="Kinda bad - 2 stars"></label>
+
+                        <input type="radio" id="difficulty{{0}}" ng-checked="$ctrl.revData[0].rateDifficulty == 1" name="difficulty{{0}}" value="1">
+                        <label class="full" for="difficulty{{0}}" title="Sucks big time - 1 star"></label>
+
+                      </fieldset>
+                    </div>
+                  </div>
+                  <div class="row clearfix lineSpac">
+                    <div class="col-sm-12">
+                      <label class="block">Overall Experience</label>
+                      <!-- <input type="textarea" name="Advice" /> -->
+                      <p>{{$ctrl.revData[0].describe}}</p>
+                    </div>
+                  </div>
+                  <div class="row clearfix lineSpac">
+                    <div class="col-sm-12">
+                      <label class="block">What was Good</label>
+                      <!-- <input type="textarea" name="Advice" /> -->
+                      <p>{{$ctrl.revData[0].whatWasGood}}</p>
+                    </div>
+                  </div>
+                  <div class="row clearfix lineSpac">
+                    <div class="col-sm-12">
+                      <label class="block">What Could be Better</label>
+                      <!-- <input type="textarea" name="Advice" /> -->
+                      <p>{{$ctrl.revData[0].whatCouldBeBetter}}</p>
+                    </div>
+                  </div>
+                  <!--<div class="row clearfix" style="margin-top: 20px;">-->
+                    <!--<div class="col-sm-5">-->
+                      <!--<image alt="Facebook" src="assets/images/facebook.png" class="sclImg"/>-->
+                      <!--<image alt="Facebook" src="assets/images/twitter.png" class="sclImg"/>-->
+                      <!--<image alt="Facebook" src="assets/images/gmail.png" class="sclImg"/>-->
+                      <!--<image alt="Facebook" src="assets/images/facebook.png" class="sclImg"/>-->
+                    <!--</div>-->
+                  <!--</div>-->
+
+                </div>
+              </div>
+              </div>
+              <div class="alert alert-info" ng-show="$ctrl.showAlert">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close" ng-click="$ctrl.closeAlert()">×</a>
+                <strong>Info!</strong> No More Reviews Found.
+              </div>
+              <div ng-show="$ctrl.showMoreFlag">
+                <div ng-repeat="revElem in $ctrl.revData" ng-if="$index > 0">
+                  <div class="srchtxt">
+                    <div class="row clearfix ">
+                      <div class="col-sm-8 cTitle">
+                        <span class="font18 bold block">{{revElem.name}}</span>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="top-st text-right">
+                          <a href=""><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                          <a href="" ng-click="$ctrl.deleteReview($ctrl.revData[0])"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div >
+                      <div class="row clearfix lineSpac">
+                        <div class="col-sm-12">
+                          <span class="badge metadata fRight" class="inherit"> {{revElem.reviewType}}</span>
+                          <span class="font16 bold block bottom8">{{revElem.review}}</span>
+                          <!-- <h5 class="block fnt26" style="display: block;">"Employee's paradise"</h5> -->
+                          <fieldset disabled="disabled" class="rating">
+                            <input type="radio" id="overall{{$index}}" ng-checked="revElem.experience == 5" name="overall{{$index}}"  value="5">
+                            <label class="full" for="overall{{$index}}"  title="Awesome - 5 stars"></label>
+
+                            <input type="radio" id="overall{{$index}}" ng-checked="revElem.experience == 4" name="overall{{$index}}" value="4">
+                            <label class="full" for="overall{{$index}}" title="Pretty good - 4 stars"></label>
+
+                            <input type="radio" id="overall{{$index}}" ng-checked="revElem.experience == 3" name="overall{{$index}}" value="3">
+                            <label class="full" for="overall{{$index}}" title="Meh - 3 stars"></label>
+
+                            <input type="radio" id="overall{{$index}}" ng-checked="revElem.experience == 2" name="overall{{$index}}" value="2">
+                            <label class="full" for="overall{{$index}}" title="Kinda bad - 2 stars"></label>
+
+                            <input type="radio" id="overall{{$index}}" ng-checked="revElem.experience == 1" name="overall{{$index}}" value="1">
+                            <label class="full" for="overall{{$index}}" title="Sucks big time - 1 star"></label>
+
+                          </fieldset>
+                          <span class="ratingDscrpn font11">Product-
+                        <span ng-repeat="prod in revElem.product"> {{prod}}<span ng-if="$index !== revElem.product.length-1">,</span></span>
+                        in
+                        <span ng-repeat="loc in revElem.location"> {{loc}}<span ng-if="$index !== revElem.location.length-1">,</span></span>
+                      </span>                        </div>
+                      </div>
+                      <div class="row clearfix lineSpac">
+                        <div class="col-sm-6">
+                          <label class="block">Time (weeks)</label>
+                          <span class="badge metadata" class="inherit">{{revElem.decisionTime}}</span>
+                        </div>
+                        <div class="col-md-6">
+                          <label class="block">Departments</label>
+                          <span class="badge metadata" class="inherit" ng-repeat="depElem in revElem.departmentsInvolved" ng>{{depElem}}</span>
+                        </div>
+                      </div>
+                      <div class="row clearfix lineSpac">
+                        <div class="col-sm-6">
+                          <label class="block">Key People</label>
+                          <span class="badge metadata" class="inherit" ng-repeat="kpiElem in revElem.keyDecisionMakers">{{kpiElem}}</span>
+                        </div>
+                        <div class="col-md-6">
+                          <label class="block">Success Factor</label>
+                          <span class="badge metadata" class="inherit" ng-repeat="sfElem in revElem.sucessFactors">{{sfElem}}</span>
+                        </div>
+                      </div>
+                      <div class="row clearfix lineSpac">
+                        <div class="col-sm-12">
+                          <label class="block">Overall Difficulty</label>
+                          <fieldset disabled="disabled" class="rating">
+                            <input type="radio" id="difficulty{{$index}}" ng-checked="revElem.rateDifficulty == 5" name="difficulty{{$index}}"  value="5">
+                            <label class="full" for="difficulty{{$index}}"  title="Awesome - 5 stars"></label>
+
+                            <input type="radio" id="difficulty{{$index}}" ng-checked="revElem.rateDifficulty == 4" name="difficulty{{$index}}" value="4">
+                            <label class="full" for="difficulty{{$index}}" title="Pretty good - 4 stars"></label>
+
+                            <input type="radio" id="difficulty{{$index}}" ng-checked="revElem.rateDifficulty == 3" name="difficulty{{$index}}" value="3">
+                            <label class="full" for="difficulty{{$index}}" title="Meh - 3 stars"></label>
+
+                            <input type="radio" id="difficulty{{$index}}" ng-checked="revElem.rateDifficulty == 2" name="difficulty{{$index}}" value="2">
+                            <label class="full" for="difficulty{{$index}}" title="Kinda bad - 2 stars"></label>
+
+                            <input type="radio" id="difficulty{{$index}}" ng-checked="revElem.rateDifficulty == 1" name="difficulty{{$index}}" value="1">
+                            <label class="full" for="difficulty{{$index}}" title="Sucks big time - 1 star"></label>
+
+                          </fieldset>
+                        </div>
+                      </div>
+                      <div class="row clearfix lineSpac">
+                        <div class="col-sm-12">
+                          <label class="block">Overall Experience</label>
+                          <!-- <input type="textarea" name="Advice" /> -->
+                          <p>{{revElem.oaExp}}</p>
+                        </div>
+                      </div>
+                      <div class="row clearfix lineSpac">
+                        <div class="col-sm-12">
+                          <label class="block">What was Good</label>
+                          <!-- <input type="textarea" name="Advice" /> -->
+                          <p>{{revElem.whatWasGood}}</p>
+                        </div>
+                      </div>
+                      <div class="row clearfix lineSpac">
+                        <div class="col-sm-12">
+                          <label class="block">What Could be Better</label>
+                          <!-- <input type="textarea" name="Advice" /> -->
+                          <p>{{revElem.whatCouldBeBetter}}</p>
+                        </div>
+                      </div>
+                      <!--<div class="row clearfix" style="margin-top: 20px;">-->
+                        <!--<div class="col-sm-5">-->
+                          <!--<image alt="Facebook" src="assets/images/facebook.png" class="sclImg"/>-->
+                          <!--<image alt="Facebook" src="assets/images/twitter.png" class="sclImg"/>-->
+                          <!--<image alt="Facebook" src="assets/images/gmail.png" class="sclImg"/>-->
+                          <!--<image alt="Facebook" src="assets/images/facebook.png" class="sclImg"/>-->
+                        <!--</div>-->
+                      <!--</div>-->
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="morebtn"> <a href="#" ng-click="$ctrl.showMore()" ng-show="$ctrl.removeShowMoreButton">View More </a> </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <notification-panel></notification-panel>
+    </div>
+  </div>
+</div>
+</body>
+</html>

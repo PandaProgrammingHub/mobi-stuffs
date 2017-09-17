@@ -1,0 +1,61 @@
+<div id="responseContainer" class="col-sm-12" style="">
+  <div class="mzda mrv hrPdng">
+
+    <div class="hrPnl" style="margin-bottom: 30px;" ng-repeat="user in $ctrl.userList">
+      <div class="row clearfix pdng8">
+        <div class="col-sm-2">
+          <img class="profileImage width115" src="images/oldman.jpg" alt="profile">
+        </div>
+        <div class="col-sm-10 addau center">
+          <div class="row clearfix">
+            <div class="col-sm-12" style="text-align: center;">
+              <div>
+                <span class="bold block font12">{{user.name}}</span>
+                <span class="block font10">{{user.designation}} @ {{user.currentcompany}}</span>
+                <span class="block font10 smallColor">{{user.email}}</span>
+              </div>
+            </div>
+            <div class="col-sm-5 font10 rvwbtn">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row clearfix">
+        <div class="col-sm-12 addau center">
+          <div class="panel-default left font11">
+            <div class="" style="padding-bottom: 6px;">
+              <div class="row clearfix">
+                <div class="col-sm-4 linkMargin">
+                  <span class="block bold">Company Name </span>
+                  <span>{{user.currentcompany}}</span>
+                </div>
+                <div class="col-sm-4 linkMargin">
+                  <span class="block bold">Phone Number </span>
+                  <span> Pending </span>
+                </div>
+                <div class="col-sm-4 linkMargin">
+                  <span class="block bold">Location </span>
+                  <span ng-repeat="location in user.location">{{location}} </span>
+                </div>
+                <div class="col-sm-12 linkMargin">
+                  <span class="block bold">Details </span>
+                  <p> Pending Comments </p>
+                </div>
+              </div>
+              <div class="row clearfix linkMargin top15" style="padding-left: 0px;">
+                <div class="input-group">
+                <span class="input-group-addon awardedIcon">
+                    Interested
+                </span>
+                  <p class="awardedText">Please Contact "{{user.name}}" @ "{{user.email}}"</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

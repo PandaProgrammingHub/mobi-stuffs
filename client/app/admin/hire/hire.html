@@ -1,0 +1,131 @@
+<div ng-show="hireCtrl.stateName()">
+  <!-- admin panle assets links goes here -->
+  <link rel="stylesheet" href="../../../assets/admin_assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../../../assets/admin_assets/css/bootstrap-responsive.min.css" />
+  <link rel="stylesheet" href="../../../assets/admin_assets/css/style.css" />
+  <link rel="stylesheet" href="../../../assets/admin_assets/css/media.css" />
+  <link href="../../../assets/admin_assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+</div>
+<div id="content">
+  <div id="content-header">
+    <div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="current"></a> </div>
+
+  </div>
+  <div class="container-fluid">
+    <hr>
+    <div class="row-fluid">
+        <div class="span12">
+          <div class="widget-box">
+            <div class="widget-title"> <span class="icon"> <i class="icon-pencil"></i> </span>
+              <h5>Hire Search</h5>
+            </div>
+            <div class="widget-content nopadding">
+              <form id="form-wizard" name="SearchHire" ng-submit="hireCtrl.searchHire(SearchHire)" class="form-horizontal ui-formwizard" method="post" novalidate="novalidate">
+                <div id="form-wizard-1" class="step ui-formwizard-content" style="display: block;">
+                  <!-- <div class="admin-panel-search-message" ng-show="noSearchResult == true"> Hire with search criteria not found </div> -->
+
+          <div class="controls-row">
+                  <div class="control-group span6">
+                    <label class="control-label">project title</label>
+                    <div class="controls">
+                      <input id="username" type="text" name="projectTitle" ng-model="hireCtrl.searchHireList.projectTitle" class="ui-wizard-content">
+                    </div>
+                  </div>
+
+          <div class="control-group span6">
+                    <label class="control-label">Product</label>
+                    <div class="controls">
+                      <input id="username" type="text" name="productCategory" uib-typeahead="product.name  for product in hireCtrl.products | filter:$viewValue | limitTo:8"  ng-model="hireCtrl.searchHireList.productCategory" class="ui-wizard-content">
+                    </div>
+                  </div>
+
+        </div>
+
+        <div class="controls-row">
+          <div class="control-group span6">
+                    <label class="control-label">Location</label>
+                    <div class="controls">
+                      <input id="username" type="text" name="location" uib-typeahead="location.name  for location in hireCtrl.locations | filter:$viewValue | limitTo:8" ng-model="hireCtrl.searchHireList.location" class="ui-wizard-content">
+                    </div>
+                  </div>
+
+                  <div class="control-group span6">
+                    <label class="control-label">Sales Stage</label>
+                    <div class="controls">
+                      <input id="username" type="text" name="saleStage" ng-model="hireCtrl.searchHireList.saleStage" class="ui-wizard-content">
+                    </div>
+                  </div>
+                </div>
+              </div>
+                <div class="form-actions">
+           <input id="next" class="btn btn-primary ui-wizard-content ui-formwizard-button" type="reset" value="Reset">
+                  <input id="next" class="btn btn-primary ui-wizard-content ui-formwizard-button" type="submit" value="Search">
+
+                </div>
+
+              </form>
+            </div>
+          </div>
+
+          <div class="widget-box">
+            <div class="widget-title"> <span class="icon"> <i class="icon-pencil"></i> </span>
+              <h5>Post Hire</h5>
+            </div>
+            <div class="widget-content nopadding">
+              <form id="form-wizard" class="form-horizontal ui-formwizard" method="post" novalidate="novalidate">
+                <div class="form-actions">
+                  <button  class="btn btn-primary" ng-click="hireCtrl.createHire()">Post Hire</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+    </div>
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="widget-box">
+
+          <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
+            <h5> Hire List</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <table class="table table-bordered data-table">
+              <thead>
+                <tr>
+                  <th style="text-align:left!important;"><input type="checkbox"></th>
+                  <th>Project Title</th>
+                  <th>Product</th>
+                  <th>Location</th>
+                  <th>Sales Stage</th>
+                  <th>Date</th>
+				          <th>Posted by</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="gradeA" ng-repeat="hir in hire | limitTo:itemsPerPage" >
+                  <td><input type="checkbox" name="radios"></td>
+                  <td>{{hir.projectTitle}}</td>
+                  <td>{{hir.productCategory}}</td>
+                  <td>{{hir.location[0]}}</td>
+                  <td>{{hir.saleStage}}</td>
+                  <td>{{hir.date | date}}</td>
+                  <td>{{hir.appliedBy.userName}}</td>
+                  <td class="center"><button ng-click="hireCtrl.deleteHire(hir._id,hir.projectTitle,$index)" class="btn btn-warning btn-mini">Delete</button></td>
+                </tr>
+                <tr ng-if="hire.length < 1 || hire === 'undefined' ">
+                  <td colspan="8" style="text-align: center;font-size: 15px;">No Hire Avliable</td>
+                </tr>
+              </tbody>
+            </table>
+            <ul style="float: right;" ng-hide="noSearchResult" uib-pagination total-items="totalItems" ng-model="currentPage"  max-size="maxSize" ng-change="pageChanged()" boundary-links="true" class="pagination-sm" items-per-page="itemsPerPage" num-pages="numPages" ></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" ng-click="createHireCtrl.close()"data-dismiss="modal">&times;</button>
+    <h4 class="modal-title">Post Hire</h4>
+  </div>
+  <div class="modal-body">
+    <form id="form-wizard" name="CretaeHire" ng-submit="createHireCtrl.createhire(CretaeHire)" class="form-inline ui-formwizard" method="post" novalidate="novalidate">
+      <small class="text-danger">{{createHireCtrl.errorMessage}}</small>
+
+      <div class="block1">
+        <div class="control-group ">
+
+          <div class="controls">
+            <input  type="text" name="projectTitle" ng-model="createHireCtrl.createHireList.projectTitle" style="margin: 5px;" class="form-control ui-wizard-content" placeholder="Project Title">
+          </div>
+        </div>
+      </div>
+      <div class="block2">
+        <div class="control-group ">
+
+          <div class="controls">
+            <input type="text" name="productCategory"  uib-typeahead="product.name  for product in createHireCtrl.products | filter:$viewValue | limitTo:8" ng-model="createHireCtrl.createHireList.productCategory" style="margin: 5px;" class="form-control ui-wizard-content" placeholder="product">
+          </div>
+        </div>
+      </div>
+      <div class="block1">
+        <div class="control-group ">
+
+          <div class="controls">
+            <input  type="text" name="location" uib-typeahead="location.name  for location in createHireCtrl.locations | filter:$viewValue | limitTo:8" ng-model="createHireCtrl.createHireList.location" style="margin: 5px;" class="form-control ui-wizard-content" placeholder="Location">
+          </div>
+        </div>
+      </div>
+      <div class="block1">
+        <div class="control-group ">
+
+          <div class="controls">
+            <input  type="text" name="saleStage" ng-model="createHireCtrl.createHireList.saleStage" style="margin: 5px;" class="form-control ui-wizard-content" placeholder="Sales Stage">
+          </div>
+        </div>
+      </div>
+      <div class="block2">
+        <div class="control-group ">
+
+          <div class="controls">
+            <input  type="text" name="postedBy" ng-model="createHireCtrl.createHireList.postedBy" style="margin: 5px;" class="form-control ui-wizard-content" placeholder="Posted By">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="">
+        <input id="next" class="btn btn-primary ui-wizard-content ui-formwizard-button" type="submit" value="Create">
+        <input class="btn btn-primary ui-wizard-content ui-formwizard-button" type="reset" value="Reset">
+      </div>
+
+    </form>
+
+
+
+
+  </div>
+
+
+</div>

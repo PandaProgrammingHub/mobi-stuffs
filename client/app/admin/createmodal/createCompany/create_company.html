@@ -1,0 +1,62 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" ng-click="createCompanyCtrl.close()" data-dismiss="modal">&times;</button>
+    <h4 class="modal-title">Edit or Create Popup</h4>
+  </div>
+  <div class="modal-body">
+    <div class="left1">
+      <form id="form-wizard" class="form-inline ui-formwizard" method="post" name="createCompanyForm" ng-submit="createCompanyCtrl.createCompany(createCompanyForm)" novalidate="novalidate">
+        <div class="block1">
+          <div class="control-group ">
+
+            <div class="controls">
+              <input id="username" ng-model="company.name" type="text" name="username" class="ui-wizard-content" placeholder="Name">
+            </div>
+          </div></div>
+        <div class="block2">
+          <div class="control-group ">
+
+            <div class="controls">
+              <input id="username" ng-model="company.headquarters" type="text" name="username" class="ui-wizard-content" placeholder="Headquarters">
+            </div>
+          </div></div>
+        <div class="block1">
+          <div class="control-group ">
+
+            <div class="controls">
+              <input id="username" ng-model="company.industry" type="text" name="username" class="ui-wizard-content" placeholder="Website">
+            </div>
+          </div></div>
+        <div class="block2">
+          <div class="control-group ">
+
+            <div class="controls">
+              <input id="username" ng-model="company.website"  type="text" name="username" class="ui-wizard-content" placeholder="Industry">
+            </div>
+          </div></div>
+        <div class="control-group">
+
+          <div class="controls">
+            <textarea  style="width:93%" ng-model="company.description" placeholder="Description"></textarea>
+          </div>
+        </div>
+
+
+        <div class="">
+          <input id="next" class="btn btn-primary ui-wizard-content ui-formwizard-button" type="submit" value="Create">
+          <input  class="btn btn-primary ui-wizard-content ui-formwizard-button" type="reset" value="Reset">
+        </div>
+
+      </form>
+
+
+    </div>
+    <div class="left2">
+      <center><div class="up-img upload-sec">	<img id="blah" src="img/uplo.png" class="img-circle"></div></center>
+      <label class="btn-bs-file btn btn-lg pg-15-uplo-img">
+        <i class="icon-plus"></i>
+        <input type="file" onchange="readURL(this);">
+      </label>
+    </div>
+  </div>
+</div>

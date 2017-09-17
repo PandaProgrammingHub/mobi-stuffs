@@ -1,0 +1,136 @@
+<div class="container-fluid">
+  <div class="row">
+    <form name="salesForm" novalidate>
+      <div class="col-md-offset-3 col-sm-offset-3 col-sm-6 col-md-6">
+        <div class="pg-5-sec">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="sales">
+                <div class="form-group">
+                  <input type="text" ng-model="salesReviewCtrl.compSelected.name"
+                         class="form-control" readonly>
+                </div>
+                <div class="form-group">
+                  <input type="text" name="name" class="form-control" ng-model="salesReviewCtrl.newSales.name" placeholder="Review Title" required>
+                  <span ng-messages="(salesForm.name.$touched && salesForm.name.$error)" role="alert">
+                  <span class="text-danger" ng-message="required">Please complete this mandatory field.</span>
+                  </span>
+                </div>
+                <span class="font14 bold block top15">Sales Experience<span class="text-danger">*</span> </span>
+                <fieldset class="rating rtng" style="" name="salesExperience" >
+                  <input type="radio" id="star5Exp" name="ratingExp" value="5" /><label class = "full" for="star5Exp" title="Awesome - 5 stars" ng-click="salesReviewCtrl.setOExpRate(5)"></label>
+                  <input type="radio" id="star4Exp" name="ratingExp" value="4" /><label class = "full" for="star4Exp" title="Pretty good - 4 stars" ng-click="salesReviewCtrl.setOExpRate(4)"></label>
+                  <input type="radio" id="star3Exp" name="ratingExp" value="3" /><label class = "full" for="star3Exp" title="Meh - 3 stars" ng-click="salesReviewCtrl.setOExpRate(3)"></label>
+                  <input type="radio" id="star2Exp" name="ratingExp" value="2" /><label class = "full" for="star2Exp" title="Kinda bad - 2 stars" ng-click="salesReviewCtrl.setOExpRate(2)"></label>
+                  <input type="radio" id="star1Exp" name="ratingExp" value="1" /><label class = "full" for="star1Exp" title="Sucks big time - 1 star" ng-click="salesReviewCtrl.setOExpRate(1)"></label>
+                </fieldset>
+                <p ng-show="salesForm.salesExperience.$invalid && !salesForm.name.$error" class="help-block">Sales review rating is required.</p>
+                <br>
+                <br>
+                <div class="sales-exp">
+                  <div class="row clearfix">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <tags-input ng-model="salesReviewCtrl.newSales.product" add-on-paste="true" placeholder="Products" name="prod">
+                          <auto-complete source="salesReviewCtrl.loadTags($query)" min-length="0"></auto-complete>
+                          <span ng-show="salesForm.prod.$touched && salesReviewCtrl.newSales.product.length == 0" class="text-danger">This field is mandatory.</span>
+                        </tags-input>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <input type="text" ng-model="salesReviewCtrl.newSales.location" uib-typeahead="name for name in salesReviewCtrl.locs | filter:$viewValue | limitTo:8" class="form-control" name="location" required>
+                        <span ng-messages="(salesForm.location.$touched && salesForm.location.$error)" role="alert">
+                        <span class="text-danger" ng-message="required">Location is mandatory.</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row clearfix top15">
+                    <div class="col-sm-12">
+                      <span class="font13 bold block bottom7">Describe sales experience with the company<span class="text-danger">*</span></span>
+                        <textarea  name="describe" class="width100" class="form-control" ng-model="salesReviewCtrl.newSales.describe" required></textarea>
+                       <span ng-messages="(salesForm.describe.$touched && salesForm.describe.$error)" role="alert">
+                       <span class="text-danger" ng-message="required">Description is mandatory.</span>
+                       </span>
+                    </div>
+                  </div>
+                  <div class="row clearfix">
+                    <div class="col-sm-6 top15">
+                      <span class="font14 bold block bottom7">Rate Sales difficulty<span class="text-danger">*</span></span>
+                      <fieldset class="rating rtng" style="" name="rateDifficulty">
+                        <input type="radio" id="star5Diff" name="ratingDiff" value="5" /><label class = "full" for="star5Diff" title="Awesome - 5 stars" ng-click="salesReviewCtrl.setODiffRate(5)"></label>
+                        <input type="radio" id="star4Diff" name="ratingDiff" value="4" /><label class = "full" for="star4Diff" title="Pretty good - 4 stars" ng-click="salesReviewCtrl.setOExpRate(4)"></label>
+                        <input type="radio" id="star3Diff" name="ratingDiff" value="3" /><label class = "full" for="star3Diff" title="Meh - 3 stars" ng-click="salesReviewCtrl.setODiffRate(3)"></label>
+                        <input type="radio" id="star2Diff" name="ratingDiff" value="2" /><label class = "full" for="star2Diff" title="Kinda bad - 2 stars" ng-click="salesReviewCtrl.setODiffRate(2)"></label>
+                        <input type="radio" id="star1Diff" name="ratingDiff" value="1" /><label class = "full" for="star1Diff" title="Sucks big time - 1 star" ng-click="salesReviewCtrl.setODiffRate(1)"></label>
+                      </fieldset>
+                      <p ng-show="salesForm.rateDifficulty.$invalid && !salesForm.rateDifficulty.$error" class="help-block">Sales review rating is required.</p>
+
+                    </div>
+                    <div class="col-sm-6 top15">
+                      <span class="font14 bold block bottom7">Rate Negotiation difficulty<span class="text-danger">*</span></span>
+                      <fieldset class="rating rtng" style="" name="rateNDifficulty">
+                        <input type="radio" id="star5NRate" name="ratingNRate" value="5" /><label class = "full" for="star5NRate" title="Awesome - 5 stars" ng-click="salesReviewCtrl.setNRate(5)"></label>
+                        <input type="radio" id="star4NRate" name="ratingNRate" value="4" /><label class = "full" for="star4NRate" title="Pretty good - 4 stars" ng-click="salesReviewCtrl.setOExpRate(4)"></label>
+                        <input type="radio" id="star3NRate" name="ratingNRate" value="3" /><label class = "full" for="star3NRate" title="Meh - 3 stars" ng-click="salesReviewCtrl.setNRate(3)"></label>
+                        <input type="radio" id="star2NRate" name="ratingNRate" value="2" /><label class = "full" for="star2NRate" title="Kinda bad - 2 stars" ng-click="salesReviewCtrl.setNRate(2)"></label>
+                        <input type="radio" id="star1NRate" name="ratingNRate" value="1" /><label class = "full" for="star1NRate" title="Sucks big time - 1 star" ng-click="salesReviewCtrl.setNRate(1)"></label>
+                      </fieldset>
+                      <p ng-show="salesForm.rateNDifficulty.$invalid && !salesForm.rateNDifficulty.$error" class="help-block">Post Sales review rating is required.</p>
+                    </div>
+                  </div>
+                  <div class="row clearfix top15">
+                    <div class="col-sm-6">
+                      <select class="rvwSelect" ng-model="salesReviewCtrl.newSales.decisionTime" name="decisionTime">
+                        <option ng-hide="true">Decision Time</option>
+                        <option value="Less than 1 week">Less than 1 week</option>
+                        <option value="1-2 weeks">1-2 weeks</option>
+                        <option value="2-4 weeks">2-4 weeks</option>
+                        <option value="1-2 months">1-2 months</option>
+                        <option value="2-4 months">2-4 months</option>
+                        <option value="More than 4 months">More than 4 months</option>
+                      </select>
+                    </div>
+                    <div class="col-sm-6">
+                      <tags-input ng-model="salesReviewCtrl.newSales.departmentsInvolved" add-on-paste="true" placeholder="Departments Involved" name="departmentsInvolved">
+                        <auto-complete source="salesReviewCtrl.loadDeptsTags($query)" min-length="0"></auto-complete>
+                      </tags-input>
+                    </div>
+                    <div class="col-sm-6">
+                      <tags-input ng-model="salesReviewCtrl.newSales.keyDecisionMakers" placeholder="Key Decision Makers"></tags-input>
+                    </div>
+                    <div class="col-sm-6">
+
+                      <tags-input  ng-model="salesReviewCtrl.newSales.successFactors" placeholder="Success Factors" name="successFactors">
+                        <auto-complete source="salesReviewCtrl.loadSuccessFacTags($query)" min-length="0"></auto-complete>
+                      </tags-input>
+                    </div>
+                    <div class="row clearfix top15">
+                      <div class="col-sm-12">
+                        <span class="font14 bold block bottom7">What was good?</span>
+                        <textarea ng-model="salesReviewCtrl.newSales.whatWasGood" name="whatWasGood" class="width100"></textarea>
+                      </div>
+                      <div class="col-sm-12 top15">
+                        <span class="font14 bold block bottom7">What could be better?</span>
+                        <textarea ng-model="salesReviewCtrl.newSales.whatCouldBeBetter" name="whatCouldBeBetter" class="width100"></textarea>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="row clearfix">
+              <div class="col-sm-12">
+                <button class="submit right" type="submit" ng-click="salesReviewCtrl.handleSalesSubmit()" ng-disabled="!salesReviewCtrl.isValid(salesForm.$valid)" >Submit</button>
+                <!--<button type="button" class="submit right" ng-click="salesReviewCtrl.handleNext()">Next</button>-->
+              </div>
+            </div>
+
+          </div>
+        </div>
+    </form>
+  </div>
+</div>

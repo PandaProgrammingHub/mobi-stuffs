@@ -1,0 +1,93 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" ng-click="createUserCtrl.close()"data-dismiss="modal">&times;</button>
+    <h4 class="modal-title">Create User</h4>
+  </div>
+  <div class="modal-body">
+    <form id="form-wizard" name="CretaeUser" ng-submit="createUserCtrl.createuser(CretaeUser)" class="form-inline ui-formwizard" method="post" novalidate="novalidate">
+      <small class="text-danger">{{createUserCtrl.errorMessage}}</small>
+
+      <div class="block1">
+        <div class="control-group ">
+
+          <div class="controls">
+            <input  type="text" name="name" ng-model="createUserCtrl.createUserList.name" style="margin: 5px;" class="form-control ui-wizard-content" placeholder="Name">
+          </div>
+        </div>
+      </div>
+      <div class="block2">
+        <div class="control-group ">
+
+          <div class="controls">
+            <input type="email" name="email" ng-model="createUserCtrl.createUserList.email" ng-pattern="/^[a-zA-Z0-9._]+[a-zA-Z0-9._]+@.*\.[a-zA-Z]{1,50}/" maxlength="100" required
+            autocomplete="off" style="margin: 5px;" class="form-control ui-wizard-content" placeholder="Email">
+            <span ng-messages="(form.email.$touched && form.email.$error)" role="alert">
+              <span class="text-danger" ng-message="required">Please complete this mandatory field.</span>
+              <span class="text-danger" ng-message="pattern">Please enter valid email.</span>
+          </div>
+        </div>
+      </div>
+      <div class="block1">
+        <div class="control-group ">
+
+          <div class="controls">
+            <input  type="text" name="currentcompany" uib-typeahead="company.name  for company in createUserCtrl.companies | filter:$viewValue | limitTo:8" ng-model="createUserCtrl.createUserList.currentcompany" style="margin: 5px;" class="form-control ui-wizard-content" placeholder="Current Company">
+          </div>
+        </div>
+      </div>
+      <div class="block2">
+        <div class="control-group ">
+
+          <div class="controls">
+            <input  type="text" name="products" uib-typeahead="product.name  for product in createUserCtrl.products | filter:$viewValue | limitTo:8" ng-model="createUserCtrl.createUserList.products" style="margin: 5px;" class="form-control ui-wizard-content" placeholder="Product Sold">
+          </div>
+        </div>
+      </div>
+      <div class="block1">
+        <div class="control-group ">
+
+          <div class="controls">
+            <input  type="text" name="company" uib-typeahead="company.name  for company in createUserCtrl.companies | filter:$viewValue | limitTo:8" ng-model="createUserCtrl.createUserList.company" style="margin: 5px;" class="form-control ui-wizard-content" placeholder="Companies Sold To">
+          </div>
+        </div>
+      </div>
+      <div class="block2">
+        <div class="control-group ">
+
+          <div class="controls">
+            <input  type="text" name="location" uib-typeahead="location.name  for location in createUserCtrl.locations | filter:$viewValue | limitTo:8" ng-model="createUserCtrl.createUserList.location" style="margin: 5px;" class="form-control ui-wizard-content" placeholder="Location Worked In">
+          </div>
+        </div>
+      </div>
+      <!-- <div class="block1">
+        <div class="control-group ">
+
+          <div class="controls">
+            <input  type="password" name="password" ng-model="createUserCtrl.createUserList.password" style="margin: 5px;" class="form-control ui-wizard-content" placeholder="Password">
+          </div>
+        </div>
+      </div> -->
+      <!-- <div class="block2"> -->
+        <div class="control-group ">
+
+          <div class="controls">
+            <textarea style="width:93%;margin: 5px;" name="description" ng-model="createUserCtrl.createUserList.description" class="form-control ui-wizard-content" placeholder="Description"></textarea>
+          </div>
+        </div>
+      <!-- </div> -->
+
+
+      <div class="">
+        <input id="next" class="btn btn-primary ui-wizard-content ui-formwizard-button" type="submit" value="Create">
+        <input class="btn btn-primary ui-wizard-content ui-formwizard-button" type="reset" value="Reset">
+      </div>
+
+    </form>
+
+
+
+
+  </div>
+
+
+</div>

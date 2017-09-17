@@ -1,0 +1,140 @@
+<div class="bannerstrip">
+    <div class="container">
+         <div class="col-sm-4">
+		  <div class="bbtm">
+		     <i class="fa fa-search" aria-hidden="true" ng-click="searchHiredCtrl.searchBy(searchHiredCtrl.searchText,type)"></i>
+		     <input type="text" ng-model="searchHiredCtrl.searchText" ng-change="searchHiredCtrl.onChange(searchHiredCtrl.searchText)" class="select1" id="sel1" placeholder="Search by">
+		 </div>
+		 </div>
+		  <div class="col-sm-4">
+		    <div class="bbtm">
+		    <i class="fa fa-map-marker" aria-hidden="true"></i>
+			 <input class="inpt1" type="text" placeholder="Location">
+		  </div>
+		  </div>
+		   <div class="col-sm-4">
+		      <div class="bbtm">
+		       <i class="fa fa-building-o" aria-hidden="true"></i>
+			  <select  ng-model="type" class="select2" id="sel1" >
+          <option> Company </option>
+          <option ng-selected="true" value="Hired"> Hire</option>
+          <option> RFP</option>
+			  </select>
+		   </div>
+		   </div>
+   </div>
+</div>
+
+<div class="wrapper_1">
+<div class="container">
+  <div class="row">
+	  <div class="col-sm-9">
+	        <div class="middle_1">
+	        <div class="row clearfix">
+		        <div class="col-sm-8">
+			        <span class="bold block font18 bottom15">(Hire Name) Results</span>
+			        <span class="block font16" ng-model="searchHiredCtrl.noOfResult">Showing 1-10 of {{searchHiredCtrl.noOfResult}} Hire Results</span>
+		        </div>
+		        <div class="col-sm-4">
+		        	<select class="rvwSelect" name="location" ng-model="searchHiredCtrl.location">
+                <option value="" selected>Choose Locations</option>
+		        		<option ng-repeat="showSearchResult in searchHiredCtrl.showSearchResults">{{showSearchResult.location[0]}}</option>
+		        	</select>
+		        </div>
+			</div>
+
+		        <div class="row">
+				   <div class="col-sm-12">
+               <div class="mzda mrv hrPdng" ng-repeat="showSearchResult in searchHiredCtrl.showSearchResults | filter:{location:searchHiredCtrl.location}">
+                 <div class="hrPnl">
+                  <label>{{showSearchResult.companyName}}</label> </div>
+                  <div class="row clearfix pdng8">
+                  <div class="col-sm-3">
+                      <img class="profileImage" src="images/oldman.jpg" alt="profile Image" style="width: 69px;">
+                  </div>
+                  <div class="col-sm-9 addau center">
+                    <div class="row clearfix">
+                  <div class="col-sm-8" style="text-align: left;">
+                    <div class="left20">
+                      <span class="bold block font14">Amit Kumar</span>
+                      <span class="block font12">{{showSearchResult.companyName}}</span>
+                      <span class="block font10 smallColor">34 Hires, 15 RFP</span>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 rvwbtn">
+                    <div class="clearfix" style="float: right;">
+                    <fieldset class="rating rtng" style="">
+                        <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                        <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                        <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                        <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                        <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                        <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                        <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                        <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                        <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                        <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                    </fieldset></div>
+                    <span class="font10 block" style="float: right;">210 Reviews</span>
+                  </div>
+                </div>
+                  </div>
+                  </div>
+                  <div class="row clearfix">
+                   <!-- <div class="col-sm-3"></div> -->
+                 <div class="col-sm-12 addau center">
+                <div class="panel-default left font11">
+                  <div class="panel-body" style="padding-bottom: 6px;">
+                      <div class="colorLabel wdth66" style="background-color: #FBC02D;"></div>
+
+                      <div class="row clearfix">
+                        <div class="col-sm-6 linkMargin">
+                          <span >{{showSearchResult.productCategory}}</span>
+                        </div>
+                        <div class="col-sm-6 linkMargin">
+                          <span>{{showSearchResult.location[0]}}</span>
+                        </div>
+                        <div class="col-sm-6 linkMargin">
+                          <span class="badge metadata">Sales</span>
+                        </div>
+                        <div class="col-sm-6 linkMargin">
+                          <div class="row clearfix">
+                            <div class="col-sm-12 smallColor" title="No of Responses">
+                              <div class="inlineBlock">
+                                <i class="fa fa-list" aria-hidden="true" title="No of Responses"></i>
+                                <span>100</span>
+                              </div>
+                              <div class="inlineBlock left15 " title="End Date">
+                                <i class="fa fa-clock-o" aria-hidden="true" title="End Date"></i>
+                                <span>{{showSearchResult.endDate}}</span>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                        <div class="col-sm-12 top15">
+                          <p>{{showSearchResult.description}}</p>
+                        </div>
+                        <div class="font14 col-sm-12 top15 rsb text-right">
+                        <a href="#"> Apply </a>
+                      </div>
+                      </div>
+                  </div>
+                </div>
+                 </div>
+
+                </div>
+               </div>
+
+				<div class="morebtn m2"> <a href="#">View More </a> </div>
+			</div>
+		   </div>
+	   <!-- <div class="col-sm-3">
+	       <div class="rightside_1">
+		   </div>
+	   </div> -->
+  </div>
+</div>
+</div>
+</body>
+</html>

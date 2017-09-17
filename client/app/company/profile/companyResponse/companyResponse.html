@@ -1,0 +1,12 @@
+<div class="modal-header">
+  <button type="button" ng-click="$ctrl.closeModal()" class="close" data-dismiss="modal">×</button>
+</div>
+<div class="modal-body">
+  <div class="pop-input">
+    <textarea ng-model="$ctrl.userObject.companyResponse" placeholder="Description(Maximum 250 character)" maxlength="250"></textarea>
+    <div class="company-name-input text-center">
+      <button class="rfpSbmt" ng-click="$ctrl.submitResponse()" type="submit">Submit</button>
+    </div>
+  </div>
+</div>
+

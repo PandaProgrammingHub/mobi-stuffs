@@ -1,0 +1,23 @@
+<search-bar></search-bar>
+
+<div class="wrapper_1">
+  <div class="container">
+    <div class="row">
+      <left-nav></left-nav>
+      <div class="col-sm-6">
+        <div class="middle_1">
+          <ul class="nav nav-tabs ntab1">
+            <li ng-class="{'active':flag=='send'}"><a ui-sref="userRfp.sendRfp" ng-init = "flag='send'" ng-click = "flag='send'">I want to send RFP</a></li>
+            <li ng-class="{'active':flag=='apply'}"><a ui-sref="userRfp.applyRfp" ng-click="flag='apply'"> I want to apply for RFP </a></li>
+          </ul>
+
+          <div class="tab-content">
+                <div ui-view><send-rfp></send-rfp></div>
+          </div>
+        </div>
+      </div>
+      <notification-panel></notification-panel>
+    </div>
+  </div>
+</div>
+

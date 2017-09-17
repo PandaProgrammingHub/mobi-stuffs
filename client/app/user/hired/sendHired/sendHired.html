@@ -1,0 +1,83 @@
+<div id="menu1" class="tab-pane fade in active">
+  <div class="row clearfix">
+  <div class="col-md-12 none mar-t right">
+    <button type="button" class="btn btn-primary wdth80 mrgnBtm" ng-click="$ctrl.PostPopUp()">Post</button>
+  </div>
+  </div>
+  <div class="col-md-12">
+
+  <div class="panel-group" ng-show="!$ctrl.showAllHireds">
+      <div class="panel panel-default">
+        <div class="panel-heading" style="padding: 1px 15px;">
+          <label>{{$ctrl.hiredsList[0].projectTitle}}</label> </div>
+        <div class="panel-body" style="padding-bottom: 6px;">
+          <div ng-show="$ctrl.hiredsList[0].priority === 'low'" class="colorLabelLow" style="background-color: #FBC02D;"></div>
+          <div ng-show="$ctrl.hiredsList[0].priority === 'medium'" class="colorLabelMedium" style="background-color: #2cf959;"></div>
+          <div ng-show="$ctrl.hiredsList[0].priority === 'high'" class="colorLabelHigh" style="background-color: #ff0000;"></div>
+          <div class="row clearfix">
+            <div class="col-sm-12 linkMargin">
+            <div class="row clearfix">
+              <div class="col-sm-6 linkMargin">
+                <div ng-repeat="category in $ctrl.hiredsList[0].productCategories">
+                  <span class="badge metadata">{{category}}</span>
+                </div>
+              </div>
+              <div class="col-sm-6 linkMargin">
+                <div class="row clearfix">
+                  <div class="col-sm-12 smallColor" title="No of Responses">
+                    <span ng-repeat="location in $ctrl.hiredsList[0].location">{{location}}</span>
+                    <div>
+                      <i class="fa fa-list pointer" ui-sref="hired.response({uid: $ctrl.hiredsList[0]._id})" aria-hidden="true" title="No of Responses"></i>
+                      <span>{{$ctrl.hiredsList[0].appliedBy.length}}</span>
+                      <i class="fa fa-clock-o" aria-hidden="true" title="End Date"></i>
+                      <span>{{$ctrl.hiredsList[0].endDate | date}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel-group" ng-show="$ctrl.showAllHireds" ng-repeat="hired in $ctrl.hiredsList">
+      <div class="panel panel-default">
+        <div class="panel-heading" style="padding: 1px 15px;">
+          <label>{{hired.projectTitle}}</label> </div>
+        <div class="panel-body" style="padding-bottom: 6px;">
+          <div ng-show="hired.priority === 'low'" class="colorLabelLow" style="background-color: #FBC02D;"></div>
+          <div ng-show="hired.priority === 'medium'" class="colorLabelMedium" style="background-color: #2cf959;"></div>
+          <div ng-show="hired.priority === 'high'" class="colorLabelHigh" style="background-color: #ff0000;"></div>
+          <div class="row clearfix">
+            <div class="col-sm-12 linkMargin">
+            </div>
+             <div class="row clearfix">
+            <div class="col-sm-6 linkMargin">
+            <div ng-repeat="category in hired.productCategories">
+              <span class="badge metadata">{{category}}</span>
+            </div>
+            </div>
+            <div class="col-sm-6 linkMargin">
+              <div class="row clearfix">
+                <div class="col-sm-12 smallColor" title="No of Responses">
+                  <span ng-repeat="location in hired.location">{{location}}</span>
+                  <div>
+                    <i class="fa fa-list pointer" ui-sref="hired.response({uid: hired._id})"  aria-hidden="true" title="No of Responses"></i>
+                    <span>{{hired.appliedBy.length}}</span>
+                    <i class="fa fa-clock-o" aria-hidden="true" title="End Date"></i>
+                    <span>{{hired.endDate | date}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <div class="morebtn" ng-show="!$ctrl.showAllHireds" ng-click="$ctrl.getAll()"><a>View More</a></div>
+</div>

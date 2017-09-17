@@ -1,0 +1,693 @@
+<div id="menu11" class="tab-pane fade active in">
+  <div class="row">
+    <div class="col-sm-5">
+      <div class="ovleft">
+        <!--<i class="fa fa-pencil editInfo" aria-hidden="true" style="right: 0px;"></i>-->
+        <p class="font12"> {{companyAboutCtrl.companyInfo.website}}</p>
+        <p class="font12"> {{companyAboutCtrl.companyInfo.headquarters}}</p>
+        <p class="font12"> {{companyAboutCtrl.companyInfo.name}}</p>
+      </div>
+    </div>
+    <div class="col-sm-7">
+      <div class="ovright">
+        <!--<i class="fa fa-pencil editInfo edtAbt" aria-hidden="true"></i>-->
+        <span class="bold block font13">About</span>
+        <p class="font12">
+          {{companyAboutCtrl.companyInfo.about}}</div>
+    </div>
+  </div>
+
+  <hr>
+  <div class="probars">
+    <div class="row">
+      <div class="col-md-4 col-sm-4">
+        <div class="clearfix">
+          <span class="font13 bold block bottom7">Pre-Sales</span>
+          <fieldset class="rating rtng" disabled="disabled" style="">
+            <input type="radio" id="preoverall{{0}}" ng-checked="companyAboutCtrl.avgpreSalesRating == 5" name="preoverall{{0}}"  value="5">
+            <label class="full" for="preoverall{{0}}" title="Awesome - 5 stars"></label>
+
+            <input type="radio" id="preoverall{{0}}" ng-checked="companyAboutCtrl.avgpreSalesRating == 4" name="preoverall{{0}}" value="4"/>
+            <label class="full" for="preoverall{{0}}"  title="Pretty good - 4 stars"></label>
+
+            <input type="radio" id="preoverall{{0}}" ng-checked="companyAboutCtrl.avgpreSalesRating == 3" name="preoverall{{0}}" value="3"/>
+            <label class="full" for="preoverall{{0}}" title="Meh - 3 stars"></label>
+
+            <input type="radio" id="preoverall{{0}}" ng-checked="companyAboutCtrl.avgpreSalesRating == 2" name="preoverall{{0}}"  value="2"/>
+            <label class="full" for="preoverall{{0}}" title="Kinda bad - 2 stars"></label>
+
+            <input type="radio" id="preoverall{{0}}" ng-checked="companyAboutCtrl.avgpreSalesRating == 1" name="preoverall{{0}}" value="1"/>
+            <label class="full" for="preoverall{{0}}" title="Sucks big time - 1 star"></label>
+
+          </fieldset>
+        </div>
+        <div class="clearfix">
+          <span class="font11 bottom7" style="display: inline-block;"> {{companyAboutCtrl.preSales.length}} Reviews</span>
+        </div>
+
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <div class="clearfix">
+          <span class="font13 bold block bottom7">Sales</span>
+          <fieldset class="rating rtng" disabled="disabled" style="">
+            <input type="radio" id="salesoverall{{$index}}" ng-checked="companyAboutCtrl.avgSalesRating == 5" name="salesoverall{{$index}}"  value="5">
+            <label class="full" for="salesoverall{{$index}}" title="Awesome - 5 stars"></label>
+
+            <input type="radio" id="salesoverall{{$index}}" ng-checked="companyAboutCtrl.avgSalesRating == 4" name="salesoverall{{$index}}" value="4"/>
+            <label class="full" for="salesoverall{{$index}}"  title="Pretty good - 4 stars"></label>
+
+            <input type="radio" id="salesoverall{{$index}}" ng-checked="companyAboutCtrl.avgSalesRating == 3" name="salesoverall{{$index}}" value="3"/>
+            <label class="full" for="salesoverall{{$index}}" title="Meh - 3 stars"></label>
+
+            <input type="radio" id="salesoverall{{$index}}" ng-checked="companyAboutCtrl.avgSalesRating == 2" name="salesoverall{{$index}}"  value="2"/>
+            <label class="full" for="salesoverall{{$index}}" title="Kinda bad - 2 stars"></label>
+
+            <input type="radio" id="salesoverall{{$index}}" ng-checked="companyAboutCtrl.avgSalesRating == 1" name="salesoverall{{$index}}" value="1"/>
+            <label class="full" for="salesoverall{{$index}}" title="Sucks big time - 1 star"></label>
+
+          </fieldset>
+        </div>
+        <div class="clearfix">
+          <span class="font11 bottom7" style="display: inline-block;">{{companyAboutCtrl.sales.length}} Reviews</span>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <div class="clearfix"><span class="font13 bold block bottom7">Post-Sales</span>
+          <fieldset class="rating rtng" disabled="disabled" style="">
+            <input type="radio" id="overall{{$index}}" ng-checked="companyAboutCtrl.avgPostSalesRating == 5" name="overall{{$index}}"  value="5">
+            <label class="full" for="overall{{$index}}" title="Awesome - 5 stars"></label>
+
+            <input type="radio" id="overall{{$index}}" ng-checked="companyAboutCtrl.avgPostSalesRating == 4" name="overall{{$index}}" value="4"/>
+            <label class="full" for="overall{{$index}}"  title="Pretty good - 4 stars"></label>
+
+            <input type="radio" id="overall{{$index}}" ng-checked="companyAboutCtrl.avgPostSalesRating == 3" name="overall{{$index}}" value="3"/>
+            <label class="full" for="overall{{$index}}" title="Meh - 3 stars"></label>
+
+            <input type="radio" id="overall{{$index}}" ng-checked="companyAboutCtrl.avgPostSalesRating == 2" name="overall{{$index}}"  value="2"/>
+            <label class="full" for="overall{{$index}}" title="Kinda bad - 2 stars"></label>
+
+            <input type="radio" id="overall{{$index}}" ng-checked="companyAboutCtrl.avgPostSalesRating == 1" name="overall{{$index}}" value="1"/>
+            <label class="full" for="overall{{$index}}" title="Sucks big time - 1 star"></label>
+
+          </fieldset>
+        </div>
+        <div class="clearfix"><span class="font11 bottom7" style="display: inline-block;">{{companyAboutCtrl.postSales.length}} Reviews</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr>
+  <div>
+    <span class="abtHdg bold block bottom7" ng-if="companyAboutCtrl.overAllSales.length">Overall Reviews</span>
+    <div class="row clearfix mzda mrv" ng-if="companyAboutCtrl.overAllSales.length">
+      <span class="block" style="margin-bottom: 20px">{{companyAboutCtrl.overAllSales[0].reviewDate |  date:"dd-MMM-yyyy"}}</span>
+      <div class="col-sm-2">
+        <img src="assets/images/oldman.jpg" alt="dot" class="img-rounded width90">
+      </div>
+      <div class="col-sm-10 oldman">
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-12">
+            <h5 class="block fnt26" style="display: block;">{{companyAboutCtrl.overAllSales[0].name}}</h5>
+            <fieldset class="rating rtng" disabled="disabled" style="">
+              <input type="radio" id="aboutoverall{{0}}" ng-checked="companyAboutCtrl.overAllSales[0].experience == 5" name="aboutoverall{{0}}"  value="5">
+              <label class="full" for="aboutoverall{{0}}" title="Awesome - 5 stars"></label>
+
+              <input type="radio" id="aboutoverall{{0}}" ng-checked="companyAboutCtrl.overAllSales[0].experience == 4" name="aboutoverall{{0}}" value="4"/>
+              <label class="full" for="aboutoverall{{0}}"  title="Pretty good - 4 stars"></label>
+
+              <input type="radio" id="aboutoverall{{0}}" ng-checked="companyAboutCtrl.overAllSales[0].experience == 3" name="aboutoverall{{0}}" value="3"/>
+              <label class="full" for="aboutoverall{{0}}" title="Meh - 3 stars"></label>
+
+              <input type="radio" id="aboutoverall{{0}}" ng-checked="companyAboutCtrl.overAllSales[0].experience == 2" name="aboutoverall{{0}}"  value="2"/>
+              <label class="full" for="aboutoverall{{0}}" title="Kinda bad - 2 stars"></label>
+
+              <input type="radio" id="aboutoverall{{0}}" ng-checked="companyAboutCtrl.overAllSales[0].experience == 1" name="aboutoverall{{0}}" value="1"/>
+              <label class="full" for="aboutoverall{{0}}" title="Sucks big time - 1 star"></label>
+
+            </fieldset>
+            <span class="ratingDscrpn font11">Product- ERP in Mumbai</span>
+          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-6">
+            <label class="block">Time (weeks)</label>
+            <span class="badge metadata" class="inherit"> {{companyAboutCtrl.overAllSales[0].decisionTime}}</span>
+          </div>
+          <div class="col-md-6" >
+            <label class="block">Departments</label>
+              <span ng-repeat="dept in companyAboutCtrl.overAllSales[0].departmentsInvolved">
+            <span class="badge metadata" class="inherit"> {{dept}}</span>
+                </span>
+          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-6">
+            <label class="block">Key People</label>
+            <span ng-repeat="keyPpl in companyAboutCtrl.overAllSales[0].keyDecisionMakers">
+            <span class="badge metadata" class="inherit"> {{keyPpl}}</span>
+            </span>
+          </div>
+          <div class="col-md-6">
+            <label class="block">Success Factors</label>
+
+            <span ng-repeat="keyPpl in companyAboutCtrl.overAllSales[0].sucessFactors">
+            <span class="badge metadata" class="inherit"> {{keyPpl}}</span>
+            </span>
+            <!--<span class="badge metadata" class="inherit"> Product Knowledge</span>
+            <span class="badge metadata" class="inherit"> Sector Experience</span>
+            <span class="badge metadata" class="inherit"> Price</span>-->
+          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-12">
+            <label class="block">Overall Difficulty</label>
+            <fieldset class="rating rtng" disabled="disabled" style="">
+              <input type="radio" id="difficulty{{0}}" ng-checked="companyAboutCtrl.overAllSales[0].rateDifficulty == 5" name="difficulty{{0}}"  value="5">
+              <label class="full" for="difficulty{{0}}" title="Awesome - 5 stars"></label>
+
+              <input type="radio" id="difficulty{{0}}" ng-checked="companyAboutCtrl.overAllSales[0].rateDifficulty == 4" name="difficulty{{0}}" value="4"/>
+              <label class="full" for="difficulty{{0}}"  title="Pretty good - 4 stars"></label>
+
+              <input type="radio" id="difficulty{{0}}" ng-checked="companyAboutCtrl.overAllSales[0].rateDifficulty == 3" name="difficulty{{0}}" value="3"/>
+              <label class="full" for="difficulty{{0}}" title="Meh - 3 stars"></label>
+
+              <input type="radio" id="difficulty{{0}}" ng-checked="companyAboutCtrl.overAllSales[0].rateDifficulty == 2" name="difficulty{{0}}"  value="2"/>
+              <label class="full" for="difficulty{{0}}" title="Kinda bad - 2 stars"></label>
+
+              <input type="radio" id="difficulty{{0}}" ng-checked="companyAboutCtrl.overAllSales[0].rateDifficulty == 1" name="difficulty{{0}}" value="1"/>
+              <label class="full" for="difficulty{{0}}" title="Sucks big time - 1 star"></label>
+
+            </fieldset>
+          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-12">
+            <label class="block">Overall Experience</label>
+            <p>{{companyAboutCtrl.overAllSales[0].describe}} <p>
+            <!-- <input type="textarea" name="Advice" /> -->
+           <!-- <p>Ex quo liber inciderint liberavisse, ei nec vocent singulis persecuti, ne ignota impedit ceteros nec. Mel
+              ei autem dicant. Expetendis definiebas sea in, atomorum explicari ne vis, his hinc consequat ei.</p>-->
+          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-12">
+            <label class="block">What was Good</label>
+            <p>{{companyAboutCtrl.overAllSales[0].whatWasGood}} <p>
+            <!--<p>Ex quo liber inciderint liberavisse, ei nec vocent singulis persecuti, ne ignota impedit ceteros nec. Mel
+              ei autem dicant. Expetendis definiebas sea in, atomorum explicari ne vis, his hinc consequat ei.</p>
+-->          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-12">
+            <label class="block">What Could be Better</label>
+            <p>{{companyAboutCtrl.overAllSales[0].whatCouldBeBetter}} <p>
+           <!-- &lt;!&ndash; <input type="textarea" name="Advice" /> &ndash;&gt;
+            <p>Ex quo liber inciderint liberavisse, ei nec vocent singulis persecuti, ne ignota impedit ceteros nec. Mel
+              ei autem dicant. Expetendis definiebas sea in, atomorum explicari ne vis, his hinc consequat ei.</p>
+-->          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-12">
+            <label class="block">Company Response</label>
+            <!-- <input type="textarea" name="Advice" /> -->
+            <p>{{companyAboutCtrl.overAllSales[0].companyResponse }}</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="row clearfix" style="margin-top: 20px;">
+        <div class="col-sm-5">
+          <!--<image alt="Facebook" src="assets/images/facebook.png" class="sclImg"/>
+          <image alt="Facebook" src="assets/images/twitter.png" class="sclImg"/>
+          <image alt="Facebook" src="assets/images/gmail.png" class="sclImg"/>
+          <image alt="Facebook" src="assets/images/facebook.png" class="sclImg"/>-->
+        </div>
+        <div class="col-sm-3">
+          <button type="button" ng-click="companyAboutCtrl.loadOverallReview()" class="btn btn-primary btnColor">More Reviews</button>
+        </div>
+        <div class="col-sm-4 right">
+          <button type="button" class="btn btn-primary btnColor wdth80">Helpful</button>
+          <i class="fa fa-flag flag" aria-hidden="true"></i>
+        </div>
+      </div>
+
+    </div>
+    <span class="bold block bottom7 abtHdg" ng-if="companyAboutCtrl.preSales.length">Pre-Sales Reviews</span>
+    <div class="row clearfix mzda mrv" ng-if="companyAboutCtrl.preSales.length">
+      <span class="block" style="margin-bottom: 20px">{{companyAboutCtrl.preSales[0].reviewDate |  date:"dd-MMM-yyyy"}}</span>
+      <div class="col-sm-2">
+        <img src="assets/images/anonymous.png" alt="dot" class="img-rounded width90">
+      </div>
+      <div class="col-sm-10 oldman">
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-12">
+            <h5 class="block fnt26" style="display: block;">{{companyAboutCtrl.preSales[0].name}}</h5>
+            <fieldset class="rating rtng" disabled="disabled" style="">
+              <input type="radio" id="presalesExp{{0}}" ng-checked="companyAboutCtrl.preSales[0].experience == 5" name="presalesExp{{0}}"  value="5">
+              <label class="full" for="presalesExp{{0}}" title="Awesome - 5 stars"></label>
+
+              <input type="radio" id="presalesExp{{0}}" ng-checked="companyAboutCtrl.preSales[0].experience == 4" name="presalesExp{{0}}" value="4"/>
+              <label class="full" for="presalesExp{{0}}"  title="Pretty good - 4 stars"></label>
+
+              <input type="radio" id="presalesExp{{0}}" ng-checked="companyAboutCtrl.preSales[0].experience == 3" name="presalesExp{{0}}" value="3"/>
+              <label class="full" for="presalesExp{{0}}" title="Meh - 3 stars"></label>
+
+              <input type="radio" id="presalesExp{{0}}" ng-checked="companyAboutCtrl.preSales[0].experience == 2" name="presalesExp{{0}}"  value="2"/>
+              <label class="full" for="presalesExp{{0}}" title="Kinda bad - 2 stars"></label>
+
+              <input type="radio" id="presalesExp{{0}}" ng-checked="companyAboutCtrl.preSales[0].experience == 1" name="presalesExp{{0}}" value="1"/>
+              <label class="full" for="presalesExp{{0}}" title="Sucks big time - 1 star"></label>
+
+            </fieldset>
+            <span class="ratingDscrpn font11">Product- ERP in Mumbai</span>
+          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-6">
+            <label class="block">Time (weeks)</label>
+            <span class="badge metadata" class="inherit">{{companyAboutCtrl.preSales[0].decisionTime}}</span>
+          </div>
+          <div class="col-md-6">
+            <label class="block">Departments</label>
+            <span ng-repeat="dept in companyAboutCtrl.preSales[0].departmentsInvolved">
+            <span class="badge metadata" class="inherit"> {{dept}}</span>
+                </span>
+          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-6">
+            <label class="block">Key People</label>
+            <span ng-repeat="keyPpl in companyAboutCtrl.preSales[0].keyDecisionMakers">
+            <span class="badge metadata" class="inherit"> {{keyPpl}}</span>
+            </span>
+            <!--<span class="badge metadata" class="inherit"> Garrete</span>
+            <span class="badge metadata" class="inherit"> Harsh Jhunjhunwal</span>
+            <span class="badge metadata" class="inherit"> Piyush Singhal</span>-->
+          </div>
+          <div class="col-md-6">
+            <label class="block">Success Factor</label>
+            <span ng-repeat="sucessFactor in companyAboutCtrl.preSales[0].sucessFactors">
+            <span class="badge metadata" class="inherit"> {{sucessFactor}}</span>
+            </span>
+            <!--<span class="badge metadata" class="inherit"> Product Knowledge</span>
+            <span class="badge metadata" class="inherit"> Sector Experience</span>
+            <span class="badge metadata" class="inherit"> Price</span>-->
+          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-12">
+            <label class="block">Pre-Sales Difficulty</label>
+            <fieldset class="rating rtng" disabled="disabled" style="">
+              <input type="radio" id="predifficulty{{0}}" ng-checked="companyAboutCtrl.preSales[0].rateDifficulty == 5" name="predifficulty{{0}}"  value="5">
+              <label class="full" for="predifficulty{{0}}" title="Awesome - 5 stars"></label>
+
+              <input type="radio" id="predifficulty{{0}}" ng-checked="companyAboutCtrl.preSales[0].rateDifficulty == 4" name="predifficulty{{0}}" value="4"/>
+              <label class="full" for="predifficulty{{0}}"  title="Pretty good - 4 stars"></label>
+
+              <input type="radio" id="predifficulty{{0}}" ng-checked="companyAboutCtrl.preSales[0].rateDifficulty == 3" name="predifficulty{{0}}" value="3"/>
+              <label class="full" for="predifficulty{{0}}" title="Meh - 3 stars"></label>
+
+              <input type="radio" id="predifficulty{{0}}" ng-checked="companyAboutCtrl.preSales[0].rateDifficulty == 2" name="predifficulty{{0}}"  value="2"/>
+              <label class="full" for="predifficulty{{0}}" title="Kinda bad - 2 stars"></label>
+
+              <input type="radio" id="predifficulty{{0}}" ng-checked="companyAboutCtrl.preSales[0].rateDifficulty == 1" name="predifficulty{{0}}" value="1"/>
+              <label class="full" for="predifficulty{{0}}" title="Sucks big time - 1 star"></label>
+
+            </fieldset>
+          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-12">
+            <label class="block">Overall Pre-Sales Experience</label>
+            <p>{{companyAboutCtrl.preSales[0].describe}} <p>
+                     </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-12">
+            <label class="block">What was Good</label>
+            <p>{{companyAboutCtrl.preSales[0].whatWasGood}} <p>
+          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-12">
+            <label class="block">What Could be Better</label>
+            <p>{{companyAboutCtrl.preSales[0].whatCouldBeBetter}} <p>
+          </div>
+        </div>
+      </div>
+      <div class="row clearfix" style="margin-top: 20px;">
+        <div class="col-sm-5">
+          <!--<image alt="Facebook" src="assets/images/facebook.png" class="sclImg"/>
+          <image alt="Facebook" src="assets/images/twitter.png" class="sclImg"/>
+          <image alt="Facebook" src="assets/images/gmail.png" class="sclImg"/>
+          <image alt="Facebook" src="assets/images/facebook.png" class="sclImg"/>-->
+        </div>
+        <div class="col-sm-3">
+          <button type="button" ui-sref="companyProfile.preSales" class="btn btn-primary btnColor">More Reviews</button>
+        </div>
+        <div class="col-sm-4 right">
+          <button type="button" ui-sref="companyResponse" class="btn btn-primary btnColor wdth80">Helpful</button>
+          <i class="fa fa-flag flag" aria-hidden="true"></i>
+        </div>
+      </div>
+
+
+    </div>
+
+    <span class="bold block bottom7 abtHdg" ng-if="companyAboutCtrl.sales.length">Sales Reviews</span>
+    <div class="row clearfix mzda mrv" ng-if="companyAboutCtrl.sales.length">
+      <span class="block" style="margin-bottom: 20px">{{companyAboutCtrl.sales[0].reviewDate |  date:"dd-MMM-yyyy"}}</span>
+      <div class="col-sm-2">
+        <img src="assets/images/tcs.png" alt="dot" class="img-rounded width90">
+      </div>
+      <div class="col-sm-10 oldman">
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-12">
+            <h5 class="block fnt26" style="display: block;">{{companyAboutCtrl.sales[0].name}}</h5>
+            <fieldset class="rating rtng" disabled="disabled" style="">
+              <input type="radio" id="salesExp{{0}}" ng-checked="companyAboutCtrl.sales[0].experience == 5" name="salesExp{{0}}"  value="5">
+              <label class="full" for="salesExp{{0}}" title="Awesome - 5 stars"></label>
+
+              <input type="radio" id="salesExp{{0}}" ng-checked="companyAboutCtrl.sales[0].experience == 4" name="salesExp{{0}}" value="4"/>
+              <label class="full" for="salesExp{{0}}"  title="Pretty good - 4 stars"></label>
+
+              <input type="radio" id="salesExp{{0}}" ng-checked="companyAboutCtrl.sales[0].experience == 3" name="salesExp{{0}}" value="3"/>
+              <label class="full" for="salesExp{{0}}" title="Meh - 3 stars"></label>
+
+              <input type="radio" id="salesExp{{0}}" ng-checked="companyAboutCtrl.sales[0].experience == 2" name="salesExp{{0}}"  value="2"/>
+              <label class="full" for="salesExp{{0}}" title="Kinda bad - 2 stars"></label>
+
+              <input type="radio" id="salesExp{{0}}" ng-checked="companyAboutCtrl.sales[0].experience == 1" name="salesExp{{0}}" value="1"/>
+              <label class="full" for="salesExp{{0}}" title="Sucks big time - 1 star"></label>
+
+            </fieldset>
+            <span class="ratingDscrpn font11">Product- ERP in Mumbai</span>
+          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-6">
+            <label class="block">Time (weeks)</label>
+            <span class="badge metadata" class="inherit">  {{companyAboutCtrl.sales[0].decisionTime}}</span>
+          </div>
+          <div class="col-md-6">
+            <label class="block">Departments</label>
+
+            <span ng-repeat="dept in companyAboutCtrl.sales[0].departmentsInvolved">
+            <span class="badge metadata" class="inherit"> {{dept}}</span>
+                </span>
+          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-6">
+            <label class="block">Key People</label>
+            <span ng-repeat="keyPpl in companyAboutCtrl.overAllSales[0].keyDecisionMakers">
+            <span class="badge metadata" class="inherit"> {{keyPpl}}</span>
+            </span>
+          </div>
+          <div class="col-md-6">
+            <label class="block">Success Factor</label>
+            <span ng-repeat="sucessFactor in companyAboutCtrl.overAllSales[0].sucessFactors">
+            <span class="badge metadata" class="inherit"> {{sucessFactor}}</span>
+            </span>
+
+          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-6">
+            <label class="block">Sales Difficulty</label>
+            <fieldset class="rating rtng" disabled="disabled" style="">
+              <input type="radio" id="slsdifficulty{{0}}" ng-checked="companyAboutCtrl.sales[0].rateDifficulty == 5" name="slsdifficulty{{0}}"  value="5">
+              <label class="full" for="slsdifficulty{{0}}" title="Awesome - 5 stars"></label>
+
+              <input type="radio" id="slsdifficulty{{0}}" ng-checked="companyAboutCtrl.sales[0].rateDifficulty == 4" name="slsdifficulty{{0}}" value="4"/>
+              <label class="full" for="slsdifficulty{{0}}"  title="Pretty good - 4 stars"></label>
+
+              <input type="radio" id="slsdifficulty{{0}}" ng-checked="companyAboutCtrl.sales[0].rateDifficulty == 3" name="slsdifficulty{{0}}" value="3"/>
+              <label class="full" for="slsdifficulty{{0}}" title="Meh - 3 stars"></label>
+
+              <input type="radio" id="slsdifficulty{{0}}" ng-checked="companyAboutCtrl.sales[0].rateDifficulty == 2" name="slsdifficulty{{0}}"  value="2"/>
+              <label class="full" for="slsdifficulty{{0}}" title="Kinda bad - 2 stars"></label>
+
+              <input type="radio" id="slsdifficulty{{0}}" ng-checked="companyAboutCtrl.sales[0].rateDifficulty == 1" name="slsdifficulty{{0}}" value="1"/>
+              <label class="full" for="slsdifficulty{{0}}" title="Sucks big time - 1 star"></label>
+
+            </fieldset>
+          </div>
+          <div class="col-sm-6">
+            <label class="block">Negotiation Difficulty</label>
+            <fieldset class="rating rtng" disabled="disabled" style="">
+              <input type="radio" id="slsNegotiation{{0}}" ng-checked="companyAboutCtrl.sales[0].rateNegotiationDifficulty == 5" name="slsNegotiation{{0}}"  value="5">
+              <label class="full" for="slsNegotiation{{0}}" title="Awesome - 5 stars"></label>
+
+              <input type="radio" id="slsNegotiation{{0}}" ng-checked="companyAboutCtrl.sales[0].rateNegotiationDifficulty == 4" name="slsNegotiation{{0}}" value="4"/>
+              <label class="full" for="slsNegotiation{{0}}"  title="Pretty good - 4 stars"></label>
+
+              <input type="radio" id="slsNegotiation{{0}}" ng-checked="companyAboutCtrl.sales[0].rateNegotiationDifficulty == 3" name="slsNegotiation{{0}}" value="3"/>
+              <label class="full" for="slsNegotiation{{0}}" title="Meh - 3 stars"></label>
+
+              <input type="radio" id="slsNegotiation{{0}}" ng-checked="companyAboutCtrl.sales[0].rateNegotiationDifficulty == 2" name="slsNegotiation{{0}}"  value="2"/>
+              <label class="full" for="slsNegotiation{{0}}" title="Kinda bad - 2 stars"></label>
+
+              <input type="radio" id="slsNegotiation{{0}}" ng-checked="companyAboutCtrl.sales[0].rateNegotiationDifficulty == 1" name="slsNegotiation{{0}}" value="1"/>
+              <label class="full" for="slsNegotiation{{0}}" title="Sucks big time - 1 star"></label>
+
+            </fieldset>
+          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-12">
+            <label class="block">Overall Sales Experience</label>
+            <p>{{companyAboutCtrl.sales[0].describe}} <p>
+          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-12">
+            <label class="block">What was Good</label>
+            <p>{{companyAboutCtrl.sales[0].whatWasGood}} <p>
+          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-12">
+            <label class="block">What Could be Better</label>
+            <p>{{companyAboutCtrl.sales[0].whatCouldBeBetter}} <p>
+          </div>
+        </div>
+
+      </div>
+      <div class="row clearfix" style="margin-top: 20px;">
+        <div class="col-sm-5">
+          <!--<image alt="Facebook" src="assets/images/facebook.png" class="sclImg"/>
+          <image alt="Facebook" src="assets/images/twitter.png" class="sclImg"/>
+          <image alt="Facebook" src="assets/images/gmail.png" class="sclImg"/>
+          <image alt="Facebook" src="assets/images/facebook.png" class="sclImg"/>-->
+        </div>
+        <div class="col-sm-3">
+          <button type="button" ui-sref="companyProfile.sales" class="btn btn-primary btnColor">More Reviews</button>
+        </div>
+        <div class="col-sm-4 right">
+          <button type="button" class="btn btn-primary btnColor wdth80">Helpful</button>
+          <i class="fa fa-flag flag" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+
+    <span class="bold block bottom7 abtHdg" ng-if="companyAboutCtrl.postSales.length">Post-Sales Reviews</span>
+    <div class="row clearfix mzda mrv" ng-if="companyAboutCtrl.postSales.length">
+      <span class="block" style="margin-bottom: 20px">{{companyAboutCtrl.postSales[0].reviewDate |  date:"dd-MMM-yyyy"}}</span>
+      <div class="col-sm-2">
+        <img src="assets/images/tcs.png" alt="dot" class="img-rounded width90">
+      </div>
+      <div class="col-sm-10 oldman">
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-12">
+            <h5 class="block fnt26" style="display: block;">{{companyAboutCtrl.postSales[0].name}}</h5>
+            <fieldset class="rating rtng" disabled="disabled" style="">
+              <input type="radio" id="postExp{{0}}" ng-checked="companyAboutCtrl.postSales[0].experience == 5" name="postExp{{0}}"  value="5">
+              <label class="full" for="postExp{{0}}" title="Awesome - 5 stars"></label>
+
+              <input type="radio" id="postExp{{0}}" ng-checked="companyAboutCtrl.postSales[0].experience == 4" name="postExp{{0}}" value="4"/>
+              <label class="full" for="postExp{{0}}"  title="Pretty good - 4 stars"></label>
+
+              <input type="radio" id="postExp{{0}}" ng-checked="companyAboutCtrl.postSales[0].experience == 3" name="postExp{{0}}" value="3"/>
+              <label class="full" for="postExp{{0}}" title="Meh - 3 stars"></label>
+
+              <input type="radio" id="postExp{{0}}" ng-checked="companyAboutCtrl.postSales[0].experience == 2" name="postExp{{0}}"  value="2"/>
+              <label class="full" for="postExp{{0}}" title="Kinda bad - 2 stars"></label>
+
+              <input type="radio" id="postExp{{0}}" ng-checked="companyAboutCtrl.postSales[0].experience == 1" name="postExp{{0}}" value="1"/>
+              <label class="full" for="postExp{{0}}" title="Sucks big time - 1 star"></label>
+
+            </fieldset>
+            <span class="ratingDscrpn font11">Product- ERP in Mumbai</span>
+          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-6">
+            <label class="block">Time (weeks)</label>
+            <span class="badge metadata" class="inherit"> {{companyAboutCtrl.postSales[0].decisionTime}}</span>
+          </div>
+          <div class="col-md-6">
+            <label class="block">Departments</label>
+            <span ng-repeat="dept in companyAboutCtrl.postSales[0].departmentsInvolved">
+            <span class="badge metadata" class="inherit"> {{dept}}</span>
+                </span>
+          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-6">
+            <label class="block">Key People</label>
+            <span ng-repeat="keyPpl in companyAboutCtrl.postSales[0].keyDecisionMakers">
+            <span class="badge metadata" class="inherit"> {{keyPpl}}</span>
+            </span>
+          </div>
+          <div class="col-md-6">
+            <label class="block">Success Factor</label>
+            <span ng-repeat="sucessFactor in companyAboutCtrl.postSales[0].sucessFactors">
+            <span class="badge metadata" class="inherit"> {{sucessFactor}}</span>
+            </span>
+           <!-- <span class="badge metadata" class="inherit"> Product Knowledge</span>
+            <span class="badge metadata" class="inherit"> Sector Experience</span>
+            <span class="badge metadata" class="inherit"> Price</span>-->
+          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-6">
+            <label class="block">Post-Sales Difficulty</label>
+            <fieldset class="rating rtng" disabled="disabled" style="">
+              <input type="radio" id="postdifficulty{{0}}" ng-checked="companyAboutCtrl.postSales[0].rateDifficulty == 5" name="postdifficulty{{0}}"  value="5">
+              <label class="full" for="postdifficulty{{0}}" title="Awesome - 5 stars"></label>
+
+              <input type="radio" id="postdifficulty{{0}}" ng-checked="companyAboutCtrl.postSales[0].rateDifficulty == 4" name="postdifficulty{{0}}" value="4"/>
+              <label class="full" for="postdifficulty{{0}}"  title="Pretty good - 4 stars"></label>
+
+              <input type="radio" id="postdifficulty{{0}}" ng-checked="companyAboutCtrl.postSales[0].rateDifficulty == 3" name="postdifficulty{{0}}" value="3"/>
+              <label class="full" for="postdifficulty{{0}}" title="Meh - 3 stars"></label>
+
+              <input type="radio" id="postdifficulty{{0}}" ng-checked="companyAboutCtrl.postSales[0].rateDifficulty == 2" name="postdifficulty{{0}}"  value="2"/>
+              <label class="full" for="postdifficulty{{0}}" title="Kinda bad - 2 stars"></label>
+
+              <input type="radio" id="postdifficulty{{0}}" ng-checked="companyAboutCtrl.postSales[0].rateDifficulty == 1" name="postdifficulty{{0}}" value="1"/>
+              <label class="full" for="postdifficulty{{0}}" title="Sucks big time - 1 star"></label>
+
+            </fieldset>
+          </div>
+          <div class="col-sm-6">
+            <label class="block">Payment Terms</label>
+            <fieldset class="rating rtng" disabled="disabled" style="">
+              <input type="radio" id="postNegotiation{{0}}" ng-checked="companyAboutCtrl.postSales[0].paymentTerms == 5" name="postNegotiation{{0}}"  value="5">
+              <label class="full" for="postNegotiation{{0}}" title="Awesome - 5 stars"></label>
+
+              <input type="radio" id="postNegotiation{{0}}" ng-checked="companyAboutCtrl.postSales[0].paymentTerms == 4" name="postNegotiation{{0}}" value="4"/>
+              <label class="full" for="postNegotiation{{0}}"  title="Pretty good - 4 stars"></label>
+
+              <input type="radio" id="postNegotiation{{0}}" ng-checked="companyAboutCtrl.postSales[0].paymentTerms == 3" name="postNegotiation{{0}}" value="3"/>
+              <label class="full" for="postNegotiation{{0}}" title="Meh - 3 stars"></label>
+
+              <input type="radio" id="postNegotiation{{0}}" ng-checked="companyAboutCtrl.postSales[0].paymentTerms == 2" name="postNegotiation{{0}}"  value="2"/>
+              <label class="full" for="postNegotiation{{0}}" title="Kinda bad - 2 stars"></label>
+
+              <input type="radio" id="postNegotiation{{0}}" ng-checked="companyAboutCtrl.postSales[0].paymentTerms == 1" name="postNegotiation{{0}}" value="1"/>
+              <label class="full" for="postNegotiation{{0}}" title="Sucks big time - 1 star"></label>
+
+            </fieldset>
+          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-12">
+            <label class="block">Post-Sales Experience</label>
+            <p>{{companyAboutCtrl.postSales[0].describe}} <p>
+          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-12">
+            <label class="block">What was Good</label>
+            <p>{{companyAboutCtrl.postSales[0].whatWasGood}} <p>
+          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-12">
+            <label class="block">What Could be Better</label>
+            <p>{{companyAboutCtrl.postSales[0].whatCouldBeBetter}} <p>
+          </div>
+        </div>
+
+      </div>
+      <div class="row clearfix" style="margin-top: 20px;">
+        <div class="col-sm-5">
+          <!--<image alt="Facebook" src="assets/images/facebook.png" class="sclImg"/>
+          <image alt="Facebook" src="assets/images/twitter.png" class="sclImg"/>
+          <image alt="Facebook" src="assets/images/gmail.png" class="sclImg"/>
+          <image alt="Facebook" src="assets/images/facebook.png" class="sclImg"/>-->
+        </div>
+        <div class="col-sm-3">
+          <button type="button" ui-sref="companyProfile.postSales" class="btn btn-primary btnColor">More Reviews</button>
+        </div>
+        <div class="col-sm-4 right">
+          <button type="button" class="btn btn-primary btnColor wdth80">Helpful</button>
+          <i class="fa fa-flag flag" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+
+    <span class="font14 bold block bottom7 abtHdg" ng-if="companyAboutCtrl.rfpsList.length">RFPS</span>
+    <div class="col-sm-12 none mar-t" ng-if="companyAboutCtrl.rfpsList.length" style="padding-bottom: 10px;">
+      <div class="middle_1" style="padding-bottom: 0px;padding-top: 0px">
+
+        <div class="row clearfix bottomSpace">
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="block" style="margin-bottom: 1px;font-size:15px;font-weight: bold;display: inline;">{{companyAboutCtrl.rfpsList[0].rfpTitle}}</h4>
+              <i class="fa fa-download download pull-right" title="Download Document" aria-hidden="true"></i>
+            </div>
+            <div class="panel-body">
+              <div class="row clearfix">
+                <div class="col-sm-6 linkMargin">
+                  <span ng-repeat="prod in companyAboutCtrl.rfpsList[0].productCategory">{{prod}}
+                    <span ng-hide="$index === companyAboutCtrl.rfpsList[0].productCategory.length-1">,</span>
+                  </span>
+                </div>
+                <div class="col-sm-6 linkMargin">
+                  <span>{{companyAboutCtrl.rfpsList[0].budgetStart}} - {{companyAboutCtrl.rfpsList[0].budgetEnd}}</span>
+                </div>
+                <div class="col-sm-6 linkMargin">
+                  <span class="badge metadata" ng-repeat="loc in companyAboutCtrl.rfpsList[0].location">{{loc}}
+                    <span ng-hide="$index === companyAboutCtrl.rfpsList[0].location.length-1">,</span>
+                  </span>
+                </div>
+                <div class="col-sm-6 linkMargin" style="padding-bottom: 1px;padding-top: 3px;">
+                  <div class="col-sm-6 none hrDt">
+                    <div class="inlineBlock">
+                      <i class="fa fa-list pointer" id="getResponse" aria-hidden="true" title="No of Responses"></i>
+                      <span>20/100</span>
+                    </div>
+                    <i class="fa fa-clock-o hrDt left6" aria-hidden="true" title="End Date"></i>
+                    <span>{{companyAboutCtrl.rfpsList[0].endDate | date}}</span>
+                  </div>
+                  <div class="col-sm-6 none rsb text-right">
+
+                  </div>
+                </div>
+                <div class="col-sm-12 bottomSpace linkMargin" style="margin-bottom: 0px;">
+                  <p>{{companyAboutCtrl.rfpsList[0].proposalDescription}}</p>
+                </div>
+                <div class="col-sm-12 none rsb text-right" style="margin-bottom: 11px;">
+                  <a class="right10 pointer" style="font-weight: bold;" data-toggle="modal"
+                     data-target="#expressInterest">Express Interest
+                  </a>
+                  <a class="pointer" style="font-weight: bold;" data-toggle="modal" data-target="#applyRFP">Apply
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

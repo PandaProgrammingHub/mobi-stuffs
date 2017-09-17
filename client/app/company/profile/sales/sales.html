@@ -1,0 +1,176 @@
+<div id="menu14" class="tab-pane fade active in">
+  <!-- <h4>210 reviews</h4> -->
+  <div class="row clearfix">
+    <div class="col-sm-8"><h4>{{$ctrl.sales.length}} reviews</h4></div>
+    <div class="col-sm-4">
+      <select class="rvwSelect bottom10">
+        <option>Select Location</option>
+        <option>Select Location</option>
+        <option>Select Location</option>
+      </select>
+    </div>
+  </div>
+  <div class=" mzda mrv" ng-repeat="rvw in $ctrl.sales">
+    <span class="block" style="margin-bottom: 20px">{{rvw.reviewDate |  date:"dd-MMM-yyyy"}}</span>
+    <div class="row clearfix">
+      <div class="col-sm-3">
+        <img src="assets/images/oldman.jpg" alt="dot" class="img-rounded width54">
+        <span class="block bold font10" ng-if="rvw.userDetails">
+          {{rvw.userDetails.name}}</span>
+        <span class="block font10">{{rvw.userDetails.designation}} @ {{rvw.userDetails.currentcompany}}
+								</span>
+      </div>
+      <div class="col-sm-9 oldman">
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-8 center">
+            <span class="block bold font22" style="color: #087ca3;">{{rvw.name}}</span>
+            <span class="block font11">Product-
+              <span ng-repeat="prd in rvw.product">{{prd}}
+                <span ng-if="$index !== rvw.product.length-1">,</span>
+              </span>in
+              <span>{{rvw.location[0]}}</span>
+            </span>
+          </div>
+          <div class="col-sm-4">
+            <fieldset disabled="disabled" class="rating rtng" style="">
+              <input type="radio" id="overall{{$index}}" ng-checked="rvw.experience == 5" name="overall{{$index}}"  value="5">
+              <label class="full" for="overall{{$index}}" title="Awesome - 5 stars"></label>
+
+              <input type="radio" id="overall{{$index}}" ng-checked="rvw.experience == 4" name="overall{{$index}}" value="4"/>
+              <label class="full" for="overall{{$index}}"  title="Pretty good - 4 stars"></label>
+
+              <input type="radio" id="overall{{$index}}" ng-checked="rvw.experience == 3" name="overall{{$index}}" value="3"/>
+              <label class="full" for="overall{{$index}}" title="Meh - 3 stars"></label>
+
+              <input type="radio" id="overall{{$index}}" ng-checked="rvw.experience == 2" name="overall{{$index}}"  value="2"/>
+              <label class="full" for="overall{{$index}}" title="Kinda bad - 2 stars"></label>
+
+              <input type="radio" id="overall{{$index}}" ng-checked="rvw.experience == 1" name="overall{{$index}}" value="1"/>
+              <label class="full" for="overall{{$index}}" title="Sucks big time - 1 star"></label>
+
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row clearfix">
+      <div class="col-md-3"></div>
+      <div class="col-sm-9 oldman">
+
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-6">
+            <label class="block">Time (weeks)</label>
+            <span class="badge metadata" class="inherit">{{rvw.decisionTime}}</span>
+          </div>
+          <div class="col-md-6">
+            <label class="block">Departments</label>
+            <span class="badge metadata" class="inherit" ng-repeat="dept in rvw.departmentsInvolved">
+              {{dept}}</span>
+          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-6">
+            <label class="block">Key People</label>
+            <span class="badge metadata" class="inherit" ng-repeat="kyPpl in rvw.keyDecisionMakers">
+              {{kyPpl}}</span>
+          </div>
+          <div class="col-md-6">
+            <label class="block">Success Factor</label>
+            <span class="badge metadata" class="inherit" ng-repeat="sFctr in rvw.successFactors">
+              {{sFctr}}</span>
+          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-6">
+            <label class="block">Sales Difficulty</label>
+            <fieldset disabled="disabled" class="rating">
+              <input type="radio" id="difficulty{{$index}}" ng-checked="rvw.rateDifficulty == 5" name="difficulty{{$index}}"  value="5">
+              <label class="full" for="difficulty{{$index}}"  title="Awesome - 5 stars"></label>
+
+              <input type="radio" id="difficulty{{$index}}" ng-checked="rvw.rateDifficulty == 4" name="difficulty{{$index}}" value="4">
+              <label class="full" for="difficulty{{$index}}" title="Pretty good - 4 stars"></label>
+
+              <input type="radio" id="difficulty{{$index}}" ng-checked="rvw.rateDifficulty == 3" name="difficulty{{$index}}" value="3">
+              <label class="full" for="difficulty{{$index}}" title="Meh - 3 stars"></label>
+
+              <input type="radio" id="difficulty{{$index}}" ng-checked="rvw.rateDifficulty == 2" name="difficulty{{$index}}" value="2">
+              <label class="full" for="difficulty{{$index}}" title="Kinda bad - 2 stars"></label>
+
+              <input type="radio" id="difficulty{{$index}}" ng-checked="rvw.rateDifficulty == 1" name="difficulty{{$index}}" value="1">
+              <label class="full" for="difficulty{{$index}}" title="Sucks big time - 1 star"></label>
+
+            </fieldset>
+          </div>
+          <div class="col-sm-6">
+            <label class="block">Negotiation Difficulty</label>
+            <fieldset disabled="disabled" class="rating">
+              <input type="radio" id="negotiation{{$index}}" ng-checked="rvw.rateNegotiationDifficulty == 5" name="negotiation{{$index}}" value="5">
+              <label class="full" for="negotiation{{$index}}" title="Awesome - 5 stars"></label>
+
+              <input type="radio" id="negotiation{{$index}}" ng-checked="rvw.rateNegotiationDifficulty == 4" name="negotiation{{$index}}" value="4">
+              <label class="full" for="negotiation{{$index}}" title="Pretty good - 4 stars"></label>
+
+              <input type="radio" id="negotiation{{$index}}" ng-checked="rvw.rateNegotiationDifficulty == 3" name="negotiation{{$index}}" value="3">
+              <label class="full" for="negotiation{{$index}}" title="Meh - 3 stars"></label>
+
+              <input type="radio" id="negotiation{{$index}}" ng-checked="rvw.rateNegotiationDifficulty == 2" name="negotiation{{$index}}" value="2">
+              <label class="full" for="negotiation{{$index}}" title="Kinda bad - 2 stars"></label>
+
+              <input type="radio" id="negotiation{{$index}}" ng-checked="rvw.rateNegotiationDifficulty == 1" name="negotiation{{$index}}" value="1">
+              <label class="full" for="negotiation{{$index}}" title="Sucks big time - 1 star"></label>
+
+            </fieldset>
+          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-12">
+            <label class="block">Overall Sales Experience</label>
+            <p>{{rvw.describe}}</p>
+          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-12">
+            <label class="block">What was Good</label>
+            <p>{{rvw.whatWasGood}}</p>
+          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div class="col-sm-12">
+            <label class="block">What Could be Better</label>
+            <p>{{rvw.whatCouldBeBetter}}</p>
+          </div>
+        </div>
+        <div class="row clearfix lineSpac">
+          <div ng-if="rvw.companyResponse" class="col-sm-12">
+            <label class="block">Company Response</label>
+            <!-- <input type="textarea" name="Advice" /> -->
+            <p>{{rvw.companyResponse}}</p>
+          </div>
+        </div>
+        <div class="row clearfix" style="margin-top: 20px;">
+          <div class="col-sm-5">
+            <!--<image alt="Facebook" src="assets/images/facebook.png" class="sclImg"/>
+            <image alt="Facebook" src="assets/images/twitter.png" class="sclImg"/>
+            <image alt="Facebook" src="assets/images/gmail.png" class="sclImg"/>
+            <image alt="Facebook" src="assets/images/facebook.png" class="sclImg"/>-->
+          </div>
+          <div class="col-sm-3" style="text-align: center;">
+            <button type="button" ng-click="$ctrl.getResponse(rvw)" class="btn btn-primary btnColor wdth80">Respond</button>
+          </div>
+          <div class="col-sm-4 right">
+            <button type="button" class="btn btn-primary btnColor wdth80">Helpful</button>
+            <i class="fa fa-flag flag" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- Second Review -->
+  <!-- End -->
+  <div class="row clearfix mzda mrv">
+    <div class="col-sm-12">
+      <span># The page shows three 3-4 reviews</span>
+    </div>
+  </div>
+</div>

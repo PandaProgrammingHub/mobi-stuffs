@@ -1,0 +1,63 @@
+<div class="body2">
+<div class="container-fluid conta">
+  <div class="row">
+    <form name="additionalinfoOne">
+    <div class="col-md-offset-4 col-sm-offset-4 col-md-4 col-sm-4">
+      <div class="progress page">
+        <div class="stepwizard">
+          <div class="stepwizard-row">
+            <div class="stepwizard-step">
+              <button type="button" class="btn btn-blue btn-circle">1</button>
+              <!-- <p>Step 1</p> -->
+            </div>
+            <div class="stepwizard-step">
+              <button type="button" class="btn btn-default btn-circle">2</button>
+              <!-- <p>Step 2</p> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="welcome-page text-center">
+        <h2>Welcome to Salesdoor </h2>
+        <h4>Let us get to know you better</h4>
+        <div class="welcome-input">
+          <div class="form-group" ng-class="{ 'has-error' : additionalinfoOne.name.$invalid && additionalinfoOne.name.$touched}">
+            <input type="text" name="name" class="form-control" ng-model="additionalinfooneCtrl.user.name" placeholder="Name"required>
+            <p ng-show="additionalinfoOne.name.$invalid && additionalinfoOne.name.$touched" class="help-block text-align-left" >Name is required.</p>
+          </div>
+          <div class="form-group" ng-class="{ 'has-error' : additionalinfoOne.location.$invalid && additionalinfoOne.location.$touched}">
+            <!--<input type="text" name="location" class="form-control" ng-model="additionalinfooneCtrl.user.location" placeholder="Locations Worked In"required>-->
+            <input type="text"
+                   name="location"
+                   uib-typeahead="location.name  for location in additionalinfooneCtrl.locations | filter:$viewValue | limitTo:8"
+                   ng-model="additionalinfooneCtrl.user.location"
+                   placeholder="Locations Worked In"
+                   class="form-control"  autocomplete="off" required/>
+            <p ng-show="additionalinfoOne.location.$invalid && additionalinfoOne.location.$touched" class="help-block text-align-left" >Locations Worked is required.</p>
+          </div>
+          <div class="form-group" ng-class="{ 'has-error' : additionalinfoOne.products.$invalid && additionalinfoOne.products.$touched}">
+            <input type="text" name="products" class="form-control" ng-model="additionalinfooneCtrl.user.products" placeholder="Products Sold"required>
+            <p ng-show="additionalinfoOne.products.$invalid && additionalinfoOne.products.$touched" class="help-block text-align-left" >Products Sold is required.</p>
+          </div>
+          <div class="form-group" ng-class="{ 'has-error' : additionalinfoOne.companies.$invalid && additionalinfoOne.companies.$touched}">
+           <!-- <input type="text" name="companies" class="form-control" ng-model="additionalinfooneCtrl.user.companies" placeholder="Companies Sold To"required>-->
+            <input type="text"
+                   name="companies"
+                   uib-typeahead="company.name  for company in additionalinfooneCtrl.companies | filter:$viewValue | limitTo:8"
+                   ng-model="additionalinfooneCtrl.user.companies"
+                   placeholder="Companies Sold To"
+                   class="form-control"  autocomplete="off"  required/>
+
+            <p ng-show="additionalinfoOne.companies.$invalid && additionalinfoOne.companies.$touched" class="help-block text-align-left" >Companies Sold is required.</p>
+          </div>
+          <div class="company-name-input text-center padding0">
+            <button type="submit" class="padding0" ng-click="additionalinfooneCtrl.saveAdditionalInfo(additionalinfoOne.$invalid)">Continue</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </form>
+  </div>
+</div>
+</div>

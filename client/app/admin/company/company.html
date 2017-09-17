@@ -1,0 +1,85 @@
+<div ng-show="$ctrl.stateName()">
+  <!-- admin panle assets links goes here -->
+  <link rel="stylesheet" href="../../../assets/admin_assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../../../assets/admin_assets/css/bootstrap-responsive.min.css" />
+  <link rel="stylesheet" href="../../../assets/admin_assets/css/style.css" />
+  <link rel="stylesheet" href="../../../assets/admin_assets/css/media.css" />
+  <link href="../../../assets/admin_assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+</div>
+
+
+<div id="content">
+  <div id="content-header">
+    <div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="current"></a> </div>
+
+  </div>
+  <div class="container-fluid">
+    <hr>
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"> <i class="icon-pencil"></i> </span>
+            <h5>Search Company</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <form  class="form-horizontal ui-formwizard" method="post" novalidate="novalidate">
+              <div id="form-wizard-1" class="step ui-formwizard-content" style="display: block;">
+                <div class="control-group ">
+                  <label class="control-label">Company Name</label>
+                  <div class="controls">
+                    <input type="text" ng-model="searchText"name="company" ng-dirty="$ctrl.companyList(searchText)" class="ui-wizard-content">
+                  </div>
+                </div>
+              </div>
+              <div class="form-actions">
+                <input class="btn btn-primary ui-wizard-content ui-formwizard-button" ng type="button" value="Search" ng-click="$ctrl.getResultedData(searchText,Company)">
+              </div>
+
+            </form>
+            <div ng-show="$ctrl.showNotifcation">
+              <h4> No Results found with this criteria</h4>
+            </div>
+          </div>
+        </div>
+  <button class="btn btn-primary ui-wizard-content ui-formwizard-button" type="button" data-toggle="modal" data-target="#edit" ng-click="$ctrl.createAdminCompany()">
+          Create Company </button>
+      </div>
+    </div>
+    <div class="row-fluid" ng-show="showNotifcation">
+      <div class="span12">
+        <div class="widget-box">
+
+          <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
+            <h5> Company List</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <table class="table table-bordered data-table">
+              <thead>
+              <tr>
+                <th><input type="checkbox"></th>
+                <th>Company Name</th>
+                <th>Headquarter</th>
+                <th>Admin Assigned</th>
+                <th>Action</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr ng-repeat="company in $ctrl.companies | limitTo:$ctrl.itemsPerPage">
+                <th><input type="checkbox"></th>
+                <td>{{company.name}}</td>
+                <td>{{company.headquarters}}</td>
+                <td><span>Yes</span><button class="btn btn-warning btn-mini" style="float:right" data-toggle="modal" data-target="#Assignedit" ng-click="$ctrl.editAdminAssignCompany(company)">Edit</button></td>
+                <td class="center"><button class="btn btn-warning btn-mini" style="float:left" data-toggle="modal" data-target="#edit" ng-click="$ctrl.editAdminCompany(company)" >Edit</button> <button class="btn btn-warning btn-mini" style="float:right" ng-click="$ctrl.deleteCompanies($index)"  >Delete</button></td>
+              </tr>
+            </tbody>
+            </table>
+            <ul uib-pagination total-items="$ctrl.totalItems" ng-model="$ctrl.currentPage"  max-size="$ctrl.maxSize" ng-change="$ctrl.pageChanged()" boundary-links="true" class="pagination-sm" items-per-page="$ctrl.itemsPerPage" num-pages="numPages" ></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

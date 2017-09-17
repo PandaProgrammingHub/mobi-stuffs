@@ -1,0 +1,126 @@
+<div class="container-fluid">
+  <div class="row">
+    <form name="preSalesForm" novalidate>
+      <div class="col-md-offset-3 col-sm-offset-3 col-sm-6 col-md-6">
+        <div class="pg-5-sec">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="preSales">
+                <div class="form-group">
+                  <input type="text" ng-model="preSalesReviewCtrl.compSelected.name"
+                         class="form-control" readonly>
+                </div>
+                <div class="form-group">
+                  <input type="text" name="name"
+                         class="form-control"
+                         ng-model="preSalesReviewCtrl.newPreSales.name"
+                         placeholder="Review Title" required>
+                  <span ng-messages="(preSalesForm.name.$touched && preSalesForm.name.$error)" role="alert">
+                  <span class="text-danger" ng-message="required">Please complete this mandatory field.</span>
+                  </span>
+                </div>
+                <span class="font14 bold block top15">Overall Pre-Sales Experience<span class="text-danger">*</span>  </span>
+                <fieldset class="rating rtng" style="" name="preSalesSalesExperience" >
+                  <input type="radio" id="star5Exp" name="ratingExp" value="5" /><label class = "full" for="star5Exp" title="Awesome - 5 stars" ng-click="preSalesReviewCtrl.setOExpRate(5)"></label>
+                  <input type="radio" id="star4Exp" name="ratingExp" value="4" /><label class = "full" for="star4Exp" title="Pretty good - 4 stars" ng-click="preSalesReviewCtrl.setOExpRate(4)"></label>
+                  <input type="radio" id="star3Exp" name="ratingExp" value="3" /><label class = "full" for="star3Exp" title="Meh - 3 stars" ng-click="preSalesReviewCtrl.setOExpRate(3)"></label>
+                  <input type="radio" id="star2Exp" name="ratingExp" value="2" /><label class = "full" for="star2Exp" title="Kinda bad - 2 stars" ng-click="preSalesReviewCtrl.setOExpRate(2)"></label>
+                  <input type="radio" id="star1Exp" name="ratingExp" value="1" /><label class = "full" for="star1Exp" title="Sucks big time - 1 star" ng-click="preSalesReviewCtrl.setOExpRate(1)"></label>
+                </fieldset>
+                <p ng-show="preSalesForm.preSalesSalesExperience.$invalid && !preSalesForm.preSalesSalesExperience.$error" class="help-block">PreSales review rating is required.</p>
+                <br>
+                <br>
+                <div class="sales-exp">
+                  <div class="row clearfix">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <tags-input ng-model="preSalesReviewCtrl.newPreSales.product" add-on-paste="true" placeholder="Products" name="prod">
+                          <auto-complete source="preSalesReviewCtrl.loadTags($query)" min-length="0"></auto-complete>
+                        </tags-input>
+                        <span ng-show="preSalesForm.prod.$touched && preSalesReviewCtrl.newPreSales.product.length == 0" class="text-danger">This field is mandatory.</span>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <input type="text" ng-model="preSalesReviewCtrl.newPreSales.location" uib-typeahead="name for name in preSalesReviewCtrl.locs | filter:$viewValue | limitTo:8" class="form-control margin_dopdown5" placeholder="Location" name="location" required>
+                        <span ng-messages="(preSalesForm.location.$touched && preSalesForm.location.$error)" role="alert">
+                        <span class="text-danger" ng-message="required">Location is mandatory.</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row clearfix top15">
+                    <div class="col-sm-12">
+                      <span class="font13 bold block bottom7">Describe overall Pre-Sales experience with the company</span>
+                        <textarea  name="describe" class="width100 form-control" ng-model="preSalesReviewCtrl.newPreSales.describe" required></textarea>
+                       <span ng-messages="(preSalesForm.describe.$touched && preSalesForm.describe.$error)" role="alert">
+                       <span class="text-danger" ng-message="required">Description is mandatory.</span>
+                       </span>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="row clearfix">
+                    <div class="col-sm-12 top15">
+                      <span class="font14 bold block bottom7">Rate Pre-Sales difficulty<span class="text-danger">*</span> </span>
+                      <fieldset class="rating rtng" style="" name="rateDifficulty">
+                        <input type="radio" id="star5Diff" name="ratingDiff" value="5" /><label class = "full" for="star5Diff" title="Awesome - 5 stars" ng-click="preSalesReviewCtrl.setODiffRate(5)"></label>
+                        <input type="radio" id="star4Diff" name="ratingDiff" value="4" /><label class = "full" for="star4Diff" title="Pretty good - 4 stars" ng-click="preSalesReviewCtrl.setODiffRate(4)"></label>
+                        <input type="radio" id="star3Diff" name="ratingDiff" value="3" /><label class = "full" for="star3Diff" title="Meh - 3 stars" ng-click="preSalesReviewCtrl.setODiffRate(3)"></label>
+                        <input type="radio" id="star2Diff" name="ratingDiff" value="2" /><label class = "full" for="star2Diff" title="Kinda bad - 2 stars" ng-click="preSalesReviewCtrl.setODiffRate(2)"></label>
+                        <input type="radio" id="star1Diff" name="ratingDiff" value="1" /><label class = "full" for="star1Diff" title="Sucks big time - 1 star" ng-click="preSalesReviewCtrl.setODiffRate(1)"></label>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <div class="row clearfix top15">
+                    <div class="col-sm-6">
+                      <select class="rvwSelect" ng-model="preSalesReviewCtrl.newPreSales.decisionTime" name="decisionTime">
+                        <option ng-hide="true">Decision Time</option>
+                        <option value="Less than 1 week">Less than 1 week</option>
+                        <option value="1-2 weeks">1-2 weeks</option>
+                        <option value="2-4 weeks">2-4 weeks</option>
+                        <option value="1-2 months">1-2 months</option>
+                        <option value="2-4 months">2-4 months</option>
+                        <option value="More than 4 months">More than 4 months</option>
+                      </select>
+                    </div>
+                    <div class="col-sm-6">
+                      <tags-input ng-model="preSalesReviewCtrl.newPreSales.departmentsInvolved" add-on-paste="true" placeholder="Departments Involved" name="departmentsInvolved">
+                        <auto-complete source="preSalesReviewCtrl.loadDeptsTags($query)" min-length="0"></auto-complete>
+                      </tags-input>
+                    </div>
+                    <div class="col-sm-6">
+                      <tags-input ng-model="preSalesReviewCtrl.newPreSales.keyDecisionMakers" placeholder="Key Decision Makers"></tags-input>
+                    </div>
+                    <div class="col-sm-6">
+                      <tags-input  ng-model="preSalesReviewCtrl.newPreSales.successFactors" placeholder="Success Factors" name="successFactors">
+                        <auto-complete source="preSalesReviewCtrl.loadSuccessFacTags($query)" min-length="0"></auto-complete>
+                      </tags-input>
+                    </div>
+                  </div>
+                  <div class="row clearfix top15">
+                    <div class="col-sm-12">
+                      <span class="font14 bold block bottom7">What was good?</span>
+                      <textarea ng-model="preSalesReviewCtrl.newPreSales.whatWasGood" name="whatWasGood" class="width100"></textarea>
+                    </div>
+                    <div class="col-sm-12 top15">
+                      <span class="font14 bold block bottom7">What could be better?</span>
+                      <textarea ng-model="preSalesReviewCtrl.newPreSales.whatCouldBeBetter" name="whatCouldBeBetter" class="width100"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row clearfix">
+            <div class="col-sm-12">
+              <button class="submit right" type="submit" ng-click="preSalesReviewCtrl.handlePreSalesSubmit(preSalesForm)"  ng-disabled="!preSalesReviewCtrl.isValid(preSalesForm.$valid)" >Submit</button>
+              <!--<button type="button" ng-click="preSalesReviewCtrl.handleNext()" class="submit right">Next</button>-->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </form>
+    <!--</div>-->
+  </div>
+</div>

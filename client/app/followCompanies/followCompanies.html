@@ -1,0 +1,96 @@
+<div class="wrapper_1 padding22">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12" id = "dialogContainer">
+        <div class="middle_1">
+          <h4 class="cnrw11"> Follow a Few Companies To Get Started</h4>
+          <!--<div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" close="followCompaniesCtrl.closeAlert($index)">{{alert.msg}}</div>-->
+          <div class="alert alert-danger alert-dismissable" ng-show="followCompaniesCtrl.showAlert">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close" ng-click="followCompaniesCtrl.closeAlert()">
+              ×</a>Need to Select company
+          </div>
+
+          <div class="row">
+            <div class="col-sm-4" ng-repeat="company in followCompaniesCtrl.companies | limitTo: 6" >
+              <div class="mzda croxxbtn">
+                <span class="xbtn"><i ng-click="followCompaniesCtrl.onCompanySelected($index)" class="fa fa-check" ng-Class="{'my-class': followCompaniesCtrl.checkFlags[$index] === true}" aria-hidden="true"></i> </span>
+                <div class="auc"> <img src="assets/images/mz.jpg" alt="mazda"></div>
+                <div class="auctor nwstars">
+                  <!--<span class="font14 bold block bottom7">{{company.name}}</span>-->
+                  <p class="font14 bold block bottom7 linename">{{company.name}}</p>
+                  <!-- <span class="font14 bold block bottom7">Auctor Pellentesque</span>  -->
+                  <div> <label> Rating </label>
+                    <fieldset class="rating">
+                      <input type="radio" id="star5" name="rating" value="5" />
+                      <label class="full" for="star5" title="Awesome - 5 stars"></label>
+                      <input type="radio" id="star4half" name="rating" value="4 and a half" />
+                      <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                      <input type="radio" id="star4" name="rating" value="4" />
+                      <label class="full" for="star4" title="Pretty good - 4 stars"></label>
+                      <input type="radio" id="star3half" name="rating" value="3 and a half" />
+                      <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                      <input type="radio" id="star3" name="rating" value="3" />
+                      <label class="full" for="star3" title="Meh - 3 stars"></label>
+                      <input type="radio" id="star2half" name="rating" value="2 and a half" />
+                      <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                      <input type="radio" id="star2" name="rating" value="2" />
+                      <label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+                      <input type="radio" id="star1half" name="rating" value="1 and a half" />
+                      <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                      <input type="radio" id="star1" name="rating" value="1" />
+                      <label class="full" for="star1" title="Sucks big time - 1 star"></label>
+                      <input type="radio" id="starhalf" name="rating" value="half" />
+                      <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                    </fieldset>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div ng-show="followCompaniesCtrl.showMoreFlag">
+              <div class="col-sm-4" ng-repeat="company in followCompaniesCtrl.companies" ng-if="$index >= 6">
+                <div class="mzda croxxbtn">
+                  <span class="xbtn"><i ng-click="followCompaniesCtrl.onCompanySelected($index)" class="fa fa-check" ng-Class="{'my-class': followCompaniesCtrl.checkFlags[$index] === true}" aria-hidden="true"></i> </span>
+                  <div class="auc"> <img src="assets/images/mz.jpg" alt="mazda"></div>
+                  <div class="auctor nwstars">
+                    <!--<span class="font14 bold block bottom7">{{company.name}}</span>-->
+                    <p class="font14 bold block bottom7">{{company.name | limitTo: 27}}</p>
+                    <!-- <span class="font14 bold block bottom7">Auctor Pellentesque</span>  -->
+                    <div> <label> Rating </label>
+                      <fieldset class="rating">
+                        <input type="radio" id="star5" name="rating" value="5" />
+                        <label class="full" for="star5" title="Awesome - 5 stars"></label>
+                        <input type="radio" id="star4half" name="rating" value="4 and a half" />
+                        <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                        <input type="radio" id="star4" name="rating" value="4" />
+                        <label class="full" for="star4" title="Pretty good - 4 stars"></label>
+                        <input type="radio" id="star3half" name="rating" value="3 and a half" />
+                        <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                        <input type="radio" id="star3" name="rating" value="3" />
+                        <label class="full" for="star3" title="Meh - 3 stars"></label>
+                        <input type="radio" id="star2half" name="rating" value="2 and a half" />
+                        <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                        <input type="radio" id="star2" name="rating" value="2" />
+                        <label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+                        <input type="radio" id="star1half" name="rating" value="1 and a half" />
+                        <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                        <input type="radio" id="star1" name="rating" value="1" />
+                        <label class="full" for="star1" title="Sucks big time - 1 star"></label>
+                        <input type="radio" id="starhalf" name="rating" value="half" />
+                        <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="morebtn m2" ng-click="followCompaniesCtrl.showMore()" ng-show="!followCompaniesCtrl.showMoreFlag"> <a href="#">View More </a> </div>
+          <button type="button" class="submit" ng-click="followCompaniesCtrl.goToGroups()">Skip</button>
+          <button type="button" class="submit fRight" ng-click="followCompaniesCtrl.followCompany()">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

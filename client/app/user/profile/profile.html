@@ -1,0 +1,317 @@
+<search-bar></search-bar>
+
+<div class="wrapper_1">
+  <div class="container">
+    <div class="row">
+      <left-nav></left-nav>
+      <div class="col-sm-6">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="middle_1 profilePadding">
+              <div class="col-md-2 none">
+                <img src={{profileCtrl.currentUser.profileImage}} class="img-circle" style="width: 100%;"/>
+              </div>
+
+              <div class="col-md-10 none">
+                <div class="top-st text-right">
+                  <ul>
+                    <!-- <li class="top-st pull-right" style="    margin-top: 5px;"><i class="fa fa-pencil" aria-hidden="true"></i></li> -->
+                    <li><fieldset class="rating" style="float:right;margin-right: 10px;font-size: 5px;">
+                      <input type="radio" id="avgRating" name="avgRating" ng-checked="profileCtrl.average === 5" value="5"><label class="full" for="star5" title="Awesome - 5 stars"></label>
+                      <input type="radio" id="avgRating" name="avgRating" ng-checked="profileCtrl.average === 4" value="4"><label class="full" for="star4" title="Pretty good - 4 stars"></label>
+                      <input type="radio" id="avgRating" name="avgRating" ng-checked="profileCtrl.average === 3" value="3"><label class="full" for="star3" title="Meh - 3 stars"></label>
+                      <input type="radio" id="avgRating" name="avgRating" ng-checked="profileCtrl.average === 2" value="2"><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+                      <input type="radio" id="avgRating" name="avgRating" ng-checked="profileCtrl.average === 1" value="1"><label class="full" for="star1" title="Sucks big time - 1 star"></label>
+                    </fieldset></li>
+                    <!-- <div class="right block">342 reviews</div> -->
+                    <!-- <li class="top-st text-right"><a href="#"><img src="images/badge.png" style="width:30px;"/></a><br></li> -->
+                  </ul>
+                </div>
+
+                <div class="garete">
+                  <div class="col-sm-9">
+                    <label class="pfName profileHdr" style="margin-left: 13%;" >{{profileCtrl.userName}} </label>
+                    <span class="font12">{{profileCtrl.userDesignation}}  @ {{profileCtrl.userCompany}}</span>
+                    <p style="margin-left: 13%;">{{profileCtrl.hiredLength}} Hires, {{profileCtrl.rfpsLength}} RFP</p>
+                  </div>
+                  <div class="col-sm-3 left">
+                    <span style="font-size: 10px;color: #787;">{{profileCtrl.revLength}} reviews</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="middle_1" style="background-color: #F5F5F5;">
+              <div class="row clearfix">
+                <div class="col-md-6">
+                  <div><label class="block">Key Expertise</label>
+                    <span class="badge metadata">{{profileCtrl.profile.products}}</span>
+                    <!--<span class="badge metadata">IT Solutions</span>-->
+                    <!--<span class="badge metadata">Health Care</span>-->
+                  </div>
+                  <!-- <div><label>Sales Experience</label><span> 10</span></div> -->
+                </div>
+                <div class="col-md-6 center">
+                  <div><label class="block">Sales experiences in</label>
+                    <span class="sei" ng-repeat="seElem in profileCtrl.salesExp"> {{seElem}}<span ng-if="$index !== profileCtrl.salesExp.length-1">,</span></span>
+                  </div>
+                  <!-- <div><label>Sub-Category</label><span> IT Solutution</span></div> -->
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12" style="margin-top:30px;">
+            <div class="mid-3">
+              <div style="width: 98%;margin-left: 1%">
+                <label  class="pfrvw">Reviews</label>
+                <p ng-show="profileCtrl.noReviews" style="color: red">No Reviews Available.</p>
+                  <div ng-show="profileCtrl.showReview">
+                    <div class="pfcntnr mrv">
+                    <div class="row clearfix lineSpac">
+                      <div class="col-sm-12">
+                        <span class="badge metadata fRight" class="inherit"> Sales</span>
+                        <h5 class="block fnt26" style="display: block;">{{profileCtrl.reviews[0].name}}</h5>
+                        <span class="bold block font16 bottom8">{{profileCtrl.reviews[0].review}}</span>
+                        <fieldset disabled="disabled" class="rating">
+                          <input type="radio" id="overall{{0}}" ng-checked="profileCtrl.reviews[0].experience == 5" name="overall{{0}}"  value="5">
+                          <label class="full" for="overall{{0}}"  title="Awesome - 5 stars"></label>
+
+                          <input type="radio" id="overall{{0}}" ng-checked="profileCtrl.reviews[0].experience == 4" name="overall{{0}}" value="4">
+                          <label class="full" for="overall{{0}}" title="Pretty good - 4 stars"></label>
+
+                          <input type="radio" id="overall{{0}}" ng-checked="profileCtrl.reviews[0].experience == 3" name="overall{{0}}" value="3">
+                          <label class="full" for="overall{{0}}" title="Meh - 3 stars"></label>
+
+                          <input type="radio" id="overall{{0}}" ng-checked="profileCtrl.reviews[0].experience == 2" name="overall{{0}}" value="2">
+                          <label class="full" for="overall{{0}}" title="Kinda bad - 2 stars"></label>
+
+                          <input type="radio" id="overall{{0}}" ng-checked="profileCtrl.reviews[0].experience == 1" name="overall{{0}}" value="1">
+                          <label class="full" for="overall{{0}}" title="Sucks big time - 1 star"></label>
+
+                        </fieldset>
+                        <span class="ratingDscrpn font11">Product-
+                        <span ng-repeat="prod in profileCtrl.reviews[0].product"> {{prod}}<span ng-if="$index !== profileCtrl.reviews[0].product.length-1">,</span></span>
+                        in
+                        <span ng-repeat="loc in profileCtrl.reviews[0].location"> {{loc}}<span ng-if="$index !== profileCtrl.reviews[0].location.length-1">,</span></span>
+                      </span>                      </div>
+                    </div>
+                    <div class="row clearfix lineSpac">
+                      <div class="col-sm-6">
+                        <label class="block">Time (weeks)</label>
+                        <span class="badge metadata" class="inherit">{{profileCtrl.reviews[0].decisionTime}}</span>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="block">Departments</label>
+                        <span class="badge metadata" class="inherit" ng-repeat="depElem in profileCtrl.reviews[0].departmentsInvolved">{{depElem}}</span>
+                      </div>
+                    </div>
+                    <div class="row clearfix lineSpac">
+                      <div class="col-sm-6">
+                        <label class="block">Key People</label>
+                        <span class="badge metadata" class="inherit" ng-repeat="kpElem in profileCtrl.reviews[0].keyDecisionMakers">{{kpElem}}</span>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="block">Success Factor</label>
+                        <span class="badge metadata" class="inherit" ng-repeat="sfElem in profileCtrl.reviews[0].sucessFactors">{{sfElem}}</span>
+                      </div>
+                    </div>
+                    <div class="row clearfix lineSpac">
+                      <div class="col-sm-12">
+                        <label class="block">Overall Difficulty</label>
+                        <fieldset disabled="disabled" class="rating">
+                          <input type="radio" id="difficulty{{0}}" ng-checked="profileCtrl.reviews[0].rateDifficulty == 5" name="difficulty{{0}}"  value="5">
+                          <label class="full" for="difficulty{{0}}"  title="Awesome - 5 stars"></label>
+
+                          <input type="radio" id="difficulty{{0}}" ng-checked="profileCtrl.reviews[0].rateDifficulty == 4" name="difficulty{{0}}" value="4">
+                          <label class="full" for="difficulty{{0}}" title="Pretty good - 4 stars"></label>
+
+                          <input type="radio" id="difficulty{{0}}" ng-checked="profileCtrl.reviews[0].rateDifficulty == 3" name="difficulty{{0}}" value="3">
+                          <label class="full" for="difficulty{{0}}" title="Meh - 3 stars"></label>
+
+                          <input type="radio" id="difficulty{{0}}" ng-checked="profileCtrl.reviews[0].rateDifficulty == 2" name="difficulty{{0}}" value="2">
+                          <label class="full" for="difficulty{{0}}" title="Kinda bad - 2 stars"></label>
+
+                          <input type="radio" id="difficulty{{0}}" ng-checked="profileCtrl.reviews[0].rateDifficulty == 1" name="difficulty{{0}}" value="1">
+                          <label class="full" for="difficulty{{0}}" title="Sucks big time - 1 star"></label>
+
+                        </fieldset>
+                      </div>
+                    </div>
+                    <div class="row clearfix lineSpac">
+                      <div class="col-sm-12">
+                        <label class="block">Overall Experience</label>
+                        <!-- <input type="textarea" name="Advice" /> -->
+                        <p>{{profileCtrl.reviews[0].describe}}</p>
+                      </div>
+                    </div>
+                    <div class="row clearfix lineSpac">
+                      <div class="col-sm-12">
+                        <label class="block">What was Good</label>
+                        <!-- <input type="textarea" name="Advice" /> -->
+                        <p>{{profileCtrl.reviews[0].whatWasGood}}</p>
+                      </div>
+                    </div>
+                    <div class="row clearfix lineSpac">
+                      <div class="col-sm-12">
+                        <label class="block">What Could be Better</label>
+                        <!-- <input type="textarea" name="Advice" /> -->
+                        <p>{{profileCtrl.reviews[0].whatCouldBeBetter}}</p>
+                      </div>
+                    </div>
+                    <div class="row clearfix" style="margin-top: 20px;">
+                      <div class="col-sm-5">
+                        <button type="button" class="btn btn-primary btnColor" ng-click="profileCtrl.showMoreReview()">View More</button>
+                        <!-- <image alt="Facebook" src="images/facebook.png" class="sclImg"/>
+                                            <image alt="Facebook" src="images/twitter.png" class="sclImg"/>
+                                            <image alt="Facebook" src="images/gmail.png" class="sclImg"/>
+                                            <image alt="Facebook" src="images/facebook.png" class="sclImg"/> -->
+                      </div>
+                    </div>
+                  </div>
+                </div><br>
+                <div class="alert alert-info" ng-show="profileCtrl.showAlert">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close" ng-click="profileCtrl.closeAlert()">×</a>
+                  <strong>Info!</strong> No More Reviews Found.
+                </div>
+              </div>
+
+              <div style="width: 98%;margin-left: 1%">
+                <label  class="pfrvw top10">Recommendation</label>
+                <p ng-show="profileCtrl.noRecommendations" style="color: red">No Recommendations Available.</p>
+                <div ng-show="profileCtrl.showRecommendation">
+                  <div class="pfcntnr mrv">
+                  <div class="col-sm-2">
+                    <img src="assets/images/circle.png" class="img-circle revwImg" />
+                  </div>
+                  <div class="col-sm-10">
+                    <div class="st">
+                      <span class="font12 bold">{{profileCtrl.recData[0].projectTitle}}</span>
+                      <div>
+                        <fieldset disabled="disabled" class="rating pfRating">
+                        <input type="radio" id="recRating{{0}}" ng-checked="profileCtrl.recData[0].recommendedRtaings == 5" name="recRating{{0}}"  value="5">
+                        <label class="full" for="recRating{{0}}"  title="Awesome - 5 stars"></label>
+
+                        <input type="radio" id="recRating{{0}}" ng-checked="profileCtrl.recData[0].recommendedRtaings == 4" name="recRating{{0}}" value="4">
+                        <label class="full" for="recRating{{0}}" title="Pretty good - 4 stars"></label>
+
+                        <input type="radio" id="recRating{{0}}" ng-checked="profileCtrl.recData[0].recommendedRtaings == 3" name="recRating{{0}}" value="3">
+                        <label class="full" for="recRating{{0}}" title="Meh - 3 stars"></label>
+
+                        <input type="radio" id="recRating{{0}}" ng-checked="profileCtrl.recData[0].recommendedRtaings == 2" name="recRating{{0}}" value="2">
+                        <label class="full" for="recRating{{0}}" title="Kinda bad - 2 stars"></label>
+
+                        <input type="radio" id="recRating{{0}}" ng-checked="profileCtrl.recData[0].recommendedRtaings == 1" name="recRating{{0}}" value="1">
+                        <label class="full" for="recRating{{0}}" title="Sucks big time - 1 star"></label>
+
+                      </fieldset>
+                      </div>
+                      <p class="font11" ng-click="profileCtrl.callUserProfile(profileCtrl.recData[0].recByUserDetails._id)">{{profileCtrl.recData[0].recByUserDetails.name}}, {{profileCtrl.recData[0].recByUserDetails.designation}}@ {{profileCtrl.recData[0].recByUserDetails.currentcompany}}</p>
+                    </div>
+                    <p class="font11">{{profileCtrl.recData[0].recommendDescriptions}}</p>
+
+                    <ul class="date-time-post">
+                      <li>{{profileCtrl.recData[0].recommendedDate}}</li>
+                      <li>-</li>
+                      <li>3 people likes this recommendation</li>
+                      <!-- <li class="pull-right see-m"><a href="">See More</a></li> -->
+                    </ul>
+                  </div>
+                  <div class="col-sm-12 "><br>
+                    <div class="alert alert-info" ng-show="profileCtrl.showRecomAlert">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close" ng-click="profileCtrl.closeRecomAlert()">×</a>
+                      <strong>Info!</strong> No More Recommendations Found.
+                    </div>
+                    <div class="col-sm-5">
+                      <button type="button" class="btn btn-primary btnColor" ng-click="profileCtrl.showMoreRecommendation()">View More</button>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+
+              <div style="width: 98%;margin-left: 1%">
+                <label  class="pfrvw top10">Hired</label>
+                <div class="pfcntnr mrv hrPdng">
+                  <div class="row clearfix">
+                    <div class="col-sm-12">
+                      <div class="panel panel-default">
+                        <div class="panel-heading" style="padding: 1px 15px;">
+                          <label>{{profileCtrl.hiredsList[0].projectTitle}}</label> </div>
+                        <div class="panel-body" style="padding-bottom: 6px;">
+                          <div ng-show="profileCtrl.hiredsList[0].priority === 'low'" class="colorLabelLow" style="background-color: #FBC02D;"></div>
+                          <div ng-show="profileCtrl.hiredsList[0].priority === 'medium'" class="colorLabelMedium" style="background-color: #2cf959;"></div>
+                          <div ng-show="profileCtrl.hiredsList[0].priority === 'high'" class="colorLabelHigh" style="background-color: #ff0000;"></div>
+                          <div class="row clearfix">
+                            <div class="col-sm-6 linkMargin">
+                              <div ng-repeat="category in profileCtrl.hiredsList[0].productCategories">
+                                <span class="badge metadata">{{category}}</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row clearfix">
+                            <div class="col-sm-6 linkMargin">
+                              <div ng-repeat="location in profileCtrl.hiredsList[0].location">
+                                <span> {{location}}<span ng-if="$index !== profileCtrl.hiredsList[0].location.length-1">,</span></span>
+                              </div>
+                            </div>
+                            <div class="col-sm-6 linkMargin">
+                              <span class="badge metadata">Sales</span>
+                            </div>
+                          </div>
+                          <div class="row clearfix linkMargin hrDt" style="margin-top: 14px;">
+                            <div class="col-sm-6" title="No of Responses">
+                              <i class="fa fa-list pointer" ui-sref="hired.response({uid: profileCtrl.hiredsList[0]._id})" aria-hidden="true" title="No of Responses"></i>
+                              <span>{{profileCtrl.hiredsList[0].appliedBy.length}}</span>
+                            </div>
+                            <div class="col-sm-6" title="End Date">
+                              <i class="fa fa-clock-o" aria-hidden="true" title="End Date"></i>
+                              <span>{{profileCtrl.hiredsList[0].endDate | date}}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-5">
+                    <button type="button" class="btn btn-primary btnColor" ng-click="profileCtrl.showMoreHireds()">View More</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row clearfix" style="width: 98%;margin-left: 1%">
+                <label  class="pfrvw top10">RFP</label>
+                <div class="pfcntnr mrv">
+                  <div class="srchtxt font11 white">
+                    <div class="st">
+                      <span class="font12 bold">{{profileCtrl.rfpsList[0].rfpTitle}}</span>
+                    </div>
+                    <p> <b>Description:</b> dolor sit amet, splendide </p>
+                    <p> <b> Proposal:</b> {{profileCtrl.rfpsList[0].proposalDescription}}
+                    </p>
+                    <p> <b>End Date:</b> {{profileCtrl.rfpsList[0].endDate | date}}
+                    </p>
+                  </div>
+                  <div class="col-sm-5">
+                    <button type="button" class="btn btn-primary btnColor" ng-click="profileCtrl.showMoreRFPS()">View More</button>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <notification-panel></notification-panel>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

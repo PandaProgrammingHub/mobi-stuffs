@@ -1,0 +1,57 @@
+<div id="menu1" class="tab-pane fade in active">
+  <div class="col-md-12 none mar-t right">
+    <button type="button" id="postRfp" ng-click="$ctrl.PostPopUp()" class="btn btn-primary wdth80 mrgnBtm">Post</button>
+  </div>
+
+
+  <div id="filterRfp" style="display: none;" class="col-sm-4 pull-right">
+    <select class="fltrPdng">
+      <option>Interested</option>
+      <option>Applied</option>
+    </select>
+  </div>
+
+  <div ng-repeat="rfps in $ctrl.rfpsList" class="col-md-12">
+    <div class="panel-group">
+      <div class="panel panel-default">
+        <div class="panel-heading" style="padding: 1px 15px;">
+          <label>{{rfps.companyName}}</label>
+          <i class="fa fa-download pull-right download" title="Download Document" aria-hidden="true"></i>
+        </div>
+        <div class="panel-body" style="padding-bottom: 6px;">
+          <div class="row clearfix">
+            <div class="col-sm-6">
+              <span ng-repeat="productCategory in rfps.productCategory">{{productCategory}}</span>
+            </div>
+            <div class="col-sm-6">
+              <span>{{rfps.budgetStart}} -</span>
+              <span> {{rfps.budgetEnd}}</span>
+            </div>
+            <div class="col-sm-6 linkMargin">
+              <span class="badge metadata" ng-repeat="location in rfp.productCategory">{{location}}</span>
+            </div>
+            <div class="col-sm-6 linkMargin">
+              <div class="row clearfix">
+                <div class="col-sm-12 smallColor" title="No of Responses">
+                  <div class="inlineBlock">
+                    <i class="fa fa-list pointer" ui-sref="userRfp.response({uid: rfps._id})"  aria-hidden="true" title="No of Responses"></i>
+                    <span>{{rfps.appliedBy.length}}</span>
+                  </div>
+                  <div class="inlineBlock left15 " title="End Date">
+                    <i class="fa fa-clock-o" aria-hidden="true" title="End Date"></i>
+                    <span>{{rfps.endDate | date}}</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="getMoreInvitation" class="morebtn">
+    <a>View More </a>
+  </div>
+</div>

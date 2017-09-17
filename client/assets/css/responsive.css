@@ -1,0 +1,17 @@
+@media(max-width:992px)
+{
+.dis input{ width:73%;}
+}
+@media(max-width:768px){
+.middle_1{ margin:20px 0;}
+.salesdoor .right.carousel-control{right:36%;}
+.salesdoor .left.carousel-control{left:38%;}
+.rs a{ float:none;}
+}
+
+@media(max-width:480px){
+.st div{ float:none;}
+.st div a{ margin-left:0; margin-right:5px;}
+
+}
+

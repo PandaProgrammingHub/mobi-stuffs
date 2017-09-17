@@ -1,0 +1,102 @@
+<div id="menu2"  class="tab-pane fade in active">
+
+  <div ng-show="!$ctrl.showAllHireds" class="col-sm-12 none mar-t" style="padding-bottom: 10px;">
+    <div class="middle_1" style="padding-bottom: 0px;padding-top: 0px">
+      <div class="row clearfix" style="padding-bottom: 1px;padding-top: 3px;">
+        <div class="col-sm-6 none hrDt"><i class="fa fa-clock-o hrDt mrgnleft4" aria-hidden="true" title="End Date"></i><span>{{$ctrl.hiredsList[0].endDate | date}}</span></div>
+        <div class="col-sm-6 none rsb text-right">
+        </div>
+      </div>
+      <div class="row clearfix bottomSpace">
+        <div class="col-sm-2 none">
+          <img src="assets/images/circle.png" class="img-circle wdth60">
+        </div>
+        <div class="col-sm-10 none">
+          <div class="row bottomSpace">
+            <div class="col-sm-12">
+              <h4 class="block" style="margin-bottom: 1px;font-size:15px;font-weight: bold;"> {{$ctrl.hiredsList[0].projectTitle}}</h4>
+              <span style="font-size: 12px;display: block;">{{$ctrl.hiredsList[0].userInfo.name}}</span>
+              <span style="font-size: 11px;display: block;">{{$ctrl.hiredsList[0].userInfo.designation}} @ {{$ctrl.hiredsList[0].userInfo.currentcompany}}</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div ng-show="$ctrl.hiredsList[0].priority === 'low'" class="colorLabelLow" style="background-color: #FBC02D;"></div>
+      <div ng-show="$ctrl.hiredsList[0].priority === 'medium'" class="colorLabelMedium" style="background-color: #2cf959;"></div>
+      <div ng-show="$ctrl.hiredsList[0].priority === 'high'" class="colorLabelHigh" style="background-color: #ff0000;"></div>
+      <div class="row clearfix">
+        <div class="col-sm-6 linkMargin">
+          <span>{{$ctrl.hiredsList[0].userInfo.products}}</span>
+        </div>
+        <div class="col-sm-6 linkMargin">
+          <span>{{$ctrl.hiredsList[0].userInfo.salesexp}}</span>
+        </div>
+        <div class="col-sm-6 linkMargin">
+          <span>{{$ctrl.hiredsList[0].userInfo.location}}</span>
+        </div>
+        <div class="col-sm-6 linkMargin">
+          <span class="badge keyBadges">{{$ctrl.hiredsList[0].userInfo.typeofsales}}</span>
+        </div>
+        <div class="col-sm-12 bottomSpace linkMargin" style="margin-bottom: 0px;">
+          <p>{{$ctrl.hiredsList[0].description}}</p>
+        </div>
+        <div class="col-sm-12 none rsb text-right" style="margin-bottom: 11px;">
+          <a ng-show="$ctrl.alreadyApplied($ctrl.hiredsList[0])">Applied</a>
+          <a ng-show="!$ctrl.alreadyApplied($ctrl.hiredsList[0])" style="cursor: pointer;" ng-click="$ctrl.applyToHired($ctrl.hiredsList[0])">Apply</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div ng-show="$ctrl.showAllHireds" class="col-sm-12 none mar-t" style="padding-bottom: 10px;" ng-repeat="hired in $ctrl.hiredsList">
+    <div class="middle_1" style="padding-bottom: 0px;padding-top: 0px">
+      <div class="row clearfix" style="padding-bottom: 1px;padding-top: 3px;">
+        <div class="col-sm-6 none hrDt"><i class="fa fa-clock-o hrDt mrgnleft4" aria-hidden="true" title="End Date"></i><span>{{hired.endDate | date}}</span></div>
+        <div class="col-sm-6 none rsb text-right">
+        </div>
+      </div>
+      <div class="row clearfix bottomSpace">
+        <div class="col-sm-2 none">
+          <img src="assets/images/circle.png" class="img-circle wdth60">
+        </div>
+        <div class="col-sm-10 none">
+          <div class="row bottomSpace">
+            <div class="col-sm-12">
+              <h4 class="block" style="margin-bottom: 1px;font-size:15px;font-weight: bold;"> {{hired.projectTitle}}</h4>
+              <span style="font-size: 12px;display: block;">{{hired.userInfo.name}}</span>
+              <span style="font-size: 11px;display: block;">{{hired.userInfo.designation}} @ {{hired.userInfo.currentcompany}}</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div ng-show="hired.priority === 'low'" class="colorLabelLow" style="background-color: #FBC02D;"></div>
+      <div ng-show="hired.priority === 'medium'" class="colorLabelMedium" style="background-color: #2cf959;"></div>
+      <div ng-show="hired.priority === 'high'" class="colorLabelHigh" style="background-color: #ff0000;"></div>
+      <div class="row clearfix">
+        <div class="col-sm-6 linkMargin">
+          <span>{{hired.userInfo.products}}</span>
+        </div>
+        <div class="col-sm-6 linkMargin">
+          <span>{{hired.userInfo.salesexp}}</span>
+        </div>
+        <div class="col-sm-6 linkMargin">
+          <span>{{hired.userInfo.location}}</span>
+        </div>
+        <div class="col-sm-6 linkMargin">
+          <span class="badge keyBadges">{{hired.userInfo.typeofsales}}</span>
+        </div>
+        <div class="col-sm-12 bottomSpace linkMargin" style="margin-bottom: 0px;">
+          <p>{{hired.description}}</p>
+        </div>
+        <div class="col-sm-12 none rsb text-right" style="margin-bottom: 11px;">
+          <a ng-show="$ctrl.alreadyApplied(hired)">Applied</a>
+          <a ng-show="!$ctrl.alreadyApplied(hired)" style="cursor: pointer;" ng-click="$ctrl.applyToHired(hired)">Apply</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="morebtn"> <a ng-show="!$ctrl.showAllHireds" ng-click="$ctrl.getAll()">View More</a> </div>
+</div>

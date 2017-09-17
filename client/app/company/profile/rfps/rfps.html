@@ -1,0 +1,49 @@
+<div id="menu16" class="tab-pane fade active in">
+  <div id="rfpPostContainer">
+    <!--<div class="col-md-12 none mar-t">
+          <button type="button" id="postRfp" class="btn btn-primary cp-rfp wdth80 mrgnBtm" ng-click="$ctrl.getRfp()">Post
+          </button>
+       </div>-->
+    <div class="mzda mrv rfpCntr" ng-repeat="rfp in $ctrl.rfpsList">
+      <div class="panel panel-default rmvMrgn">
+        <div class="panel-heading">
+          <h4 class="block" style="margin-bottom: 1px;font-size:15px;font-weight: bold;display: inline;">{{rfp.rfpTitle}}</h4>
+          <i class="fa fa-download download pull-right" title="Download Document" aria-hidden="true"></i>
+        </div>
+        <div class="panel-body">
+          <div class="row clearfix">
+            <div class="col-sm-6 linkMargin">
+              <span ng-repeat="prod in rfp.productCategory">{{prod}}
+                  <span ng-hide="$index === rfp.productCategory.length-1">,</span>
+              </span>
+            </div>
+            <div class="col-sm-6 linkMargin">
+              <span>{{rfp.budgetStart}} - {{rfp.budgetEnd}}</span>
+            </div>
+            <div class="col-sm-6 linkMargin">
+              <span class="badge metadata" ng-repeat="loc in rfp.location">{{loc}}
+                  <span ng-hide="$index === rfp.location.length-1">,</span>
+              </span>
+            </div>
+            <div class="col-sm-6 linkMargin" style="padding-bottom: 1px;padding-top: 3px;">
+              <div class="col-sm-6 none hrDt">
+                <div class="inlineBlock">
+                  <i class="fa fa-list pointer" id="getResponse"  ui-sref="companyProfile.response" aria-hidden="true" title="No of Responses"></i>
+                  <span>20/100</span>
+                </div>
+                <i class="fa fa-clock-o hrDt left6" aria-hidden="true" title="End Date"></i>
+                <span>{{rfp.endDate | date}}</span>
+              </div>
+              <div class="col-sm-6 none rsb text-right">
+
+              </div>
+            </div>
+            <div class="col-sm-12 bottomSpace linkMargin" style="margin-bottom: 0px;">
+              <p>{{rfp.proposalDescription}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
